@@ -18,7 +18,8 @@ import Interest from './containers/Interest';
 import Friend from './containers/Friend';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link
 } from 'react-router-dom';
 
 
@@ -37,13 +38,24 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
+        <Link to="/">Home</Link>
+        <br></br>
+        <Link to="/albums">Albums</Link>
+        <br></br>
+        <Link to="/friends">Friends</Link>
+        <br></br>
+        <Link to="/interests">Interests</Link>
+        <br></br>
+        <Link to="/photos">Photos</Link>
+        <br></br>
+        <Link to="/users">Users</Link>
 
         <Route exact path="/" component={App}/>
-        <Route exact path="/albums" component={Album}/>
-        <Route exact path="/friends" component={Friend}/>
-        <Route exact path="/interests" component={Interest}/>
-        <Route exact path="/photos" component={Photo}/>
-        <Route exact path="/users" component={User}/>
+        <Route path="/albums" component={Album}/>
+        <Route path="/friends" component={Friend}/>
+        <Route path="/interests" component={Interest}/>
+        <Route path="/photos" component={Photo}/>
+        <Route path="/users" component={User}/>
 
       </div>
     </Router>
