@@ -3,105 +3,125 @@
 module.exports = {
   up : function (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('friends',[{
-  "username": "kbenjafield0",
-  "email": "cyounie0@themeforest.net",
-  "createdAt": "7/18/2017",
-  "updatedAt": "9/9/2017"
+  "username": "pcoakley0",
+  "email": "gscoines0@alexa.com",
+  "createdAt": "5/6/2017",
+  "updatedAt": "6/20/2017",
+  "userId": 20
 }, {
-  "username": "cjakovijevic1",
-  "email": "kbrewett1@ocn.ne.jp",
-  "createdAt": "2/3/2017",
-  "updatedAt": "6/4/2017"
+  "username": "calderton1",
+  "email": "bvanderbaaren1@howstuffworks.com",
+  "createdAt": "2/15/2017",
+  "updatedAt": "7/7/2017",
+  "userId": 9
 }, {
-  "username": "llahiff2",
-  "email": "ghexter2@uol.com.br",
-  "createdAt": "11/2/2017",
-  "updatedAt": "7/27/2017"
+  "username": "apawden2",
+  "email": "mlarimer2@marriott.com",
+  "createdAt": "3/12/2017",
+  "updatedAt": "5/24/2017",
+  "userId": 2
 }, {
-  "username": "tupwood3",
-  "email": "ajolly3@cpanel.net",
+  "username": "tsmallthwaite3",
+  "email": "jquinsee3@topsy.com",
+  "createdAt": "1/29/2017",
+  "updatedAt": "12/24/2016",
+  "userId": 3
+}, {
+  "username": "rheigl4",
+  "email": "lmuncie4@utexas.edu",
+  "createdAt": "1/3/2017",
+  "updatedAt": "5/15/2017",
+  "userId": 5
+}, {
+  "username": "dgonzalo5",
+  "email": "aackhurst5@discovery.com",
   "createdAt": "2/16/2017",
-  "updatedAt": "4/9/2017"
+  "updatedAt": "7/20/2017",
+  "userId": 19
 }, {
-  "username": "ehabben4",
-  "email": "adyster4@reuters.com",
-  "createdAt": "3/16/2017",
-  "updatedAt": "9/6/2017"
+  "username": "pprobin6",
+  "email": "fskidmore6@weibo.com",
+  "createdAt": "11/8/2016",
+  "updatedAt": "9/5/2017",
+  "userId": 7
 }, {
-  "username": "ejoyson5",
-  "email": "dmatchett5@mac.com",
-  "createdAt": "1/19/2017",
-  "updatedAt": "8/22/2017"
+  "username": "amabbutt7",
+  "email": "jduggary7@psu.edu",
+  "createdAt": "6/10/2017",
+  "updatedAt": "3/6/2017",
+  "userId": 14
 }, {
-  "username": "ralgy6",
-  "email": "cchinnock6@nyu.edu",
-  "createdAt": "9/16/2017",
-  "updatedAt": "1/14/2017"
+  "username": "bsynnot8",
+  "email": "dfeighney8@hhs.gov",
+  "createdAt": "5/1/2017",
+  "updatedAt": "2/10/2017",
+  "userId": 1
 }, {
-  "username": "ccreigan7",
-  "email": "igiraldon7@topsy.com",
-  "createdAt": "11/10/2016",
-  "updatedAt": "2/8/2017"
+  "username": "rkaasmann9",
+  "email": "driggulsford9@merriam-webster.com",
+  "createdAt": "12/25/2016",
+  "updatedAt": "5/1/2017",
+  "userId": 17
 }, {
-  "username": "dsanz8",
-  "email": "bdeakan8@nsw.gov.au",
-  "createdAt": "4/12/2017",
-  "updatedAt": "4/30/2017"
+  "username": "bgilbeya",
+  "email": "lterrya@networksolutions.com",
+  "createdAt": "3/12/2017",
+  "updatedAt": "8/7/2017",
+  "userId": 6
 }, {
-  "username": "cmcdonough9",
-  "email": "aducham9@sitemeter.com",
-  "createdAt": "12/1/2016",
-  "updatedAt": "10/24/2017"
+  "username": "sskiltonb",
+  "email": "crolanceb@reference.com",
+  "createdAt": "11/9/2016",
+  "updatedAt": "4/24/2017",
+  "userId": 7
 }, {
-  "username": "daltimasa",
-  "email": "twildsmitha@creativecommons.org",
-  "createdAt": "8/26/2017",
-  "updatedAt": "11/25/2016"
+  "username": "rgaynesc",
+  "email": "mleitherc@tripod.com",
+  "createdAt": "5/17/2017",
+  "updatedAt": "3/9/2017",
+  "userId": 8
 }, {
-  "username": "sbernlib",
-  "email": "mhazzardb@google.ca",
-  "createdAt": "12/6/2016",
-  "updatedAt": "5/17/2017"
+  "username": "crubanenkod",
+  "email": "ecurralld@goodreads.com",
+  "createdAt": "7/1/2017",
+  "updatedAt": "7/12/2017",
+  "userId": 9
 }, {
-  "username": "alangmeadc",
-  "email": "dsinniec@patch.com",
-  "createdAt": "1/9/2017",
-  "updatedAt": "5/28/2017"
+  "username": "csatterleye",
+  "email": "idunnione@apple.com",
+  "createdAt": "1/13/2017",
+  "updatedAt": "1/16/2017",
+  "userId": 15
 }, {
-  "username": "abellwardd",
-  "email": "asodeaud@163.com",
-  "createdAt": "1/2/2017",
-  "updatedAt": "3/18/2017"
+  "username": "bmilberryf",
+  "email": "ijoriotf@tripod.com",
+  "createdAt": "8/27/2017",
+  "updatedAt": "6/12/2017",
+  "userId": 11
 }, {
-  "username": "dsallerye",
-  "email": "lfawkese@nasa.gov",
-  "createdAt": "1/16/2017",
-  "updatedAt": "9/5/2017"
+  "username": "fdedenhamg",
+  "email": "iudieg@google.com.hk",
+  "createdAt": "9/10/2017",
+  "updatedAt": "7/24/2017",
+  "userId": 6
 }, {
-  "username": "isatterthwaitef",
-  "email": "frawstornf@opensource.org",
-  "createdAt": "4/1/2017",
-  "updatedAt": "6/2/2017"
+  "username": "czimmermeisterh",
+  "email": "bibbesonh@ca.gov",
+  "createdAt": "11/25/2016",
+  "updatedAt": "11/26/2016",
+  "userId": 20
 }, {
-  "username": "pguering",
-  "email": "cdikesg@xing.com",
-  "createdAt": "8/25/2017",
-  "updatedAt": "5/28/2017"
+  "username": "glunami",
+  "email": "colmani@ted.com",
+  "createdAt": "3/20/2017",
+  "updatedAt": "10/6/2017",
+  "userId": 4
 }, {
-  "username": "cboeterh",
-  "email": "mkinvigh@telegraph.co.uk",
-  "createdAt": "5/22/2017",
-  "updatedAt": "4/20/2017"
-}, {
-  "username": "djerzaki",
-  "email": "svondruskai@acquirethisname.com",
-  "createdAt": "5/29/2017",
-  "updatedAt": "1/3/2017"
-}, {
-  "username": "dfewtrellj",
-  "email": "tbenyonj@usgs.gov",
-  "createdAt": "6/16/2017",
-  "updatedAt": "5/20/2017"
+  "username": "jshimwellj",
+  "email": "vofeenyj@springer.com",
+  "createdAt": "1/30/2017",
+  "updatedAt": "12/1/2016",
+  "userId": 16
 }] , {});
   },
 

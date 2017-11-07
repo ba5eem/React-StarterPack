@@ -3,105 +3,125 @@
 module.exports = {
   up : function (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('photos',[{
-  "title": "Beisa oryx",
-  "url": "https://robohash.org/quiexpeditaest.png?size=200x200&set=set1",
-  "createdAt": "5/22/2017",
-  "updatedAt": "12/20/2016"
+  "title": "Flicker, field",
+  "url": "https://robohash.org/etquodvoluptatem.png?size=200x200&set=set1",
+  "createdAt": "6/16/2017",
+  "updatedAt": "4/27/2017",
+  "albumId": 10
 }, {
-  "title": "Rufous tree pie",
-  "url": "https://robohash.org/quiexercitationemdolorem.png?size=200x200&set=set1",
-  "createdAt": "7/25/2017",
-  "updatedAt": "2/22/2017"
+  "title": "Turtle, snake-necked",
+  "url": "https://robohash.org/atqueveroin.png?size=200x200&set=set1",
+  "createdAt": "12/28/2016",
+  "updatedAt": "7/3/2017",
+  "albumId": 4
 }, {
-  "title": "Seal, common",
-  "url": "https://robohash.org/repudiandaeoccaecatiarchitecto.png?size=200x200&set=set1",
-  "createdAt": "7/13/2017",
-  "updatedAt": "11/27/2016"
+  "title": "Worm snake (unidentified)",
+  "url": "https://robohash.org/nihilautodio.png?size=200x200&set=set1",
+  "createdAt": "7/9/2017",
+  "updatedAt": "3/31/2017",
+  "albumId": 12
 }, {
-  "title": "Capuchin, white-fronted",
-  "url": "https://robohash.org/oditutofficiis.png?size=200x200&set=set1",
-  "createdAt": "8/2/2017",
-  "updatedAt": "5/27/2017"
+  "title": "Black-collared barbet",
+  "url": "https://robohash.org/voluptasnihildolore.png?size=200x200&set=set1",
+  "createdAt": "3/25/2017",
+  "updatedAt": "9/2/2017",
+  "albumId": 16
 }, {
-  "title": "Fat-tailed dunnart",
-  "url": "https://robohash.org/saepenesciuntnecessitatibus.png?size=200x200&set=set1",
-  "createdAt": "10/18/2017",
-  "updatedAt": "5/17/2017"
+  "title": "Corella, long-billed",
+  "url": "https://robohash.org/autcupiditateincidunt.png?size=200x200&set=set1",
+  "createdAt": "11/22/2016",
+  "updatedAt": "7/7/2017",
+  "albumId": 4
 }, {
-  "title": "White-headed vulture",
-  "url": "https://robohash.org/quiaeiuspossimus.png?size=200x200&set=set1",
-  "createdAt": "7/24/2017",
-  "updatedAt": "8/1/2017"
+  "title": "Hare, arctic",
+  "url": "https://robohash.org/odioautid.png?size=200x200&set=set1",
+  "createdAt": "11/19/2016",
+  "updatedAt": "6/30/2017",
+  "albumId": 4
 }, {
-  "title": "Mountain lion",
-  "url": "https://robohash.org/officiaeaea.png?size=200x200&set=set1",
-  "createdAt": "11/28/2016",
-  "updatedAt": "7/6/2017"
+  "title": "Chital",
+  "url": "https://robohash.org/laboriosamullameum.png?size=200x200&set=set1",
+  "createdAt": "9/1/2017",
+  "updatedAt": "11/13/2016",
+  "albumId": 1
 }, {
-  "title": "Wallaby, agile",
-  "url": "https://robohash.org/nobissintfacere.png?size=200x200&set=set1",
-  "createdAt": "10/30/2017",
-  "updatedAt": "1/10/2017"
+  "title": "Field flicker",
+  "url": "https://robohash.org/aliaseligendivelit.png?size=200x200&set=set1",
+  "createdAt": "10/16/2017",
+  "updatedAt": "6/23/2017",
+  "albumId": 1
 }, {
-  "title": "Deer, roe",
-  "url": "https://robohash.org/autconsequaturad.png?size=200x200&set=set1",
-  "createdAt": "6/17/2017",
-  "updatedAt": "4/2/2017"
+  "title": "Jackal, golden",
+  "url": "https://robohash.org/molestiaeutnam.png?size=200x200&set=set1",
+  "createdAt": "7/8/2017",
+  "updatedAt": "9/2/2017",
+  "albumId": 3
+}, {
+  "title": "Snake (unidentified)",
+  "url": "https://robohash.org/beataeporroet.png?size=200x200&set=set1",
+  "createdAt": "5/11/2017",
+  "updatedAt": "9/20/2017",
+  "albumId": 14
+}, {
+  "title": "Badger, american",
+  "url": "https://robohash.org/reprehenderitautemmaiores.png?size=200x200&set=set1",
+  "createdAt": "9/11/2017",
+  "updatedAt": "11/22/2016",
+  "albumId": 5
+}, {
+  "title": "Boa, mexican",
+  "url": "https://robohash.org/nonimpeditet.png?size=200x200&set=set1",
+  "createdAt": "8/30/2017",
+  "updatedAt": "5/22/2017",
+  "albumId": 4
 }, {
   "title": "Coyote",
-  "url": "https://robohash.org/omnisdoloribusoccaecati.png?size=200x200&set=set1",
-  "createdAt": "8/1/2017",
-  "updatedAt": "6/5/2017"
+  "url": "https://robohash.org/debitissitcorporis.png?size=200x200&set=set1",
+  "createdAt": "12/24/2016",
+  "updatedAt": "10/11/2017",
+  "albumId": 14
 }, {
-  "title": "Platypus",
-  "url": "https://robohash.org/doloremquetemporibusquidem.png?size=200x200&set=set1",
-  "createdAt": "12/26/2016",
-  "updatedAt": "7/19/2017"
+  "title": "Rat, white-faced tree",
+  "url": "https://robohash.org/veroquiaquo.png?size=200x200&set=set1",
+  "createdAt": "12/28/2016",
+  "updatedAt": "10/9/2017",
+  "albumId": 10
 }, {
-  "title": "Indian peacock",
-  "url": "https://robohash.org/laudantiumsitvoluptatibus.png?size=200x200&set=set1",
-  "createdAt": "5/18/2017",
-  "updatedAt": "5/13/2017"
+  "title": "Grouse, sage",
+  "url": "https://robohash.org/officiismaximeet.png?size=200x200&set=set1",
+  "createdAt": "10/9/2017",
+  "updatedAt": "10/16/2017",
+  "albumId": 17
 }, {
-  "title": "Indian jackal",
-  "url": "https://robohash.org/aspernaturquissint.png?size=200x200&set=set1",
-  "createdAt": "8/20/2017",
-  "updatedAt": "2/24/2017"
+  "title": "Mexican boa",
+  "url": "https://robohash.org/autemdoloremenim.png?size=200x200&set=set1",
+  "createdAt": "1/30/2017",
+  "updatedAt": "7/25/2017",
+  "albumId": 20
 }, {
-  "title": "Pelican, brown",
-  "url": "https://robohash.org/suntnecessitatibusvoluptate.png?size=200x200&set=set1",
-  "createdAt": "6/6/2017",
-  "updatedAt": "9/2/2017"
+  "title": "African fish eagle",
+  "url": "https://robohash.org/quosreiciendisdeleniti.png?size=200x200&set=set1",
+  "createdAt": "5/31/2017",
+  "updatedAt": "12/30/2016",
+  "albumId": 10
 }, {
-  "title": "Sacred ibis",
-  "url": "https://robohash.org/etremsint.png?size=200x200&set=set1",
-  "createdAt": "2/27/2017",
-  "updatedAt": "1/13/2017"
+  "title": "Seal, harbor",
+  "url": "https://robohash.org/quodquiaveniam.png?size=200x200&set=set1",
+  "createdAt": "4/5/2017",
+  "updatedAt": "3/30/2017",
+  "albumId": 16
 }, {
-  "title": "Woolly-necked stork",
-  "url": "https://robohash.org/animipariaturasperiores.png?size=200x200&set=set1",
-  "createdAt": "6/28/2017",
-  "updatedAt": "7/9/2017"
+  "title": "Lily trotter",
+  "url": "https://robohash.org/quisquilaborum.png?size=200x200&set=set1",
+  "createdAt": "6/19/2017",
+  "updatedAt": "5/29/2017",
+  "albumId": 10
 }, {
-  "title": "Australian masked owl",
-  "url": "https://robohash.org/utvoluptasest.png?size=200x200&set=set1",
-  "createdAt": "3/31/2017",
-  "updatedAt": "2/11/2017"
-}, {
-  "title": "Squirrel, malabar",
-  "url": "https://robohash.org/etquisuscipit.png?size=200x200&set=set1",
-  "createdAt": "10/18/2017",
-  "updatedAt": "12/29/2016"
-}, {
-  "title": "Turaco, violet-crested",
-  "url": "https://robohash.org/atrerumatque.png?size=200x200&set=set1",
-  "createdAt": "11/1/2017",
-  "updatedAt": "1/6/2017"
-}, {
-  "title": "Vulture, turkey",
-  "url": "https://robohash.org/eiusquasiconsequatur.png?size=200x200&set=set1",
-  "createdAt": "3/10/2017",
-  "updatedAt": "1/15/2017"
+  "title": "Gila monster",
+  "url": "https://robohash.org/voluptatemfugavoluptatem.png?size=200x200&set=set1",
+  "createdAt": "8/6/2017",
+  "updatedAt": "2/12/2017",
+  "albumId": 5
 }] , {});
   },
 
