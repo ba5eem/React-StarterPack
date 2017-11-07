@@ -3,125 +3,145 @@
 module.exports = {
   up : function (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('friends',[{
-  "username": "pcoakley0",
-  "email": "gscoines0@alexa.com",
-  "createdAt": "5/6/2017",
-  "updatedAt": "6/20/2017",
-  "userId": 20
-}, {
-  "username": "calderton1",
-  "email": "bvanderbaaren1@howstuffworks.com",
-  "createdAt": "2/15/2017",
-  "updatedAt": "7/7/2017",
-  "userId": 9
-}, {
-  "username": "apawden2",
-  "email": "mlarimer2@marriott.com",
-  "createdAt": "3/12/2017",
-  "updatedAt": "5/24/2017",
-  "userId": 2
-}, {
-  "username": "tsmallthwaite3",
-  "email": "jquinsee3@topsy.com",
-  "createdAt": "1/29/2017",
-  "updatedAt": "12/24/2016",
-  "userId": 3
-}, {
-  "username": "rheigl4",
-  "email": "lmuncie4@utexas.edu",
-  "createdAt": "1/3/2017",
-  "updatedAt": "5/15/2017",
-  "userId": 5
-}, {
-  "username": "dgonzalo5",
-  "email": "aackhurst5@discovery.com",
-  "createdAt": "2/16/2017",
-  "updatedAt": "7/20/2017",
-  "userId": 19
-}, {
-  "username": "pprobin6",
-  "email": "fskidmore6@weibo.com",
-  "createdAt": "11/8/2016",
-  "updatedAt": "9/5/2017",
-  "userId": 7
-}, {
-  "username": "amabbutt7",
-  "email": "jduggary7@psu.edu",
-  "createdAt": "6/10/2017",
-  "updatedAt": "3/6/2017",
-  "userId": 14
-}, {
-  "username": "bsynnot8",
-  "email": "dfeighney8@hhs.gov",
-  "createdAt": "5/1/2017",
-  "updatedAt": "2/10/2017",
-  "userId": 1
-}, {
-  "username": "rkaasmann9",
-  "email": "driggulsford9@merriam-webster.com",
-  "createdAt": "12/25/2016",
-  "updatedAt": "5/1/2017",
-  "userId": 17
-}, {
-  "username": "bgilbeya",
-  "email": "lterrya@networksolutions.com",
-  "createdAt": "3/12/2017",
-  "updatedAt": "8/7/2017",
-  "userId": 6
-}, {
-  "username": "sskiltonb",
-  "email": "crolanceb@reference.com",
-  "createdAt": "11/9/2016",
-  "updatedAt": "4/24/2017",
-  "userId": 7
-}, {
-  "username": "rgaynesc",
-  "email": "mleitherc@tripod.com",
-  "createdAt": "5/17/2017",
-  "updatedAt": "3/9/2017",
-  "userId": 8
-}, {
-  "username": "crubanenkod",
-  "email": "ecurralld@goodreads.com",
-  "createdAt": "7/1/2017",
-  "updatedAt": "7/12/2017",
-  "userId": 9
-}, {
-  "username": "csatterleye",
-  "email": "idunnione@apple.com",
-  "createdAt": "1/13/2017",
-  "updatedAt": "1/16/2017",
+  "username": "wmallaby0",
+  "email": "bmorcomb0@bbb.org",
+  "avatar": "https://robohash.org/asperioresinhic.png?size=200x200&set=set1",
+  "createdAt": "11/22/2016",
+  "updatedAt": "12/1/2016",
   "userId": 15
 }, {
-  "username": "bmilberryf",
-  "email": "ijoriotf@tripod.com",
-  "createdAt": "8/27/2017",
-  "updatedAt": "6/12/2017",
-  "userId": 11
+  "username": "kcampsall1",
+  "email": "gmatts1@businessinsider.com",
+  "avatar": "https://robohash.org/sitquialaudantium.bmp?size=200x200&set=set1",
+  "createdAt": "3/10/2017",
+  "updatedAt": "9/18/2017",
+  "userId": 8
 }, {
-  "username": "fdedenhamg",
-  "email": "iudieg@google.com.hk",
-  "createdAt": "9/10/2017",
-  "updatedAt": "7/24/2017",
-  "userId": 6
+  "username": "groughey2",
+  "email": "jbengall2@scribd.com",
+  "avatar": "https://robohash.org/etveniamquas.jpg?size=200x200&set=set1",
+  "createdAt": "12/17/2016",
+  "updatedAt": "1/11/2017",
+  "userId": 8
 }, {
-  "username": "czimmermeisterh",
-  "email": "bibbesonh@ca.gov",
-  "createdAt": "11/25/2016",
-  "updatedAt": "11/26/2016",
-  "userId": 20
+  "username": "aescolme3",
+  "email": "dsawfoot3@yale.edu",
+  "avatar": "https://robohash.org/utmollitiarepellat.png?size=200x200&set=set1",
+  "createdAt": "1/12/2017",
+  "updatedAt": "11/15/2016",
+  "userId": 19
 }, {
-  "username": "glunami",
-  "email": "colmani@ted.com",
-  "createdAt": "3/20/2017",
-  "updatedAt": "10/6/2017",
+  "username": "hjordin4",
+  "email": "zinchbald4@unc.edu",
+  "avatar": "https://robohash.org/enimoccaecatirepellendus.bmp?size=200x200&set=set1",
+  "createdAt": "4/5/2017",
+  "updatedAt": "4/6/2017",
+  "userId": 19
+}, {
+  "username": "dalbrecht5",
+  "email": "cgillford5@xing.com",
+  "avatar": "https://robohash.org/quaeratealaborum.jpg?size=200x200&set=set1",
+  "createdAt": "7/17/2017",
+  "updatedAt": "12/5/2016",
   "userId": 4
 }, {
-  "username": "jshimwellj",
-  "email": "vofeenyj@springer.com",
-  "createdAt": "1/30/2017",
-  "updatedAt": "12/1/2016",
+  "username": "jgolston6",
+  "email": "rdumberell6@senate.gov",
+  "avatar": "https://robohash.org/quiexcepturipariatur.bmp?size=200x200&set=set1",
+  "createdAt": "9/30/2017",
+  "updatedAt": "3/15/2017",
+  "userId": 7
+}, {
+  "username": "yallenby7",
+  "email": "castupenas7@mayoclinic.com",
+  "avatar": "https://robohash.org/quasiiustolaudantium.bmp?size=200x200&set=set1",
+  "createdAt": "7/5/2017",
+  "updatedAt": "4/2/2017",
+  "userId": 10
+}, {
+  "username": "ksprackling8",
+  "email": "mfarraway8@census.gov",
+  "avatar": "https://robohash.org/etautin.bmp?size=200x200&set=set1",
+  "createdAt": "12/19/2016",
+  "updatedAt": "3/1/2017",
+  "userId": 7
+}, {
+  "username": "meyckel9",
+  "email": "wthing9@friendfeed.com",
+  "avatar": "https://robohash.org/officiisrerumsoluta.png?size=200x200&set=set1",
+  "createdAt": "3/16/2017",
+  "updatedAt": "8/2/2017",
+  "userId": 9
+}, {
+  "username": "aglovera",
+  "email": "mfearnalla@google.co.uk",
+  "avatar": "https://robohash.org/providenttemporaincidunt.bmp?size=200x200&set=set1",
+  "createdAt": "7/18/2017",
+  "updatedAt": "9/17/2017",
   "userId": 16
+}, {
+  "username": "dstidstonb",
+  "email": "rcrallanb@chicagotribune.com",
+  "avatar": "https://robohash.org/cumquevoluptatibusvoluptatum.jpg?size=200x200&set=set1",
+  "createdAt": "11/13/2016",
+  "updatedAt": "5/23/2017",
+  "userId": 10
+}, {
+  "username": "bcamdenc",
+  "email": "sgimbartc@chicagotribune.com",
+  "avatar": "https://robohash.org/voluptasearepudiandae.jpg?size=200x200&set=set1",
+  "createdAt": "6/23/2017",
+  "updatedAt": "3/19/2017",
+  "userId": 14
+}, {
+  "username": "lstrotond",
+  "email": "bburgoined@deliciousdays.com",
+  "avatar": "https://robohash.org/dolorequiaet.jpg?size=200x200&set=set1",
+  "createdAt": "4/25/2017",
+  "updatedAt": "12/16/2016",
+  "userId": 17
+}, {
+  "username": "bnotte",
+  "email": "dmaccie@marriott.com",
+  "avatar": "https://robohash.org/providentaspernaturtempora.jpg?size=200x200&set=set1",
+  "createdAt": "2/1/2017",
+  "updatedAt": "6/22/2017",
+  "userId": 13
+}, {
+  "username": "jollerhadf",
+  "email": "emeritf@narod.ru",
+  "avatar": "https://robohash.org/quinatusofficia.bmp?size=200x200&set=set1",
+  "createdAt": "9/13/2017",
+  "updatedAt": "6/10/2017",
+  "userId": 4
+}, {
+  "username": "dbowkleyg",
+  "email": "ahebbrong@theglobeandmail.com",
+  "avatar": "https://robohash.org/estullamqui.png?size=200x200&set=set1",
+  "createdAt": "6/2/2017",
+  "updatedAt": "2/27/2017",
+  "userId": 12
+}, {
+  "username": "jlownh",
+  "email": "dpolottih@ameblo.jp",
+  "avatar": "https://robohash.org/abaliquamsed.bmp?size=200x200&set=set1",
+  "createdAt": "5/16/2017",
+  "updatedAt": "7/6/2017",
+  "userId": 15
+}, {
+  "username": "raitchesoni",
+  "email": "htulli@amazonaws.com",
+  "avatar": "https://robohash.org/quiaquisquamut.png?size=200x200&set=set1",
+  "createdAt": "5/5/2017",
+  "updatedAt": "6/9/2017",
+  "userId": 12
+}, {
+  "username": "eaitkenheadj",
+  "email": "dlowellj@fema.gov",
+  "avatar": "https://robohash.org/quosedautem.bmp?size=200x200&set=set1",
+  "createdAt": "3/11/2017",
+  "updatedAt": "2/5/2017",
+  "userId": 5
 }] , {});
   },
 

@@ -3,105 +3,125 @@
 module.exports = {
   up : function (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('albums',[{
-  "title": "Tlingit-Haida",
-  "createdAt": "5/12/2017",
-  "updatedAt": "2/22/2017",
-  "userId": 5
-}, {
-  "title": "Sri Lankan",
-  "createdAt": "7/8/2017",
-  "updatedAt": "3/17/2017",
-  "userId": 18
-}, {
-  "title": "Crow",
-  "createdAt": "7/19/2017",
-  "updatedAt": "5/22/2017",
-  "userId": 16
-}, {
-  "title": "Filipino",
-  "createdAt": "10/19/2017",
-  "updatedAt": "2/25/2017",
-  "userId": 20
-}, {
-  "title": "Dominican (Dominican Republic)",
-  "createdAt": "11/24/2016",
-  "updatedAt": "1/31/2017",
-  "userId": 10
-}, {
-  "title": "Aleut",
-  "createdAt": "7/2/2017",
-  "updatedAt": "6/12/2017",
-  "userId": 18
-}, {
-  "title": "Pakistani",
-  "createdAt": "7/13/2017",
-  "updatedAt": "8/12/2017",
-  "userId": 12
-}, {
-  "title": "Polynesian",
-  "createdAt": "12/7/2016",
-  "updatedAt": "2/25/2017",
-  "userId": 9
-}, {
-  "title": "Pima",
-  "createdAt": "9/29/2017",
-  "updatedAt": "9/24/2017",
-  "userId": 6
-}, {
-  "title": "Vietnamese",
-  "createdAt": "9/12/2017",
-  "updatedAt": "8/27/2017",
-  "userId": 11
-}, {
-  "title": "Comanche",
-  "createdAt": "8/21/2017",
-  "updatedAt": "11/25/2016",
-  "userId": 14
-}, {
-  "title": "Seminole",
-  "createdAt": "7/8/2017",
-  "updatedAt": "1/22/2017",
+  "title": "Navajo",
+  "avatar": "https://robohash.org/eaaccusantiumconsequatur.bmp?size=50x50&set=set1",
+  "createdAt": "8/11/2017",
+  "updatedAt": "11/15/2016",
   "userId": 2
 }, {
-  "title": "Puget Sound Salish",
-  "createdAt": "4/6/2017",
-  "updatedAt": "10/1/2017",
+  "title": "Indonesian",
+  "avatar": "https://robohash.org/idmagnamcum.bmp?size=50x50&set=set1",
+  "createdAt": "12/16/2016",
+  "updatedAt": "12/31/2016",
+  "userId": 12
+}, {
+  "title": "Pueblo",
+  "avatar": "https://robohash.org/aliassaepeitaque.png?size=50x50&set=set1",
+  "createdAt": "2/23/2017",
+  "updatedAt": "3/27/2017",
+  "userId": 5
+}, {
+  "title": "Iroquois",
+  "avatar": "https://robohash.org/consecteturmaioresquia.bmp?size=50x50&set=set1",
+  "createdAt": "1/27/2017",
+  "updatedAt": "11/29/2016",
+  "userId": 2
+}, {
+  "title": "Nicaraguan",
+  "avatar": "https://robohash.org/pariaturinventoreeos.bmp?size=50x50&set=set1",
+  "createdAt": "2/12/2017",
+  "updatedAt": "7/5/2017",
+  "userId": 17
+}, {
+  "title": "Cuban",
+  "avatar": "https://robohash.org/molestiaevoluptatemid.jpg?size=50x50&set=set1",
+  "createdAt": "1/3/2017",
+  "updatedAt": "1/8/2017",
   "userId": 4
 }, {
-  "title": "Asian Indian",
-  "createdAt": "4/29/2017",
-  "updatedAt": "8/10/2017",
-  "userId": 19
-}, {
-  "title": "Colombian",
-  "createdAt": "2/23/2017",
-  "updatedAt": "2/27/2017",
-  "userId": 16
-}, {
-  "title": "Cheyenne",
-  "createdAt": "3/14/2017",
-  "updatedAt": "5/22/2017",
-  "userId": 9
+  "title": "Ecuadorian",
+  "avatar": "https://robohash.org/sapientesintvel.png?size=50x50&set=set1",
+  "createdAt": "1/8/2017",
+  "updatedAt": "6/25/2017",
+  "userId": 5
 }, {
   "title": "Vietnamese",
-  "createdAt": "3/25/2017",
-  "updatedAt": "4/24/2017",
+  "avatar": "https://robohash.org/estrepellatquo.png?size=50x50&set=set1",
+  "createdAt": "6/19/2017",
+  "updatedAt": "1/29/2017",
+  "userId": 5
+}, {
+  "title": "White",
+  "avatar": "https://robohash.org/utconsequaturtemporibus.jpg?size=50x50&set=set1",
+  "createdAt": "8/28/2017",
+  "updatedAt": "4/13/2017",
+  "userId": 1
+}, {
+  "title": "Shoshone",
+  "avatar": "https://robohash.org/suntexcepturisimilique.png?size=50x50&set=set1",
+  "createdAt": "2/21/2017",
+  "updatedAt": "10/6/2017",
+  "userId": 6
+}, {
+  "title": "Navajo",
+  "avatar": "https://robohash.org/utquiavelit.bmp?size=50x50&set=set1",
+  "createdAt": "4/12/2017",
+  "updatedAt": "5/24/2017",
+  "userId": 2
+}, {
+  "title": "Apache",
+  "avatar": "https://robohash.org/reprehenderitquiamodi.bmp?size=50x50&set=set1",
+  "createdAt": "5/28/2017",
+  "updatedAt": "9/18/2017",
   "userId": 8
 }, {
-  "title": "American Indian and Alaska Native (AIAN)",
-  "createdAt": "6/23/2017",
-  "updatedAt": "11/6/2017",
+  "title": "Navajo",
+  "avatar": "https://robohash.org/sedquosducimus.bmp?size=50x50&set=set1",
+  "createdAt": "11/20/2016",
+  "updatedAt": "9/12/2017",
+  "userId": 9
+}, {
+  "title": "Chippewa",
+  "avatar": "https://robohash.org/automnissed.jpg?size=50x50&set=set1",
+  "createdAt": "11/26/2016",
+  "updatedAt": "11/28/2016",
+  "userId": 10
+}, {
+  "title": "Alaskan Athabascan",
+  "avatar": "https://robohash.org/similiqueaccusamusofficia.png?size=50x50&set=set1",
+  "createdAt": "2/12/2017",
+  "updatedAt": "1/25/2017",
+  "userId": 4
+}, {
+  "title": "Delaware",
+  "avatar": "https://robohash.org/cumhicet.bmp?size=50x50&set=set1",
+  "createdAt": "9/6/2017",
+  "updatedAt": "7/6/2017",
+  "userId": 1
+}, {
+  "title": "Peruvian",
+  "avatar": "https://robohash.org/necessitatibusvitaequasi.png?size=50x50&set=set1",
+  "createdAt": "3/2/2017",
+  "updatedAt": "3/30/2017",
+  "userId": 4
+}, {
+  "title": "Polynesian",
+  "avatar": "https://robohash.org/etinciduntfuga.png?size=50x50&set=set1",
+  "createdAt": "6/19/2017",
+  "updatedAt": "10/8/2017",
+  "userId": 18
+}, {
+  "title": "Colville",
+  "avatar": "https://robohash.org/quidemdelectuslabore.png?size=50x50&set=set1",
+  "createdAt": "11/22/2016",
+  "updatedAt": "3/6/2017",
+  "userId": 3
+}, {
+  "title": "Pima",
+  "avatar": "https://robohash.org/providentsuntneque.jpg?size=50x50&set=set1",
+  "createdAt": "2/5/2017",
+  "updatedAt": "5/4/2017",
   "userId": 13
-}, {
-  "title": "Puerto Rican",
-  "createdAt": "3/31/2017",
-  "updatedAt": "6/20/2017",
-  "userId": 16
-}, {
-  "title": "Cherokee",
-  "createdAt": "1/9/2017",
-  "updatedAt": "12/14/2016",
-  "userId": 14
 }] , {});
   },
 
