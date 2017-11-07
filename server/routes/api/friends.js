@@ -33,8 +33,10 @@ _friends.get('/:id', ( req, res ) => {
 _friends.post('/new', ( req, res ) => {
   console.log('friends _friends has been requested: POST ');
   friends.create({
-    title: req.body.title,
-    url: req.body.url
+    username: req.body.username,
+    email: req.body.email,
+    avatar: req.body.avatar,
+    userId: req.body.userId
   }).then((data) => {
     console.log('friends _friends has posted new data to the DB, result: ', data);
     res.json(data);
@@ -47,8 +49,10 @@ _friends.put('/:id', ( req, res ) => {
   console.log('friends.put/:id :', id);
   let data = req.body;
     return friends.update({
-      title: req.body.title,
-      url: req.body.url
+      username: req.body.username,
+      email: req.body.email,
+      avatar: req.body.avatar,
+      userId: req.body.userId
     }, {where: {id:id}
     }).then((friend) => {
       res.json('friend updated');
