@@ -1,0 +1,112 @@
+'use strict';
+
+module.exports = {
+  up : function (queryInterface, Sequelize) {
+    return queryInterface.bulkInsert('friends',[{
+  "username": "kbenjafield0",
+  "email": "cyounie0@themeforest.net",
+  "createdAt": "7/18/2017",
+  "updatedAt": "9/9/2017"
+}, {
+  "username": "cjakovijevic1",
+  "email": "kbrewett1@ocn.ne.jp",
+  "createdAt": "2/3/2017",
+  "updatedAt": "6/4/2017"
+}, {
+  "username": "llahiff2",
+  "email": "ghexter2@uol.com.br",
+  "createdAt": "11/2/2017",
+  "updatedAt": "7/27/2017"
+}, {
+  "username": "tupwood3",
+  "email": "ajolly3@cpanel.net",
+  "createdAt": "2/16/2017",
+  "updatedAt": "4/9/2017"
+}, {
+  "username": "ehabben4",
+  "email": "adyster4@reuters.com",
+  "createdAt": "3/16/2017",
+  "updatedAt": "9/6/2017"
+}, {
+  "username": "ejoyson5",
+  "email": "dmatchett5@mac.com",
+  "createdAt": "1/19/2017",
+  "updatedAt": "8/22/2017"
+}, {
+  "username": "ralgy6",
+  "email": "cchinnock6@nyu.edu",
+  "createdAt": "9/16/2017",
+  "updatedAt": "1/14/2017"
+}, {
+  "username": "ccreigan7",
+  "email": "igiraldon7@topsy.com",
+  "createdAt": "11/10/2016",
+  "updatedAt": "2/8/2017"
+}, {
+  "username": "dsanz8",
+  "email": "bdeakan8@nsw.gov.au",
+  "createdAt": "4/12/2017",
+  "updatedAt": "4/30/2017"
+}, {
+  "username": "cmcdonough9",
+  "email": "aducham9@sitemeter.com",
+  "createdAt": "12/1/2016",
+  "updatedAt": "10/24/2017"
+}, {
+  "username": "daltimasa",
+  "email": "twildsmitha@creativecommons.org",
+  "createdAt": "8/26/2017",
+  "updatedAt": "11/25/2016"
+}, {
+  "username": "sbernlib",
+  "email": "mhazzardb@google.ca",
+  "createdAt": "12/6/2016",
+  "updatedAt": "5/17/2017"
+}, {
+  "username": "alangmeadc",
+  "email": "dsinniec@patch.com",
+  "createdAt": "1/9/2017",
+  "updatedAt": "5/28/2017"
+}, {
+  "username": "abellwardd",
+  "email": "asodeaud@163.com",
+  "createdAt": "1/2/2017",
+  "updatedAt": "3/18/2017"
+}, {
+  "username": "dsallerye",
+  "email": "lfawkese@nasa.gov",
+  "createdAt": "1/16/2017",
+  "updatedAt": "9/5/2017"
+}, {
+  "username": "isatterthwaitef",
+  "email": "frawstornf@opensource.org",
+  "createdAt": "4/1/2017",
+  "updatedAt": "6/2/2017"
+}, {
+  "username": "pguering",
+  "email": "cdikesg@xing.com",
+  "createdAt": "8/25/2017",
+  "updatedAt": "5/28/2017"
+}, {
+  "username": "cboeterh",
+  "email": "mkinvigh@telegraph.co.uk",
+  "createdAt": "5/22/2017",
+  "updatedAt": "4/20/2017"
+}, {
+  "username": "djerzaki",
+  "email": "svondruskai@acquirethisname.com",
+  "createdAt": "5/29/2017",
+  "updatedAt": "1/3/2017"
+}, {
+  "username": "dfewtrellj",
+  "email": "tbenyonj@usgs.gov",
+  "createdAt": "6/16/2017",
+  "updatedAt": "5/20/2017"
+}] , {});
+  },
+
+  down : function (queryInterface, Sequelize) {
+    queryInterface.bulkDelete('friends',null )
+  }
+};
+

@@ -37,7 +37,7 @@ app.get('*', ( req, res ) => {
 });
 
 const server = app.listen(PORT,() => {
-  //db.sequelize.sync( { force: true } ); //this is to link with your DB defined in the config file - set to true to overwrite, set to false to not overwrite: 
+  db.sequelize.sync( { force: false } ); //this is to link with your DB defined in the config file - set to true to overwrite, set to false to not overwrite: 
   console.log(`You entered the Matrix on PORT: ${PORT}`);
 });
 

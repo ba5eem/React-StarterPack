@@ -2,9 +2,10 @@
   "development": {
     "username": "Baseem",
     "password": null,
-    "database": "database_name_goes_here",
+    "database": "socialdb",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   "test": {
     "username": "root",

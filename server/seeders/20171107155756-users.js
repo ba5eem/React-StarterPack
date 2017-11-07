@@ -1,0 +1,152 @@
+'use strict';
+
+module.exports = {
+  up : function (queryInterface, Sequelize) {
+    return queryInterface.bulkInsert('users',[{
+  "username": "fjenoure0",
+  "password": "work",
+  "email": "elaviste0@hud.gov",
+  "avatar": "https://robohash.org/quamdoloreut.png?size=200x200&set=set1",
+  "createdAt": "9/8/2017",
+  "updatedAt": "12/17/2016"
+}, {
+  "username": "rpoley1",
+  "password": "work",
+  "email": "ahillburn1@utexas.edu",
+  "avatar": "https://robohash.org/dolorumhicdolores.png?size=200x200&set=set1",
+  "createdAt": "8/26/2017",
+  "updatedAt": "2/22/2017"
+}, {
+  "username": "lberzen2",
+  "password": "work",
+  "email": "ogomez2@opera.com",
+  "avatar": "https://robohash.org/errordoloremquenihil.png?size=200x200&set=set1",
+  "createdAt": "6/8/2017",
+  "updatedAt": "10/10/2017"
+}, {
+  "username": "kfronsek3",
+  "password": "work",
+  "email": "rgillopp3@mail.ru",
+  "avatar": "https://robohash.org/exercitationemaliasmaiores.png?size=200x200&set=set1",
+  "createdAt": "12/25/2016",
+  "updatedAt": "9/12/2017"
+}, {
+  "username": "arosenblatt4",
+  "password": "work",
+  "email": "asegrave4@mapquest.com",
+  "avatar": "https://robohash.org/ipsamquosed.png?size=200x200&set=set1",
+  "createdAt": "3/21/2017",
+  "updatedAt": "1/23/2017"
+}, {
+  "username": "hrudwell5",
+  "password": "work",
+  "email": "hcastellanos5@cornell.edu",
+  "avatar": "https://robohash.org/errorrepellatvel.png?size=200x200&set=set1",
+  "createdAt": "6/6/2017",
+  "updatedAt": "4/7/2017"
+}, {
+  "username": "ekilner6",
+  "password": "work",
+  "email": "lbilling6@ycombinator.com",
+  "avatar": "https://robohash.org/nonperferendiseum.png?size=200x200&set=set1",
+  "createdAt": "9/27/2017",
+  "updatedAt": "2/22/2017"
+}, {
+  "username": "mdelaharpe7",
+  "password": "work",
+  "email": "bschruurs7@sina.com.cn",
+  "avatar": "https://robohash.org/perferendisadtenetur.png?size=200x200&set=set1",
+  "createdAt": "11/29/2016",
+  "updatedAt": "8/24/2017"
+}, {
+  "username": "brembrandt8",
+  "password": "work",
+  "email": "tottley8@google.ca",
+  "avatar": "https://robohash.org/quifugiatnon.png?size=200x200&set=set1",
+  "createdAt": "10/23/2017",
+  "updatedAt": "6/9/2017"
+}, {
+  "username": "gdefreyne9",
+  "password": "work",
+  "email": "nallworthy9@bigcartel.com",
+  "avatar": "https://robohash.org/oditestdolorum.png?size=200x200&set=set1",
+  "createdAt": "2/21/2017",
+  "updatedAt": "2/28/2017"
+}, {
+  "username": "jgravya",
+  "password": "work",
+  "email": "knanettia@army.mil",
+  "avatar": "https://robohash.org/facereillumrem.png?size=200x200&set=set1",
+  "createdAt": "5/22/2017",
+  "updatedAt": "12/2/2016"
+}, {
+  "username": "mhundeyb",
+  "password": "work",
+  "email": "bhenrotb@meetup.com",
+  "avatar": "https://robohash.org/suntteneturut.png?size=200x200&set=set1",
+  "createdAt": "9/24/2017",
+  "updatedAt": "4/24/2017"
+}, {
+  "username": "ckonradc",
+  "password": "work",
+  "email": "jyanyushkinc@latimes.com",
+  "avatar": "https://robohash.org/modiquidemrem.png?size=200x200&set=set1",
+  "createdAt": "4/28/2017",
+  "updatedAt": "4/13/2017"
+}, {
+  "username": "feastesd",
+  "password": "work",
+  "email": "hglawsopd@angelfire.com",
+  "avatar": "https://robohash.org/ullamipsaea.png?size=200x200&set=set1",
+  "createdAt": "8/15/2017",
+  "updatedAt": "3/26/2017"
+}, {
+  "username": "hfulope",
+  "password": "work",
+  "email": "rbromagee@hhs.gov",
+  "avatar": "https://robohash.org/uteumoptio.png?size=200x200&set=set1",
+  "createdAt": "8/30/2017",
+  "updatedAt": "1/4/2017"
+}, {
+  "username": "sskonesf",
+  "password": "work",
+  "email": "wgoodissonf@telegraph.co.uk",
+  "avatar": "https://robohash.org/etexplicaboomnis.png?size=200x200&set=set1",
+  "createdAt": "2/25/2017",
+  "updatedAt": "3/24/2017"
+}, {
+  "username": "jdrong",
+  "password": "work",
+  "email": "mjinag@cafepress.com",
+  "avatar": "https://robohash.org/corruptietsit.png?size=200x200&set=set1",
+  "createdAt": "6/7/2017",
+  "updatedAt": "4/17/2017"
+}, {
+  "username": "lbrayshayh",
+  "password": "work",
+  "email": "earthargh@skype.com",
+  "avatar": "https://robohash.org/nihilnonad.png?size=200x200&set=set1",
+  "createdAt": "1/10/2017",
+  "updatedAt": "3/28/2017"
+}, {
+  "username": "sivashchenkoi",
+  "password": "work",
+  "email": "ctryhorni@amazon.de",
+  "avatar": "https://robohash.org/quiaexpeditaut.png?size=200x200&set=set1",
+  "createdAt": "9/24/2017",
+  "updatedAt": "12/5/2016"
+}, {
+  "username": "eottleyj",
+  "password": "work",
+  "email": "evauterj@ifeng.com",
+  "avatar": "https://robohash.org/rerumlaboreet.png?size=200x200&set=set1",
+  "createdAt": "9/13/2017",
+  "updatedAt": "11/16/2016"
+}] , {});
+  },
+
+  down : function (queryInterface, Sequelize) {
+    queryInterface.bulkDelete('users',null )
+  }
+};
+
