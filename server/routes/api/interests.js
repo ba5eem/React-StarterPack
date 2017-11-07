@@ -34,7 +34,8 @@ _interests.post('/new', ( req, res ) => {
   console.log('interests _interests has been requested: POST ');
   interests.create({
     title: req.body.title,
-    url: req.body.url
+    url: req.body.url,
+    userId: 21
   }).then((data) => {
     console.log('interests _interests has posted new data to the DB, result: ', data);
     res.json(data);
@@ -48,7 +49,8 @@ _interests.put('/:id', ( req, res ) => {
   let data = req.body;
   return interests.update({
     title: req.body.title,
-    url: req.body.url
+    url: req.body.url,
+    userId: req.body.userId
   }, {where: {id:id}
   }).then((interest) => {
     res.json('interest updated');
