@@ -13,8 +13,8 @@ class Interest extends Component {
   }
 /*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
   componentDidMount() { 
-    //this.props.loadData();
-    // without DB setup this will fail - after DB - uncomment above line
+    this.props.loadData();
+
   }
 /*NOTHING ABOVE NEEDS TO CHANGE*/
 
@@ -26,8 +26,19 @@ class Interest extends Component {
   render(){
     return (
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
-        <div className="App">
-          Hello from Interests
+          <div className="App">
+          {this.props.data.map((data,idx)=>{
+            return (
+              <div key={idx}>
+              <h1>Id{data.id}</h1>
+              <h2>Title{data.title}</h2>
+              <h3>created:{data.createdAt}</h3>
+              <h3>Updated:{data.updatedAt}</h3>
+              <h3>userId: {data.albumId}</h3>
+              </div>
+              )
+          })
+        }
         </div>
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
     );/*END OF RETURN*/
@@ -36,7 +47,7 @@ class Interest extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.dataList
+    data: state.interestList
   }
 }
 

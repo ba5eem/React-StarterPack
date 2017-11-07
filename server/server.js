@@ -10,6 +10,7 @@ const db              = require('./models');
 const Redis           = require('connect-redis')(session);
 const LocalStrategy   = require('passport-local').Strategy;
 const saltRounds      = 12;
+var cors              = require('cors')
 const PORT            = process.env.PORT || 3000;
 const app             = express();
 
@@ -21,6 +22,7 @@ app.use(methodOverride('_method'));
 app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors())
 app.use('/api', routes);
 
 //FOR AUTHENTICATION CODE SEE /HELPERS/AUTH/Auth.js - you can copy and paste it in here: 
