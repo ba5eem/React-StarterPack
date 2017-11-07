@@ -1,14 +1,16 @@
 module.exports = function(sequelize,DataTypes){
-  const TableName = sequelize.define('name', {
+  const User = sequelize.define('users', {
     username: {type: DataTypes.STRING, unique: true},
     password: DataTypes.STRING,
     email: DataTypes.STRING,
     avatar: DataTypes.STRING,
   });
-  TableName.associate = function(models){
-    TableName.hasMany(models.temp);
+  User.associate = function(models){
+    User.hasMany(models.interests);
+    User.hasMany(models.friends);
+    User.hasMany(models.albums);
   };
-  return TableName;
+  return User;
 };
 
 //Most Likely you will have more than one table name: here is a good example of creating table with associations and references:

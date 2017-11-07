@@ -9,6 +9,8 @@ The original setup was created using create-react-app app-name in the cli.
 The following NPM modules are required:
 npm install
 
+@baseem you need to change these to --save
+
 npm install express
 npm install express-session
 npm install body-parser
