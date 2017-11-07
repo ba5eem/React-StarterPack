@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadData,addData,editData,deleteData } from '../../actions';
-import AppHeader from '../../components/AppHeader.js';
+import AppHeader from './comps/AppHeader.js';
 import edit from '../../lib/Edit';
 import destroyData from '../../lib/Delete';
 import addNew from '../../lib/Add';

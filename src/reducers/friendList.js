@@ -1,6 +1,6 @@
 import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions';
 
-const tempList = (state = [],action) => { 
+const friendList = (state = [],action) => { 
   console.log("Reducer has been activated, current state: ", state)
   switch (action.type){
     case LOAD_DATA:
@@ -26,4 +26,4 @@ const tempList = (state = [],action) => {
   }
 }
 
-export default tempList;
+export default friendList;

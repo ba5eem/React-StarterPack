@@ -1,9 +1,15 @@
 import { combineReducers } from 'redux';
-import dataList from './dataList.js';
-import tempList from './tempList.js';
+import userList from './userList.js';
+import photoList from './photoList.js';
+import interestList from './interestList.js';
+import friendList from './friendList.js';
+import albumList from './albumList.js';
 
 
 export default combineReducers({
-  dataList,
-  tempList
+  userList,
+  photoList,
+  interestList,
+  friendList,
+  albumList
 })
