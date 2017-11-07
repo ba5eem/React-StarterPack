@@ -34,7 +34,8 @@ _albums.post('/new', ( req, res ) => {
   console.log('albums _albums has been requested: POST ');
   albums.create({
     title: req.body.title,
-    url: req.body.url
+    avatar: req.body.avatar,
+    userId: req.body.userId
   }).then((data) => {
     console.log('albums _albums has posted new data to the DB, result: ', data);
     res.json(data);
@@ -48,7 +49,8 @@ _albums.put('/:id', ( req, res ) => {
   let data = req.body;
   return albums.update({
     title: req.body.title,
-    url: req.body.url
+    avatar: req.body.avatar,
+    userId: req.body.userId
   }, {where: {id:id}
   }).then((album) => {
     res.json('album updated');
