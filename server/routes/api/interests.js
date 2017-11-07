@@ -6,13 +6,13 @@ const LocalStrategy           = require('passport-local').Strategy;
 const saltRounds              = 12;
 const _interests              = express.Router();
 const db                      = require('../../models');
-const {interest}              = db;
+const {interests}              = db;
 
 
 
 _interests.get('/', ( req, res ) => {
   console.log('interests _interests has been requested: GET ');
-  interest.findAll({raw:true})
+  interests.findAll({raw:true})
   .then((DataCollection) => {
     console.log('interests _interests has queried all data from the DB, result: ', DataCollection);
     res.json(DataCollection);
@@ -23,7 +23,7 @@ _interests.get('/:id', ( req, res ) => {
   console.log('interests ID _interests has been requested: GET ');
   let id = req.params.id;
   console.log('interests.get/:id :', id);
-  interest.findById(id)
+  interests.findById(id)
   .then((data) => {
     console.log('interests ID _interests has been requested:, result: ', data);
     res.json(data);
@@ -32,7 +32,7 @@ _interests.get('/:id', ( req, res ) => {
 
 _interests.post('/new', ( req, res ) => {
   console.log('interests _interests has been requested: POST ');
-  interest.create({
+  interests.create({
     title: req.body.title,
     url: req.body.url
   }).then((data) => {
@@ -46,7 +46,7 @@ _interests.put('/:id', ( req, res ) => {
   let id = req.params.id;
   console.log('interests.put/:id :', id);
   let data = req.body;
-  return interest.update({
+  return interests.update({
     title: req.body.title,
     url: req.body.url
   }, {where: {id:id}
@@ -61,7 +61,7 @@ _interests.delete('/:id', ( req, res ) => {
   console.log('interests.delete/:id :', id);
   let data = req.body;
   console.log('interests.delete/:id data :', data);
-  interest.destroy({
+  interests.destroy({
       where     : [{id: id}],
       returning : true,
       plain     : true

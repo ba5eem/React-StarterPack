@@ -6,13 +6,13 @@ const LocalStrategy           = require('passport-local').Strategy;
 const saltRounds              = 12;
 const _photos                 = express.Router();
 const db                      = require('../../models');
-const {photos}                  = db;
+const {photos}                = db;
 
 
 
 _photos.get('/', ( req, res ) => {
   console.log('photos _photos has been requested: GET ');
-  photo.findAll({raw:true})
+  photos.findAll({raw:true})
   .then((DataCollection) => {
     console.log('photos _photos has queried all data from the DB, result: ', DataCollection);
     res.json(DataCollection);
@@ -23,7 +23,7 @@ _photos.get('/:id', ( req, res ) => {
   console.log('photos ID _photos has been requested: GET ');
   let id = req.params.id;
   console.log('photos.get/:id :', id);
-  photo.findById(id)
+  photos.findById(id)
   .then((data) => {
     console.log('photos ID _photos has been requested:, result: ', data);
     res.json(data);
@@ -32,7 +32,7 @@ _photos.get('/:id', ( req, res ) => {
 
 _photos.post('/new', ( req, res ) => {
   console.log('photos _photos has been requested: POST ');
-  photo.create({
+  photos.create({
     title: req.body.title,
     url: req.body.url
   }).then((data) => {
@@ -46,7 +46,7 @@ _photos.put('/:id', ( req, res ) => {
   let id = req.params.id;
   console.log('photos.put/:id :', id);
   let data = req.body;
-  return photo.update({
+  return photos.update({
     title: req.body.title,
     url: req.body.url
   }, {where: {id:id}
@@ -61,7 +61,7 @@ _photos.delete('/:id', ( req, res ) => {
   console.log('photos.delete/:id :', id);
   let data = req.body;
   console.log('photos.delete/:id data :', data);
-  photo.destroy({
+  photos.destroy({
       where     : [{id: id}],
       returning : true,
       plain     : true
