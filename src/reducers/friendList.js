@@ -1,4 +1,4 @@
-import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions';
+import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/friends';
 
 const friendList = (state = [],action) => { 
   console.log("Reducer has been activated, current state: ", state)

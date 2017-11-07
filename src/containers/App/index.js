@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadData,addData,editData,deleteData } from '../../actions';
 import AppHeader from './comps/AppHeader.js';
 import edit from '../../lib/Edit';
 import destroyData from '../../lib/Delete';
@@ -61,11 +60,7 @@ const mapStateToProps = (state) => {
 }
 
 const ConnectedApp = connect(
-  mapStateToProps,
-  {loadData,
-  addData,
-  editData,
-  deleteData}
+  mapStateToProps
 )(App)
 
 export default ConnectedApp;

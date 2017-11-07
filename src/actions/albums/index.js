@@ -1,4 +1,4 @@
-import httpRequest from '../lib/httpRequest';
+import httpRequest from '../../lib/httpRequest';
 /*URI ROUTES for HTTP REQUEST*/
 const TEMP = 'temp';
 /*HTTP METHODS*/
