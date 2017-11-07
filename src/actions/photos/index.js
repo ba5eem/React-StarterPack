@@ -1,6 +1,6 @@
 import httpRequest from '../../lib/httpRequest';
 /*URI ROUTES for HTTP REQUEST*/
-const TEMP = 'temp';
+const _photos = 'photos';
 /*HTTP METHODS*/
 const GET = 'GET';
 const POST = 'POST';
@@ -14,9 +14,9 @@ export const DELETE_DATA = 'DELETE_DATA';
 
 
 export const loadData = (data) => {
-  console.log('ACTION loadData has been Activated: ',data);
+  console.log('PHOTOS ACTION loadData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(GET,TEMP,null, function(err,data){
+    return httpRequest(GET,_photos,null, function(err,data){
       console.log('ACTION loadData before dispatch: ',data);
       dispatch({
         type: LOAD_DATA,
@@ -29,7 +29,7 @@ export const loadData = (data) => {
 export const addData = (data) => {
   console.log('ACTION addData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(POST,TEMP,data, function(err,data){
+    return httpRequest(POST,_photos,data, function(err,data){
       console.log('ACTION addData before dispatch: ',data);
       dispatch({
         type: ADD_DATA,
@@ -42,7 +42,7 @@ export const addData = (data) => {
 export const editData = (data) => {
   console.log('ACTION editData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(PUT,TEMP,data, function(err,data){
+    return httpRequest(PUT,_photos,data, function(err,data){
       console.log('ACTION editData before dispatch: ',data);
       dispatch({
         type: ADD_DATA,
@@ -55,7 +55,7 @@ export const editData = (data) => {
 export const deleteData = (data) => {
   console.log('ACTION deleteData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(DEL,TEMP,data, function(err,data){
+    return httpRequest(DEL,_photos,data, function(err,data){
       console.log('ACTION deleteData before dispatch: ',data);
       dispatch({
         type: ADD_DATA,
