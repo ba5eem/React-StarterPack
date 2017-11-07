@@ -11,6 +11,11 @@ import thunk from 'redux-thunk';
 import './index.css';
 /*CONTAINERS*/
 import App from './containers/App';
+import Album from './containers/Album';
+import User from './containers/User';
+import Photo from './containers/Photo';
+import Interest from './containers/Interest';
+import Friend from './containers/Friend';
 import {
   BrowserRouter as Router,
   Route
@@ -34,6 +39,11 @@ ReactDOM.render(
       <div>
 
         <Route exact path="/" component={App}/>
+        <Route exact path="/albums" component={Album}/>
+        <Route exact path="/friends" component={Friend}/>
+        <Route exact path="/interests" component={Interest}/>
+        <Route exact path="/photos" component={Photo}/>
+        <Route exact path="/users" component={User}/>
 
       </div>
     </Router>

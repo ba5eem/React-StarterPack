@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AppHeader from './comps/AppHeader.js';
+import { loadData } from '../../actions/albums';
 
-class App extends Component {
+
+class Album extends Component {
   constructor() {
     super();
     
@@ -12,7 +13,7 @@ class App extends Component {
   }
 /*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
   componentDidMount() { 
-    // this.props.loadData();
+    //this.props.loadData();
     // without DB setup this will fail - after DB - uncomment above line
   }
 /*NOTHING ABOVE NEEDS TO CHANGE*/
@@ -26,8 +27,7 @@ class App extends Component {
     return (
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
         <div className="App">
-          <AppHeader
-            data = {this.props.data}/>
+            Hello from Albums
         </div>
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
     );/*END OF RETURN*/
@@ -40,8 +40,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const ConnectedApp = connect(
-  mapStateToProps
-)(App)
+const ConnectedAlbum = connect(
+  mapStateToProps,
+  {loadData}
+)(Album)
 
-export default ConnectedApp;
+export default ConnectedAlbum;
