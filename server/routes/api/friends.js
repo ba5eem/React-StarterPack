@@ -4,9 +4,9 @@ const passport                = require('passport');
 const bcrypt                  = require('bcrypt');
 const LocalStrategy           = require('passport-local').Strategy;
 const saltRounds              = 12;
-const _friends                 = express.Router();
-const db                      = require('../models');
-const {friend}                  = db;
+const _friends                = express.Router();
+const db                      = require('../../models');
+const {friend}                = db;
 
 
 

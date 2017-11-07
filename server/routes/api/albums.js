@@ -5,8 +5,8 @@ const bcrypt                  = require('bcrypt');
 const LocalStrategy           = require('passport-local').Strategy;
 const saltRounds              = 12;
 const _albums                 = express.Router();
-const db                      = require('../models');
-const {album}                  = db;
+const db                      = require('../../models');
+const {album}                 = db;
 
 
 

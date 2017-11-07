@@ -7,7 +7,6 @@ const bcrypt          = require('bcrypt');
 const routes          = require('./routes');
 const path            = require('path');
 const db              = require('./models');
-const {ModelName}     = db;
 const Redis           = require('connect-redis')(session);
 const LocalStrategy   = require('passport-local').Strategy;
 const saltRounds      = 12;
