@@ -34,7 +34,8 @@ _photos.post('/new', ( req, res ) => {
   console.log('photos _photos has been requested: POST ');
   photos.create({
     title: req.body.title,
-    url: req.body.url
+    url: req.body.url,
+    albumId: 10
   }).then((data) => {
     console.log('photos _photos has posted new data to the DB, result: ', data);
     res.json(data);
@@ -48,7 +49,8 @@ _photos.put('/:id', ( req, res ) => {
   let data = req.body;
   return photos.update({
     title: req.body.title,
-    url: req.body.url
+    url: req.body.url,
+    albumId: req.body.albumId
   }, {where: {id:id}
   }).then((photo) => {
     res.json('photo updated');
