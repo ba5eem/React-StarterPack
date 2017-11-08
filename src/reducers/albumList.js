@@ -3,7 +3,7 @@ import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/albums';
 const albumList = (state = [],action) => { 
   switch (action.type){
     case LOAD_DATA:
-      console.log('LOAD_DATA has been activated: ',action.data);
+      //console.log('LOAD_DATA has been activated: ',action.data);
       return action.data;
     case ADD_DATA:
       console.log('ADD_DATA has been activated: ',action.data);

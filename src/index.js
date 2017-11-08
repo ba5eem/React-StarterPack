@@ -22,19 +22,20 @@ import Logout from './containers/Logout';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom';
 
 
+const auth = localStorage.getItem('auth');
+console.log('localstorage: ',localStorage)
+console.log('entry point. :',auth);
 
 const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk)
   );
-
-
-
 
 
 ReactDOM.render(
@@ -60,7 +61,7 @@ ReactDOM.render(
       <Link to="/logout">Logout</Link>
 
       <Route exact path="/" component={App} />
-      <Route path="/albums" component={Album} />
+      <Route path="/albums" component={Album}/>
       <Route path="/friends" component={Friend} />
       <Route path="/interest" component={Interest} />
       <Route path="/photos" component={Photo} />
@@ -69,6 +70,8 @@ ReactDOM.render(
       <Route path="/login" component={Login} />
       <Route path="/logout" component={Logout} />
 
+
+   
     </div>
     </Router>
   </Provider>, document.getElementById('root'));

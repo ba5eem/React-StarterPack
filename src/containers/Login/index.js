@@ -13,7 +13,7 @@ class Login extends Component {
       authUser: localStorage.getItem('auth')
     }
 
-    console.log(this.props);
+    console.log('login cont. :',this.props);
   }
 
 
@@ -49,6 +49,7 @@ class Login extends Component {
           <input type="submit" className="button" value="Login"/>
         </form>
       </div>
+
 
     )
   }

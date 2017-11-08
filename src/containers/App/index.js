@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
 import AppHeader from './comps/AppHeader.js';
+import Login from '../Login';
+import Album from '../Album';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
     this.state={ 
-      data: []
+      auth: []
     }
   }
-/*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
-  componentDidMount() { 
-    // this.props.loadData();
-    // without DB setup this will fail - after DB - uncomment above line
-  }
-/*NOTHING ABOVE NEEDS TO CHANGE*/
+  
 
 
 
@@ -23,11 +21,13 @@ class App extends Component {
 
 
   render(){
+    console.log(this.props);
     return (
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
-        <div className="App">
-          <AppHeader
-            data = {this.props.data}/>
+        <div className="app-routes">
+          <Switch>
+            {this.props.auth.auth ? <Route path="/" component={Album} /> : <Route path="/" component={Login} /> }
+          </Switch>
         </div>
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
     );/*END OF RETURN*/
@@ -36,7 +36,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.dataList
+    data: state.dataList,
+    auth: state.login
   }
 }
 

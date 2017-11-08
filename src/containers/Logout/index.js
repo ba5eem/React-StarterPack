@@ -8,7 +8,7 @@ class Logout extends Component {
 
   handleLogout(event){
     event.preventDefault();
-    this.props.logoutUser(localStorage.getItem('userId'));
+    this.props.logoutUser();
     localStorage.setItem('auth', false);
     localStorage.setItem('username', null);
     localStorage.setItem('userId', null);

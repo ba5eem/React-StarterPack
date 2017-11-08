@@ -11,8 +11,9 @@ const login = (state = [], action) => {
     localStorage.setItem('userId', action);
       return action.data;
     case LOGOUT_USER:
+      state.push({auth: false});
     console.log(action.data)
-      return null;
+      return state;
     default:
       return state
   }

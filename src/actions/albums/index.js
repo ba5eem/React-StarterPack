@@ -14,10 +14,10 @@ export const DELETE_DATA = 'DELETE_DATA';
 
 
 export const loadData = (data) => {
-  console.log('ALBUMS ACTION loadData has been Activated: ',data);
+  //console.log('ALBUMS ACTION loadData has been Activated: ',data);
   return function(dispatch){
     return httpRequest(GET,_albums,null, function(err,data){
-      console.log('ACTION loadData before dispatch: ',data);
+     // console.log('ACTION loadData before dispatch: ',data);
       dispatch({
         type: LOAD_DATA,
         data: data

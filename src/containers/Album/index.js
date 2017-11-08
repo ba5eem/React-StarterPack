@@ -8,7 +8,7 @@ class Album extends Component {
     super();
     
     this.state={ 
-      data: []
+      fireRedirect: false
     }
   }
 /*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
@@ -16,6 +16,7 @@ class Album extends Component {
     this.props.loadData();
   }
 /*NOTHING ABOVE NEEDS TO CHANGE*/
+
 
 
 

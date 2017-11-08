@@ -19,14 +19,19 @@ _login.get('/',(req,res)=>{
 
 _login.post('/',isAuthenticated, function(req, res, next) {
   console.log(req.body);
+  let local = {}
   passport.authenticate('local', function(err, user, info) {
     if (err) { return next(err); }//send fail message - logged in false //some error reason
     if (!user) { return res.json('false - not a user'); }
     req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      let local = {}
+      if (err) { 
+        local.auth = false;
+        return res.json(); 
+      }
+
       local.id = req.user.id;
       local.username = req.user.username;
+      local.auth = true;
       return res.json(local);
     });
   })(req, res, next);

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const AppHeader = ({data}) => {
-  console.log("From AppHeader Component - this was passed in from the App Container: ", data)
+const AppHeader = () => {
+
   return (
 
       <div>Welcome to facelibrary</div>
