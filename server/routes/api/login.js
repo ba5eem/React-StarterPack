@@ -13,7 +13,8 @@ _login.get('/',(req,res)=>{
   let value = req.isAuthenticated();
   console.log('Is the current user authenticated: ', (value ? 'Yes Baseem' : 'No Baseem'));
   console.log("REQ.USER***********************",req.user);
-  return res.json(req.user);
+
+  return res.json((req.user ? req.user : 'Welcome to login page, no one is logged in right now'));
 });
 
 _login.post('/',isAuthenticated, function(req, res, next) {

@@ -6,6 +6,7 @@ const LocalStrategy           = require('passport-local').Strategy;
 const saltRounds              = 12;
 const _register               = express.Router();
 const db                      = require('../../models');
+const {users}                  = db;
 
 //REGISTER ROUTE
 _register.get('/',(req,res)=>{
@@ -15,11 +16,11 @@ _register.get('/',(req,res)=>{
 _register.post('/', (req,res) =>{
   bcrypt.genSalt(saltRounds, function(err,salt){
     bcrypt.hash(req.body.password, salt, function(err, hash){
-      db.user.create({
+      db.users.create({
         username: req.body.username,
         password: hash,
-        email: req.body.email,
-        userstatus: (req.body.email ? 'active' : 'inactive')
+        email: 'email@test-db-test-email.io',
+        avatar: 'http://bit.ly/2zHt8Xi'
       })
       .then( (user) => {
         console.log(user);
