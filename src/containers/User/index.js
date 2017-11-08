@@ -34,7 +34,7 @@ class User extends Component {
               <h2>Username{data.username}</h2>
               <h3>password{data.password}</h3>
               <h3>Email{data.email}</h3>
-              <img src={data.avatar}></img>
+              <img src={data.avatar} alt=""></img>
               <h3>created{data.createdAt}</h3>
               <h3>updated{data.updatedAt}</h3>
               </div>

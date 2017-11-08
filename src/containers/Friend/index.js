@@ -32,7 +32,7 @@ class Friend extends Component {
               <h1>Id: {data.id}</h1>
               <h2>Username: {data.title}</h2>
               <h2>email: {data.email}</h2>
-              <img src={data.avatar}></img>
+              <img src={data.avatar} alt=""></img>
               <h3>created: {data.createdAt}</h3>
               <h3>Updated: {data.updatedAt}</h3>
               <h3>userId: {data.albumId}</h3>
