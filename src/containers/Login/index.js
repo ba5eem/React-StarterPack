@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { loginUser } from '../../actions/login';
 
 
 class Login extends Component {
@@ -9,9 +10,32 @@ class Login extends Component {
     this.state = {
       username: '',
       password: '',
-      email: ''
+      authUser: localStorage.getItem('auth')
     }
 
+    console.log(this.props);
+  }
+
+
+  handleChangeUsername(event){
+    this.setState({
+      username: event.target.value
+    })
+  }
+
+  handleChangePassword(event){
+    this.setState({
+      password: event.target.value
+    })
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    let newUser = {
+      username: this.state.username,
+      password: this.state.password
+    }
+      this.props.loginUser(newUser);
   }
 
 
@@ -19,7 +43,11 @@ class Login extends Component {
   render(){
     return (
       <div id="login-form">
-          Hello from Login form
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input type="text" value={this.state.username} placeholder="username" onChange={this.handleChangeUsername.bind(this)}/>
+          <input type="password" value={this.state.password} placeholder="password" onChange={this.handleChangePassword.bind(this)}/>
+          <input type="submit" className="button" value="Login"/>
+        </form>
       </div>
 
     )
@@ -31,6 +59,7 @@ class Login extends Component {
 
 const ConnectedLogin = connect(
   null,
+  {loginUser}
 )(Login);
 
 export default ConnectedLogin;

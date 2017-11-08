@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { logoutUser } from '../../actions/login';
 
 
 class Logout extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      username: '',
-      password: '',
-      email: ''
-    }
-
-  }
 
 
+  handleLogout(event){
+    event.preventDefault();
+    this.props.logoutUser(localStorage.getItem('userId'));
+    localStorage.setItem('auth', false);
+    localStorage.setItem('username', null);
+    localStorage.setItem('userId', null);
+  } 
 
   render(){
     return (
       <div id="logout-form">
-          Hello from Logout form
+        <form onSubmit={this.handleLogout.bind(this)}>
+          <input type="submit" className="button" value="Logout"/>
+        </form>
       </div>
 
     )
@@ -31,6 +31,7 @@ class Logout extends Component {
 
 const ConnectedLogout = connect(
   null,
+  {logoutUser}
 )(Logout);
 
 export default ConnectedLogout;
