@@ -1,7 +1,6 @@
 import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/albums';
 
 const albumList = (state = [],action) => { 
-  console.log("Reducer has been activated, current state: ", state)
   switch (action.type){
     case LOAD_DATA:
       console.log('LOAD_DATA has been activated: ',action.data);

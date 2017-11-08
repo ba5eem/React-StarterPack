@@ -4,6 +4,7 @@ import photoList from './photoList.js';
 import interestList from './interestList.js';
 import friendList from './friendList.js';
 import albumList from './albumList.js';
+import login from './loginUser.js';
 
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
   photoList,
   interestList,
   friendList,
-  albumList
+  albumList,
+  login
 })

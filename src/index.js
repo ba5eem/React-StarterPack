@@ -10,12 +10,15 @@ import thunk from 'redux-thunk';
 /*CSS*/
 import './index.css';
 /*CONTAINERS*/
-import App from './containers/App';
 import Album from './containers/Album';
-import User from './containers/User';
-import Photo from './containers/Photo';
-import Interest from './containers/Interest';
+import App from './containers/App';
 import Friend from './containers/Friend';
+import Interest from './containers/Interest';
+import Photo from './containers/Photo';
+import User from './containers/User';
+import Register from './containers/Register';
+import Login from './containers/Login';
+import Logout from './containers/Logout';
 import {
   BrowserRouter as Router,
   Route,
@@ -38,26 +41,35 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <Link to="/">Home</Link>
-        <br></br>
-        <Link to="/albums">Albums</Link>
-        <br></br>
-        <Link to="/friends">Friends</Link>
-        <br></br>
-        <Link to="/interests">Interests</Link>
-        <br></br>
-        <Link to="/photos">Photos</Link>
-        <br></br>
-        <Link to="/users">Users</Link>
+      <Link to="/">Home</Link>
+      <br></br>
+      <Link to="/albums">Albums</Link>
+      <br></br>
+      <Link to="/friends">Friends</Link>
+      <br></br>
+      <Link to="/interest">Interests</Link>
+      <br></br>
+      <Link to="/photos">Photos</Link>
+      <br></br>
+      <Link to="/users">Users</Link>
+      <br></br>
+      <Link to="/register">Register</Link>
+      <br></br>
+      <Link to="/login">Login</Link>
+      <br></br>
+      <Link to="/logout">Logout</Link>
 
-        <Route exact path="/" component={App}/>
-        <Route path="/albums" component={Album}/>
-        <Route path="/friends" component={Friend}/>
-        <Route path="/interests" component={Interest}/>
-        <Route path="/photos" component={Photo}/>
-        <Route path="/users" component={User}/>
+      <Route exact path="/" component={App} />
+      <Route path="/albums" component={Album} />
+      <Route path="/friends" component={Friend} />
+      <Route path="/interest" component={Interest} />
+      <Route path="/photos" component={Photo} />
+      <Route path="/users" component={User} />
+      <Route path="/register" component={Register} />
+      <Route path="/login" component={Login} />
+      <Route path="/logout" component={Logout} />
 
-      </div>
+    </div>
     </Router>
   </Provider>, document.getElementById('root'));
 registerServiceWorker();

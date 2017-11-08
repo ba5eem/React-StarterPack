@@ -7,6 +7,7 @@ const bcrypt          = require('bcrypt');
 const routes          = require('./routes');
 const path            = require('path');
 const db              = require('./models');
+const {user}          = db;
 const Redis           = require('connect-redis')(session);
 const LocalStrategy   = require('passport-local').Strategy;
 const saltRounds      = 12;
@@ -19,13 +20,58 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 //Authentication:
-app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(session({
+  store: new Redis(),
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors())
 app.use('/api', routes);
 
-//FOR AUTHENTICATION CODE SEE /HELPERS/AUTH/Auth.js - you can copy and paste it in here: 
+
+passport.serializeUser((users,done) => {
+  console.log("serializing");
+  return done(null, {
+    id: users.id,
+    username: users.username
+  });
+});
+
+passport.deserializeUser((users, done) => {
+  console.log('deserializing');
+  db.user.findOne({where: { id: users.id}})
+  .then(user => {
+    return done(null, {
+      id: users.id,
+      username: users.username
+    });
+  });
+});
+
+passport.use(new LocalStrategy(function(username, password, done) {
+    db.user.findOne({where: { username: username } })
+    .then( user => {
+      if(user === null) {
+        return done(null, false, {message: 'bad username or password'});
+      }
+      else {
+        bcrypt.compare(password, user.password)
+        .then (res => {
+          console.log(res);
+          if (res) {return done(null, user); }
+          else {
+            return done(null, false, {message: 'bad username or password'});
+          }
+        });
+      }
+    })
+    .catch(err =>{
+      console.error('error: ', err);
+  });
+}));
+
 
 app.get('/', ( req, res ) =>{
   console.log('GET request on landing page has been made');
