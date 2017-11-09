@@ -7,8 +7,15 @@ const saltRounds              = 12;
 const _photos                 = express.Router();
 const db                      = require('../../models');
 const {photos}                = db;
+const multer                  = require('multer');
 
-
+const storage = multer.diskStorage({
+  destination: './uploads',
+  filename(req,file,cb){
+    cb(null, `${file.originalname}`);
+  }
+})
+const upload = multer({storage});
 
 _photos.get('/', ( req, res ) => {
   console.log('photos _photos has been requested: GET ');
@@ -30,14 +37,15 @@ _photos.get('/:id', ( req, res ) => {
   });
 });
 
-_photos.post('/new', ( req, res ) => {
-  console.log('photos _photos has been requested: POST ');
+_photos.post('/new',upload.single('file'), ( req, res ) => {
+  let file = req.file;
+  console.log('photos _photos has been requested: POST req.file: ',req.file);
+  console.log('photos _photos has been requested: POST req.file.path: ',req.file.path);
   photos.create({
     title: req.body.title,
-    url: req.body.url,
+    url: req.file.path,
     albumId: 10
   }).then((data) => {
-    console.log('photos _photos has posted new data to the DB, result: ', data);
     res.json(data);
   });
 });
