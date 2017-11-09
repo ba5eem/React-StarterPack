@@ -26,7 +26,7 @@ _login.post('/',isAuthenticated, function(req, res, next) {
     req.logIn(user, function(err) {
       if (err) { 
         local.auth = false;
-        return res.json(); 
+        return res.json(local); 
       }
 
       local.id = req.user.id;

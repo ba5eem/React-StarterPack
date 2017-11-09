@@ -51,9 +51,11 @@ _interests.put('/:id', ( req, res ) => {
     title: req.body.title,
     url: req.body.url,
     userId: req.body.userId
-  }, {where: {id:id}
+ }, {where     : [{id: id}],
+      returning : true,
+      plain     : true
   }).then((interest) => {
-    res.json('interest updated');
+    res.json(interest);
   });
 });
 

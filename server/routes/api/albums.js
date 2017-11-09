@@ -54,8 +54,8 @@ _albums.put('/:id', ( req, res ) => {
  }, {where     : [{id: id}],
       returning : true,
       plain     : true
-  }).then((user) => {
-    res.json(user);
+  }).then((album) => {
+    res.json(album);
   });
 });
 

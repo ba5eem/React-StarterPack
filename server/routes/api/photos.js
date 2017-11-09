@@ -52,8 +52,11 @@ _photos.put('/:id', ( req, res ) => {
     url: req.body.url,
     albumId: req.body.albumId
   }, {where: {id:id}
+ }, {where     : [{id: id}],
+      returning : true,
+      plain     : true
   }).then((photo) => {
-    res.json('photo updated');
+    res.json(photo);
   });
 });
 

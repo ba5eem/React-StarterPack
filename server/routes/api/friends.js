@@ -54,8 +54,11 @@ _friends.put('/:id', ( req, res ) => {
       avatar: req.body.avatar,
       userId: req.body.userId
     }, {where: {id:id}
-    }).then((friend) => {
-      res.json('friend updated');
+ }, {where     : [{id: id}],
+      returning : true,
+      plain     : true
+  }).then((friend) => {
+    res.json(friend);
   });
 });
 
