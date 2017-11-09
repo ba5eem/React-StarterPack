@@ -18,12 +18,36 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 _photos.get('/', ( req, res ) => {
-  console.log('photos _photos has been requested: GET ');
+  //console.log('photos _photos has been requested: GET ');
   photos.findAll({raw:true})
   .then((DataCollection) => {
-    console.log('photos _photos has queried all data from the DB, result: ', DataCollection);
+    //console.log('photos _photos has queried all data from the DB, result: ', DataCollection);
     res.json(DataCollection);
   });
+});
+
+
+
+_photos.post('/', upload.single('file'), ( req, res ) => {
+  let file = req.file;
+  console.log('file: ',(file ? file : 'Its undefined'));
+  photos.create({
+    name : req.body.name,
+    url    : req.file.path,
+    albumId : 1
+  }).then((data) => {
+      return item.findOne({
+        where: {
+          id: data.id
+        }
+      })
+    .then((item) => {
+      return res.json(item);
+    })
+  })
+  .catch((err) => {
+    console.log(err)
+  })
 });
 
 _photos.get('/:id', ( req, res ) => {
@@ -33,19 +57,6 @@ _photos.get('/:id', ( req, res ) => {
   photos.findById(id)
   .then((data) => {
     console.log('photos ID _photos has been requested:, result: ', data);
-    res.json(data);
-  });
-});
-
-_photos.post('/new',upload.single('file'), ( req, res ) => {
-  let file = req.file;
-  console.log('photos _photos has been requested: POST req.file: ',req.file);
-  console.log('photos _photos has been requested: POST req.file.path: ',req.file.path);
-  photos.create({
-    title: req.body.title,
-    url: req.file.path,
-    albumId: 10
-  }).then((data) => {
     res.json(data);
   });
 });

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import AppHeader from './comps/AppHeader.js';
 import Login from '../Login';
 import Album from '../Album';
 

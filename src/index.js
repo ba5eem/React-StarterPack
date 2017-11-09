@@ -23,14 +23,13 @@ import Logout from './containers/Logout';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Redirect
+  Link
 } from 'react-router-dom';
 
 
-const auth = localStorage.getItem('auth');
-console.log('localstorage: ',localStorage)
-console.log('entry point. :',auth);
+//const auth = localStorage.getItem('auth');
+//console.log('localstorage: ',localStorage)
+//console.log('entry point. :',auth);
 
 const store = createStore(
   reducers,

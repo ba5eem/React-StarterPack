@@ -1,4 +1,5 @@
 import httpRequest from '../../lib/httpRequest';
+const axios = require('axios');
 /*URI ROUTES for HTTP REQUEST*/
 const _photos = 'photos';
 /*HTTP METHODS*/
@@ -14,10 +15,10 @@ export const DELETE_DATA = 'DELETE_DATA';
 
 
 export const loadData = (data) => {
-  console.log('PHOTOS ACTION loadData has been Activated: ',data);
+  //console.log('PHOTOS ACTION loadData has been Activated: ',data);
   return function(dispatch){
     return httpRequest(GET,_photos,null, function(err,data){
-      console.log('ACTION loadData before dispatch: ',data);
+      //console.log('ACTION loadData before dispatch: ',data);
       dispatch({
         type: LOAD_DATA,
         data: data
@@ -27,15 +28,14 @@ export const loadData = (data) => {
 }
 
 export const addData = (data) => {
-  console.log('ACTION addData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(POST,_photos,data, function(err,data){
-      console.log('ACTION addData before dispatch: ',data);
+    return axios.post('http://localhost:3000/api/photos', data)
+    .then( data => {
       dispatch({
         type: ADD_DATA,
         data: data
-      })
-    })
+      });
+    });
   }
 }
 
