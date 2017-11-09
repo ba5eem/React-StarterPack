@@ -53,9 +53,11 @@ _users.put('/:id', ( req, res ) => {
     password: req.body.password,
     email: req.body.email,
     avatar   : req.body.avatar
-  }, {where: {id:id}
+ }, {where     : [{id: id}],
+      returning : true,
+      plain     : true
   }).then((user) => {
-    res.json('User updated');
+    res.json(user);
   });
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleUser = ({user,edit,auth,editNow,backToUsers,handleChangeUsername,handleChangePassword,handleChangeEmail}) => {
+const SingleUser = ({user,edit,auth,editNow,backToUsers,handleChange}) => {
   return (
 
       <div className="App">
@@ -16,16 +16,19 @@ const SingleUser = ({user,edit,auth,editNow,backToUsers,handleChangeUsername,han
         : <form onSubmit={this.handleSubmit}>
             <input 
               type="text" 
+              name='username'
               placeholder={user[0].username}
-              onChange={handleChangeUsername}/>
+              onChange={handleChange}/>
             <input 
               type="text" 
+              name='password'
               placeholder={user[0].password} 
-              onChange={handleChangePassword}/>
+              onChange={handleChange}/>
             <input 
               type="text" 
+              name="email"
               placeholder={user[0].email} 
-              onChange={handleChangeEmail}/>
+              onChange={handleChange}/>
           </form>}
           {auth ? 
             <button 

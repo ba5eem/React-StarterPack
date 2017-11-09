@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadData } from '../../actions/users';
+import { loadData,editData } from '../../actions/users';
 import UserList from './comps/UserList.js';
 import SingleUser from './comps/SingleUser.js';
 import filterUser from '../../lib/Filter/filterUser';
+import editUser from '../../lib/Edit';
+
 
 class User extends Component {
   constructor(props) {
@@ -23,37 +25,24 @@ class User extends Component {
     this.props.loadData(); 
   }
 
-  handleChangeUsername(event){ this.setState({ username: event.target.value }) }
-
-  handleChangePassword(event){ this.setState({ password: event.target.value }) }
-
-  handleChangeEmail(event){ this.setState({ email: event.target.value }) }
+  handleChange(e){ editUser(e); }
 
   loadUser(id,e){
     let users = this.props.users;
     let user = filterUser(users,id)
-    console.log(user);
     this.setState({user: user});
   }
   backToUsers(e){
     e.preventDefault();
-    this.setState({user: null});
+    //this.setState({user: null});
   }
   editNow(user,e){
-    this.setState({user: user});
-    this.setState({edit: true});
+    let editedUser = editUser(e);
+    this.setState({user: user, edit: true});
     if(this.state.edit){
-      let user = {
-      id: this.state.user[0].id,
-      username: this.state.username,
-      password: this.state.password,
-      email: this.state.email,
-      userstatus: (this.state.email ? 'active' : 'inactive')
-    }
-    console.log(user);
-    //this.props.editUser(user);
-    this.setState({user: null});
-    this.setState({edit: false});
+      editedUser.id = user[0].id;
+      this.props.editData(editedUser);
+      this.setState({user: null, edit: false});
     }
   }
 
@@ -74,9 +63,7 @@ class User extends Component {
           auth={this.state.auth}
           editNow={this.editNow.bind(this)}
           backToUsers={this.backToUsers.bind(this)}
-          handleChangeUsername={this.handleChangeUsername.bind(this)}
-          handleChangePassword={this.handleChangePassword.bind(this)}
-          handleChangeEmail={this.handleChangeEmail.bind(this)}
+          handleChange={this.handleChange.bind(this)}
           user={this.state.user} />
           :
         <UserList
@@ -96,7 +83,7 @@ const mapStateToProps = (state) => {
 
 const ConnectedUser = connect(
   mapStateToProps,
-  {loadData}
+  {loadData,editData}
 )(User)
 
 export default ConnectedUser;

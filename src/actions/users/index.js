@@ -42,10 +42,10 @@ export const addData = (data) => {
 export const editData = (data) => {
   console.log('ACTION editData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(PUT,_users,data, function(err,data){
+    return httpRequest(PUT,_users+'/'+data.id,data, function(err,data){
       console.log('ACTION editData before dispatch: ',data);
       dispatch({
-        type: ADD_DATA,
+        type: EDIT_DATA,
         data: data
       })
     })
@@ -58,7 +58,7 @@ export const deleteData = (data) => {
     return httpRequest(DEL,_users,data, function(err,data){
       console.log('ACTION deleteData before dispatch: ',data);
       dispatch({
-        type: ADD_DATA,
+        type: DELETE_DATA,
         data: data
       })
     })
