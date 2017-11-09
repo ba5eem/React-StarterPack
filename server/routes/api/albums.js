@@ -51,9 +51,11 @@ _albums.put('/:id', ( req, res ) => {
     title: req.body.title,
     avatar: req.body.avatar,
     userId: req.body.userId
-  }, {where: {id:id}
-  }).then((album) => {
-    res.json('album updated');
+ }, {where     : [{id: id}],
+      returning : true,
+      plain     : true
+  }).then((user) => {
+    res.json(user);
   });
 });
 

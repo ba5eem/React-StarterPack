@@ -10,13 +10,10 @@ const albumList = (state = [],action) => {
       return [...state,action.data]
     case EDIT_DATA:
       console.log('EDIT_DATA has been activated: ',action.data);
-      const data = action.data[1];
-      let id = data.id
-      let arr = state.filter((elem) =>{
-        return elem.id !== id;
-      })
-      console.log(arr.concat([data]))
-      return arr.concat([data]);
+      let index = state.findIndex((data) => {
+        return data.id === action.data[1].id
+      });
+      return [ ...(state.slice(0, index)), action.data[1], ...(state.slice((index + 1), state.length))];
     case DELETE_DATA:
       console.log('DELETE_DATA has been activated: ',action.data);
       return action.data;

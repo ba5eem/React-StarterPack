@@ -42,10 +42,10 @@ export const addData = (data) => {
 export const editData = (data) => {
   console.log('ACTION editData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(PUT,_albums,data, function(err,data){
+    return httpRequest(PUT,_albums+'/'+data.id,data, function(err,data){
       console.log('ACTION editData before dispatch: ',data);
       dispatch({
-        type: ADD_DATA,
+        type: EDIT_DATA,
         data: data
       })
     })

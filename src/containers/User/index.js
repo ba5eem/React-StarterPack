@@ -13,9 +13,6 @@ class User extends Component {
     
     this.state={ 
       user: '',
-      username: '',
-      password: '',
-      email: '',
       edit: false,
       auth: true
     }
@@ -27,14 +24,11 @@ class User extends Component {
 
   handleChange(e){ editUser(e); }
 
-  loadUser(id,e){
-    let users = this.props.users;
-    let user = filterUser(users,id)
-    this.setState({user: user});
-  }
+  loadUser(id,e){ this.setState({user: filterUser(this.props.users,id)}); }
+  
   backToUsers(e){
     e.preventDefault();
-    //this.setState({user: null});
+    this.setState({user: null});
   }
   editNow(user,e){
     let editedUser = editUser(e);
@@ -45,12 +39,6 @@ class User extends Component {
       this.setState({user: null, edit: false});
     }
   }
-
-
-
-
-
-
 
   render(){
     const user = this.state.user;

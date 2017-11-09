@@ -1,47 +1,66 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadData } from '../../actions/albums';
-
+import { loadData,editData } from '../../actions/albums';
+import AlbumList from './comps/AlbumList.js';
+import SingleAlbum from './comps/SingleAlbum.js';
+import filterUser from '../../lib/Filter/filterUser';
+import editAlbum from '../../lib/Edit/editAlbum.js';
 
 class Album extends Component {
   constructor() {
     super();
     
     this.state={ 
-      fireRedirect: false
+      album: '',
+      edit:false,
+      auth:true
     }
   }
-/*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
-  componentDidMount() { 
-    this.props.loadData();
+
+  componentDidMount() { this.props.loadData(); }
+
+  handleChange(e){ editAlbum(e); }
+
+  loadAlbum(id,e){ this.setState({album: filterUser(this.props.data,id)}); }
+
+  backToAlbums(e){
+    e.preventDefault();
+    this.setState({user: null});
   }
-/*NOTHING ABOVE NEEDS TO CHANGE*/
-
-
+  editNow(album,e){
+    let editedAlbum = editAlbum(e);
+    this.setState({album: album, edit: true});
+    if(this.state.edit){
+      editedAlbum.id = album[0].id;
+      this.props.editData(editedAlbum);
+      this.setState({album: null, edit: false});
+    }
+  }
 
 
 
 
 
   render(){
+    const album = this.state.album;
     return (
-      /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
-                                   <div className="App">
-          {this.props.data.map((data,idx)=>{
-            return (
-              <div key={idx}>
-              <h1>Id: {data.id}</h1>
-              <h2>Title: {data.title}</h2>
-              <img src={data.avatar} alt=""></img>
-              <h3>created: {data.createdAt}</h3>
-              <h3>Updated: {data.updatedAt}</h3>
-              <h3>userId: {data.albumId}</h3>
-              </div>
-              )
-          })
-        }
+
+        <div className="App">
+          {album ?
+            <SingleAlbum
+              edit={this.state.edit}
+              auth={this.state.auth}
+              editNow={this.editNow.bind(this)}
+              backToAlbums={this.backToAlbums.bind(this)}
+              handleChange={this.handleChange.bind(this)}
+              album={this.state.album} />
+            :
+            <AlbumList
+              loadAlbum={this.loadAlbum.bind(this)}
+              albums={this.props.data} />
+          }
         </div>
-      /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
+
     );/*END OF RETURN*/
   }
 } /*END OF RENDER AND CLASS APP*/
@@ -54,7 +73,7 @@ const mapStateToProps = (state) => {
 
 const ConnectedAlbum = connect(
   mapStateToProps,
-  {loadData}
+  {loadData,editData}
 )(Album)
 
 export default ConnectedAlbum;
