@@ -9,7 +9,6 @@ const albumList = (state = [],action) => {
       console.log('ADD_DATA has been activated: ',action.data);
       return [...state,action.data]
     case EDIT_DATA:
-      console.log('EDIT_DATA has been activated: ',action.data);
       let index = state.findIndex((data) => {
         return data.id === action.data[1].id
       });

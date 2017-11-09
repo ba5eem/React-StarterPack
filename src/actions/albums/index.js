@@ -55,10 +55,10 @@ export const editData = (data) => {
 export const deleteData = (data) => {
   console.log('ACTION deleteData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(DEL,_albums,data, function(err,data){
+    return httpRequest(DEL,_albums+'/'+data.id,data,data, function(err,data){
       console.log('ACTION deleteData before dispatch: ',data);
       dispatch({
-        type: ADD_DATA,
+        type: DELETE_DATA,
         data: data
       })
     })
