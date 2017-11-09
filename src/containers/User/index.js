@@ -10,7 +10,12 @@ class User extends Component {
     super(props);
     
     this.state={ 
-      user: ''
+      user: '',
+      username: '',
+      password: '',
+      email: '',
+      edit: false,
+      auth: true
     }
   }
 /*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
@@ -18,11 +23,38 @@ class User extends Component {
     this.props.loadData(); 
   }
 
+  handleChangeUsername(event){ this.setState({ username: event.target.value }) }
+
+  handleChangePassword(event){ this.setState({ password: event.target.value }) }
+
+  handleChangeEmail(event){ this.setState({ email: event.target.value }) }
+
   loadUser(id,e){
     let users = this.props.users;
     let user = filterUser(users,id)
     console.log(user);
     this.setState({user: user});
+  }
+  backToUsers(e){
+    e.preventDefault();
+    this.setState({user: null});
+  }
+  editNow(user,e){
+    this.setState({user: user});
+    this.setState({edit: true});
+    if(this.state.edit){
+      let user = {
+      id: this.state.user[0].id,
+      username: this.state.username,
+      password: this.state.password,
+      email: this.state.email,
+      userstatus: (this.state.email ? 'active' : 'inactive')
+    }
+    console.log(user);
+    //this.props.editUser(user);
+    this.setState({user: null});
+    this.setState({edit: false});
+    }
   }
 
 
@@ -38,6 +70,13 @@ class User extends Component {
         {user ?
 
         <SingleUser
+          edit={this.state.edit}
+          auth={this.state.auth}
+          editNow={this.editNow.bind(this)}
+          backToUsers={this.backToUsers.bind(this)}
+          handleChangeUsername={this.handleChangeUsername.bind(this)}
+          handleChangePassword={this.handleChangePassword.bind(this)}
+          handleChangeEmail={this.handleChangeEmail.bind(this)}
           user={this.state.user} />
           :
         <UserList
