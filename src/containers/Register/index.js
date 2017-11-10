@@ -1,59 +1,38 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addData } from '../../actions/users';
+import addNew from '../../lib/Add';
 
 class RegistrationForm extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      username: '',
-      password: '',
-      email: ''
+      username: ''
     }
 
-    this.handleChangeUsername = this.handleChangeUsername.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChangeUsername(event){
-    this.setState({
-      username: event.target.value
-    })
-  }
+  handleChange(e){ addNew(e); }
 
-  handleChangePassword(event){
-    this.setState({
-      password: event.target.value
-    })
-  }
-
-  handleChangeEmail(event){
-    this.setState({
-      email: event.target.value
-    })
-  }
-
-  handleSubmit(event){
-    event.preventDefault();
-
-    let newUser = {
-      username: this.state.username,
-      password: this.state.password,
-      email: this.state.email
-    }
+  handleSubmit(e){
+    e.preventDefault();
+    let newUser = addNew(e);
     console.log(newUser);
     this.props.addData(newUser);
   }
+
+
+
   render(){
     return (
       <div id="registration-form">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.username} placeholder="username" onChange={this.handleChangeUsername}/>
-          <input type="password" value={this.state.password} placeholder="password" onChange={this.handleChangePassword}/>
-          <input type="text" value={this.state.email} placeholder="email address" onChange={this.handleChangeEmail}/>
+          <input type="text" name="username" placeholder="username" onChange={this.handleChange}/>
+          <input type="password" name="password" placeholder="password" onChange={this.handleChange}/>
+          <input type="text" name="email" placeholder="email address" onChange={this.handleChange}/>
           <input type="submit" className="button" value="Complete Registration"/>
         </form>
       </div>

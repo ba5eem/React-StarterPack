@@ -1,18 +1,21 @@
-function addNew(id,e){
+var local = {}; 
+
+function addNew(e){
   console.log('addNew method lib helper has been fired');
-  let target = e.target.name;
-  let value = e.target.value;
-  let title = (target === 'title');
+  let target   = e.target.name;
+  let value    = e.target.value;
+  let title    = (target === 'title');
+  let username = (target === 'username');
+  let password = (target === 'password');
+  let email    = (target === 'email');
 
-  let updatedData = {};
-    updatedData.id = id;
+  if(title)    {local.title    = value} 
+  if(username) {local.username = value}
+  if(password) {local.password = value}
+  if(email)    {local.email    = value}
 
-  if(title)   { updatedData.title   = value} 
-
-
-
-
-  return updatedData;
+  console.log(local);
+  return local;
 }
 
 export default addNew;
