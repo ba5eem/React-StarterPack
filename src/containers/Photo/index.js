@@ -9,7 +9,7 @@ class Photo extends Component {
     super(props);
     
     this.state={ 
-      name: '',
+      title: '',
       file: '',
       imageUrl: ''
     }
@@ -23,7 +23,7 @@ class Photo extends Component {
 
     handleChangeName(event){
     this.setState({
-      name: event.target.value
+      title: event.target.value
     })
   }
 
@@ -50,15 +50,13 @@ class Photo extends Component {
   handleSubmit(event){
     event.preventDefault();
 
-    let local = {}
-    local.file = this.state.file;
-    local.name = this.state.name;
+    let formData = new FormData();
 
-    // formData.append('file', this.state.file);
-    // formData.append('name', this.state.name);
+    formData.append('file', this.state.file);
+    formData.append('title', this.state.title);
 
-    console.log(local);
-    this.props.addData(local);
+
+    this.props.addData(formData);
 
   }
 

@@ -32,11 +32,11 @@ _photos.post('/', upload.single('file'), ( req, res ) => {
   let file = req.file;
   console.log('file: ',(file ? file : 'Its undefined'));
   photos.create({
-    name : req.body.name,
-    url    : req.file.path,
-    albumId : 1
+    title : req.body.title,
+    file   : req.file.path,
+    albumId : 4
   }).then((data) => {
-      return item.findOne({
+      return photos.findOne({
         where: {
           id: data.id
         }

@@ -1,7 +1,7 @@
 module.exports = function(sequelize,DataTypes){
   const Photo = sequelize.define('photos', {
     title : DataTypes.STRING,
-    url: DataTypes.STRING
+    file: DataTypes.STRING
   });
   Photo.associate = function(models){
     Photo.belongsTo(models.albums);
