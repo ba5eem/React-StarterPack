@@ -14,7 +14,6 @@ _friends.get('/', ( req, res ) => {
   console.log('friends _friends has been requested: GET ');
   friends.findAll({raw:true})
   .then((DataCollection) => {
-    console.log('friends _friends has queried all data from the DB, result: ', DataCollection);
     res.json(DataCollection);
   });
 });

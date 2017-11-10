@@ -14,7 +14,6 @@ _albums.get('/', ( req, res ) => {
   console.log('albums _albums has been requested: GET ');
   albums.findAll({raw:true})
   .then((DataCollection) => {
-    console.log('albums _albums has queried all data from the DB, result: ', DataCollection);
     res.json(DataCollection);
   });
 });

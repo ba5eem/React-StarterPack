@@ -1,7 +1,6 @@
 var local = {}; 
 
 function addNew(e){
-  console.log('addNew method lib helper has been fired');
   let target   = e.target.name;
   let value    = e.target.value;
   let title    = (target === 'title');
@@ -14,7 +13,6 @@ function addNew(e){
   if(password) {local.password = value}
   if(email)    {local.email    = value}
 
-  console.log(local);
   return local;
 }
 

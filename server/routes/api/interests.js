@@ -14,7 +14,7 @@ _interests.get('/', ( req, res ) => {
   console.log('interests _interests has been requested: GET ');
   interests.findAll({raw:true})
   .then((DataCollection) => {
-    console.log('interests _interests has queried all data from the DB, result: ', DataCollection);
+
     res.json(DataCollection);
   });
 });

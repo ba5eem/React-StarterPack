@@ -16,6 +16,8 @@ import Friend from './containers/Friend';
 import Interest from './containers/Interest';
 import Photo from './containers/Photo';
 import User from './containers/User';
+import Profile from './containers/Profile';
+import Navbar from './containers/Navbar';
 import Register from './containers/Register';
 import Login from './containers/Login';
 import Logout from './containers/Logout';
@@ -42,30 +44,14 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-      <Link to="/">Home</Link>
-      <br></br>
-      <Link to="/albums">Albums</Link>
-      <br></br>
-      <Link to="/friends">Friends</Link>
-      <br></br>
-      <Link to="/interest">Interests</Link>
-      <br></br>
-      <Link to="/photos">Photos</Link>
-      <br></br>
-      <Link to="/users">Users</Link>
-      <br></br>
-      <Link to="/register">Register</Link>
-      <br></br>
-      <Link to="/login">Login</Link>
-      <br></br>
-      <Link to="/logout">Logout</Link>
-
+      <Navbar />
       <Route exact path="/" component={App} />
       <Route path="/albums" component={Album}/>
       <Route path="/friends" component={Friend} />
       <Route path="/interest" component={Interest} />
       <Route path="/photos" component={Photo} />
       <Route path="/users" component={User} />
+      <Route path="/profile" component={Profile} />
       <Route path="/register" component={Register} />
       <Route path="/login" component={Login} />
       <Route path="/logout" component={Logout} />
