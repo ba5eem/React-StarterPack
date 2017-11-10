@@ -6,13 +6,20 @@ const LocalStrategy           = require('passport-local').Strategy;
 const saltRounds              = 12;
 const _albums                 = express.Router();
 const db                      = require('../../models');
-const {albums}                 = db;
+const {albums,photos}         = db;
 
 
 
 _albums.get('/', ( req, res ) => {
   console.log('albums _albums has been requested: GET ');
-  albums.findAll({raw:true})
+  albums.findAll({
+    include: [
+      {model: photos, as: 'photos'}
+
+
+
+    ]
+  })
   .then((DataCollection) => {
     res.json(DataCollection);
   });
