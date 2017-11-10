@@ -23,7 +23,7 @@ _register.post('/', (req,res) =>{
         avatar: 'http://bit.ly/2zHt8Xi'
       })
       .then( (user) => {
-        console.log(user);
+        console.log(req.body);
         res.json('user successfully added');
       })
       .catch((err) => {

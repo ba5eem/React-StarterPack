@@ -2,18 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addData } from '../../actions/users';
 import addNew from '../../lib/Add';
+import RegisterForm from './comps/RegisterForm';
 
 class RegistrationForm extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      username: ''
-    }
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
   handleChange(e){ addNew(e); }
 
@@ -24,23 +15,14 @@ class RegistrationForm extends Component {
     this.props.addData(newUser);
   }
 
-
-
   render(){
-    return (
-      <div id="registration-form">
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" name="username" placeholder="username" onChange={this.handleChange}/>
-          <input type="password" name="password" placeholder="password" onChange={this.handleChange}/>
-          <input type="text" name="email" placeholder="email address" onChange={this.handleChange}/>
-          <input type="submit" className="button" value="Complete Registration"/>
-        </form>
-      </div>
-
-    )
-  }
-
-
+    return ( <div>
+              <RegisterForm
+                handleChange={this.handleChange.bind(this)}
+                handleSubmit={this.handleSubmit.bind(this)} />
+             </div>
+           )
+     }
 }
 
 
