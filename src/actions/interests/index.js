@@ -7,19 +7,19 @@ const POST = 'POST';
 const PUT = 'PUT';
 const DEL = 'DELETE';
 /*ACTIONS*/
-export const LOAD_DATA = 'LOAD_DATA';
+export const LOAD_INT = 'LOAD_INT';
 export const ADD_DATA = 'ADD_DATA';
 export const EDIT_DATA = 'EDIT_DATA';
 export const DELETE_DATA = 'DELETE_DATA';
 
 
 export const loadData = (data) => {
-  console.log('INTERESTS ACTION loadData has been Activated: ',data);
+  //console.log('INTERESTS ACTION loadData has been Activated: ',data);
   return function(dispatch){
     return httpRequest(GET,_interest,null, function(err,data){
-      console.log('ACTION loadData before dispatch: ',data);
+      //console.log('ACTION loadData before dispatch: ',data);
       dispatch({
-        type: LOAD_DATA,
+        type: LOAD_INT,
         data: data
       })
     })

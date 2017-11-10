@@ -1,8 +1,8 @@
-import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/photos';
+import { LOAD_PHOTOS, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/photos';
 
 const photoList = (state = [],action) => { 
   switch (action.type){
-    case LOAD_DATA:
+    case LOAD_PHOTOS:
       //console.log('LOAD_DATA has been activated: ',action.data);
       return action.data;
     case ADD_DATA:

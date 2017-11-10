@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadData,editData } from '../../actions/albums';
 import AlbumList from './comps/AlbumList.js';
 import SingleAlbum from './comps/SingleAlbum.js';
-import filterUser from '../../lib/Filter/filterUser';
+import filter from '../../lib/Filter';
 import editAlbum from '../../lib/Edit/editAlbum.js';
 
 class Album extends Component {
@@ -21,7 +21,7 @@ class Album extends Component {
 
   handleChange(e){ editAlbum(e); }
 
-  loadAlbum(id,e){ this.setState({album: filterUser(this.props.data,id)}); }
+  loadAlbum(id,e){ this.setState({album: filter(this.props.data,'id',id)}); }
 
   backToAlbums(e){
     e.preventDefault();

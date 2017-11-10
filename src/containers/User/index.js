@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadData,editData } from '../../actions/users';
 import UserList from './comps/UserList.js';
 import SingleUser from './comps/SingleUser.js';
-import filterUser from '../../lib/Filter/filterUser';
+import filter from '../../lib/Filter';
 import editUser from '../../lib/Edit';
 
 
@@ -22,7 +22,7 @@ class User extends Component {
 
   handleChange(e){ editUser(e); }
 
-  loadUser(id,e){ this.setState({user: filterUser(this.props.users,id)}); }
+  loadUser(id,e){ this.setState({user: filter(this.props.users,'id',id)}); }
   
   backToUsers(e){
     e.preventDefault();

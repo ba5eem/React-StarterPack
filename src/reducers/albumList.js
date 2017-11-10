@@ -1,8 +1,8 @@
-import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/albums';
+import { LOAD_ALBUMS, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/albums';
 
 const albumList = (state = [],action) => { 
   switch (action.type){
-    case LOAD_DATA:
+    case LOAD_ALBUMS:
       //console.log('LOAD_DATA has been activated: ',action.data);
       return action.data;
     case ADD_DATA:

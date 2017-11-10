@@ -7,19 +7,19 @@ const POST = 'POST';
 const PUT = 'PUT';
 const DEL = 'DELETE';
 /*ACTIONS*/
-export const LOAD_DATA = 'LOAD_DATA';
+export const LOAD_FRIENDS = 'LOAD_FRIENDS';
 export const ADD_DATA = 'ADD_DATA';
 export const EDIT_DATA = 'EDIT_DATA';
 export const DELETE_DATA = 'DELETE_DATA';
 
 
 export const loadData = (data) => {
-  console.log('FRIENDS ACTION loadData has been Activated: ',data);
+  //console.log('FRIENDS ACTION loadData has been Activated: ',data);
   return function(dispatch){
     return httpRequest(GET,_friends,null, function(err,data){
-      console.log('ACTION loadData before dispatch: ',data);
+      //console.log('ACTION loadData before dispatch: ',data);
       dispatch({
-        type: LOAD_DATA,
+        type: LOAD_FRIENDS,
         data: data
       })
     })

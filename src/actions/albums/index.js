@@ -7,7 +7,7 @@ const POST = 'POST';
 const PUT = 'PUT';
 const DEL = 'DELETE';
 /*ACTIONS*/
-export const LOAD_DATA = 'LOAD_DATA';
+export const LOAD_ALBUMS = 'LOAD_ALBUMS';
 export const ADD_DATA = 'ADD_DATA';
 export const EDIT_DATA = 'EDIT_DATA';
 export const DELETE_DATA = 'DELETE_DATA';
@@ -19,7 +19,7 @@ export const loadData = (data) => {
     return httpRequest(GET,_albums,null, function(err,data){
      // console.log('ACTION loadData before dispatch: ',data);
       dispatch({
-        type: LOAD_DATA,
+        type: LOAD_ALBUMS,
         data: data
       })
     })

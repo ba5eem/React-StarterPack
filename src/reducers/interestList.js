@@ -1,9 +1,9 @@
-import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/interests';
+import { LOAD_INT, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions/interests';
 
 const interestList = (state = [],action) => { 
 
   switch (action.type){
-    case LOAD_DATA:
+    case LOAD_INT:
       //console.log('LOAD_DATA has been activated: ',action.data);
       return action.data;
     case ADD_DATA:
