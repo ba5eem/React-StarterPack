@@ -7,8 +7,8 @@ const login = (state = [], action) => {
     case LOGIN_USER:
     console.log("login action: ", action.data)
     localStorage.setItem('auth', true);
-    localStorage.setItem('username', action.data);
-    localStorage.setItem('userId', action);
+    localStorage.setItem('username', action.data.username);
+    localStorage.setItem('userId', action.data.id);
       return action.data;
     case LOGOUT_USER:
       state.push({auth: false});
