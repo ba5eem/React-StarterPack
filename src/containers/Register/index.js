@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { addData } from '../../actions/users';
 
 class RegistrationForm extends Component {
   constructor(props){
@@ -44,13 +44,13 @@ class RegistrationForm extends Component {
       password: this.state.password,
       email: this.state.email
     }
-
-    this.props.addUser(newUser);
+    console.log(newUser);
+    this.props.addData(newUser);
   }
   render(){
     return (
       <div id="registration-form">
-        <form onSubmit="this.handleSubmit">
+        <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.username} placeholder="username" onChange={this.handleChangeUsername}/>
           <input type="password" value={this.state.password} placeholder="password" onChange={this.handleChangePassword}/>
           <input type="text" value={this.state.email} placeholder="email address" onChange={this.handleChangeEmail}/>
@@ -67,6 +67,7 @@ class RegistrationForm extends Component {
 
 const ConnectedRegistrationForm = connect(
   null,
+  {addData}
 )(RegistrationForm);
 
 export default ConnectedRegistrationForm;

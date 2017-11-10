@@ -1,6 +1,8 @@
 import httpRequest from '../../lib/httpRequest';
 /*URI ROUTES for HTTP REQUEST*/
 const _users = 'users';
+const _register = 'register';
+
 /*HTTP METHODS*/
 const GET = 'GET';
 const POST = 'POST';
@@ -29,7 +31,7 @@ export const loadData = (data) => {
 export const addData = (data) => {
   console.log('ACTION addData has been Activated: ',data);
   return function(dispatch){
-    return httpRequest(POST,_users,data, function(err,data){
+    return httpRequest(POST,_register,data, function(err,data){
       console.log('ACTION addData before dispatch: ',data);
       dispatch({
         type: ADD_DATA,

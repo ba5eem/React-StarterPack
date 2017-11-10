@@ -4,7 +4,6 @@ const axios = require('axios');
 const _photos = 'photos';
 /*HTTP METHODS*/
 const GET = 'GET';
-const POST = 'POST';
 const PUT = 'PUT';
 const DEL = 'DELETE';
 /*ACTIONS*/
