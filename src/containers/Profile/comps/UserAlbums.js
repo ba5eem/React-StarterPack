@@ -8,7 +8,7 @@ const UserAlbums = ({albums}) => {
           { albums.map((album,idx) => {
             return (
               <div key={idx}>
-                <h3>ID: {album.id}</h3>
+                <h3>Album ID: {album.id}</h3>
                 <h1>TITLE: {album.title}</h1>
                   <div>
                     <i><UserPhotos 

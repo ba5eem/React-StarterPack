@@ -32,7 +32,7 @@ class Profile extends Component {
 
   render(){
     //const user = this.state.user;
-    console.log(this.props.albums);
+    console.log(this.props.friends);
     return (
       <div className='App'>
         <UserInfo 
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
   return {
     user: filter(state.userList,'id',localStorage.userId),
     albums: filter(state.albumList,'userId',localStorage.userId),
-    friends: state.friendList,
+    friends: filter(state.friendList,'userId',localStorage.userId),
     interests: state.interestList
   }
 }
