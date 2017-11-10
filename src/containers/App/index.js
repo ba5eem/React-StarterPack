@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import Login from '../Login';
-import Album from '../Album';
+import Profile from '../Profile';
 
 class App extends Component {
   constructor(props) {
@@ -20,12 +20,11 @@ class App extends Component {
 
 
   render(){
-    console.log(this.props);
     return (
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
         <div className="app-routes">
           <Switch>
-            {this.props.auth.auth ? <Route path="/" component={Album} /> : <Route path="/" component={Login} /> }
+            {localStorage.username !== 'undefined' ? <Route path="/" component={Profile} /> : <Route path="/" component={Login} /> }
           </Switch>
         </div>
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/

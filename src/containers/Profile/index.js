@@ -21,7 +21,8 @@ class Profile extends Component {
   render(){
     const user = this.state.user;
     return (
-      <div>
+      <div className='App'>
+        {localStorage.username} Profile Page
 
       </div>
     );/*END OF RETURN*/
