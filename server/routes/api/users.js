@@ -14,7 +14,6 @@ _users.get('/', ( req, res ) => {
   console.log('users _users has been requested: GET ');
   users.findAll({raw:true})
   .then((DataCollection) => {
-    console.log('users _users has queried all data from the DB, result: ', DataCollection);
     res.json(DataCollection);
   });
 });

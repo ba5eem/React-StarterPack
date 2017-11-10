@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addData } from '../../actions/users';
-import { Redirect, withRouter } from 'react-router';
+import { Redirect } from 'react-router';
 import addNew from '../../lib/Add';
 import RegisterForm from './comps/RegisterForm';
 

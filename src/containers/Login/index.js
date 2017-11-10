@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/login';
+import addNew from '../../lib/Add';
+import LoginForm from './comps/LoginForm';
 
 
 class Login extends Component {
@@ -8,58 +11,51 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      username: '',
-      password: '',
-      authUser: localStorage.getItem('auth')
+      registered: false,
+      err: false
     }
-
-    console.log('login cont. :',this.props);
   }
+  componentDidMount() { this.props.loginUser(); }
 
+  handleChange(e){ addNew(e); }
 
-  handleChangeUsername(event){
-    this.setState({
-      username: event.target.value
-    })
+  handleSubmit(e){
+    e.preventDefault();
+    let newLogin = addNew(e);
+    this.props.loginUser(newLogin);
+    setTimeout(function() {
+      if(localStorage.username !== undefined){
+        this.setState({registered: true})
+    }this.setState({err: true}); }.bind(this),1000);
   }
-
-  handleChangePassword(event){
-    this.setState({
-      password: event.target.value
-    })
-  }
-
-  handleSubmit(event){
-    event.preventDefault();
-    let newUser = {
-      username: this.state.username,
-      password: this.state.password
-    }
-      this.props.loginUser(newUser);
-  }
-
-
 
   render(){
+    const { from } = this.props.location.state || { from: { pathname: '/users' } }
+    const redirect = this.state.registered;
+    if(redirect){ return ( <Redirect to={from}/>) }
+    
     return (
       <div id="login-form">
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text" value={this.state.username} placeholder="username" onChange={this.handleChangeUsername.bind(this)}/>
-          <input type="password" value={this.state.password} placeholder="password" onChange={this.handleChangePassword.bind(this)}/>
-          <input type="submit" className="button" value="Login"/>
-        </form>
+        <LoginForm
+          err={this.state.err}
+          handleChange={this.handleChange.bind(this)}
+          handleSubmit={this.handleSubmit.bind(this)} />
       </div>
 
 
     )
   }
+}
 
-
+const mapStateToProps = (state) => {
+  return {
+    user: state.login
+  }
 }
 
 
 const ConnectedLogin = connect(
-  null,
+  mapStateToProps,
   {loginUser}
 )(Login);
 

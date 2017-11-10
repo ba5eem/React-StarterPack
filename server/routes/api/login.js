@@ -11,20 +11,25 @@ const {users}                 = db;
 //LOGIN ROUTE
 _login.get('/',(req,res)=>{
   let value = req.isAuthenticated();
-  console.log('Is the current user authenticated: ', (value ? 'Yes Baseem' : 'No Baseem'));
-  console.log("REQ.USER***********************",req.user);
 
   return res.json((req.user ? req.user : 'Welcome to login page, no one is logged in right now'));
 });
 
 _login.post('/',isAuthenticated, function(req, res, next) {
-  console.log(req.body);
+  console.log(req.body)
   let local = {}
   passport.authenticate('local', function(err, user, info) {
     if (err) { return next(err); }//send fail message - logged in false //some error reason
-    if (!user) { return res.json('false - not a user'); }
+    if (!user) { 
+      return 
+        local.id = 'undefined';
+        local.username = 'undefined';
+        local.auth = false;
+        return res.json(local);  }
     req.logIn(user, function(err) {
       if (err) { 
+        local.id = 'undefined';
+        local.username = 'undefined';
         local.auth = false;
         return res.json(local); 
       }
@@ -36,6 +41,7 @@ _login.post('/',isAuthenticated, function(req, res, next) {
     });
   })(req, res, next);
 });
+
 
 
 

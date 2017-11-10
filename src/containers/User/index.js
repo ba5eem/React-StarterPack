@@ -17,10 +17,8 @@ class User extends Component {
       auth: true
     }
   }
-/*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
-  componentDidMount() {
-    this.props.loadData(); 
-  }
+
+  componentDidMount() { this.props.loadData(); }
 
   handleChange(e){ editUser(e); }
 
