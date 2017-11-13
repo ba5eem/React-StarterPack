@@ -1,4 +1,5 @@
 import httpRequest from '../../lib/httpRequest';
+const axios = require('axios');
 /*URI ROUTES for HTTP REQUEST*/
 const _login = 'login';
 const _logout = 'logout';
@@ -24,15 +25,14 @@ export const loginUser = (data) => {
 }
 
 export const logoutUser = () => {
-  console.log('Login action has been Activated: ');
   return function(dispatch){
-    return httpRequest(GET,_logout,null, function(err,data){
-      console.log('ACTION loadData before dispatch: ',data);
+    return axios.get('/api/logout')
+    .then( () => {
       dispatch({
         type: LOGOUT_USER,
-        data: data
-      })
-    })
+        user: null
+      });
+    });
   }
 }
 

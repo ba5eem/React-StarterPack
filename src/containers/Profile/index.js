@@ -32,7 +32,7 @@ class Profile extends Component {
 
   render(){
     //const user = this.state.user;
-    console.log(this.props.friends);
+    //console.log(this.props.friends);
     return (
       <div className='App'>
         <UserInfo 

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AuthNav = ({username}) => {
   return (
 
-      <div className="App">
+      <div className="navbar">
         <Link to="/">Home</Link>
         <br></br>
         <Link to="/albums">Albums</Link>

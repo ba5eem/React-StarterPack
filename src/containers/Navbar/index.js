@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AuthNav from './comps/AuthNav';
 import NotAuthNav from './comps/NotAuthNav';
+import style from '../../index.css';
+import AppHeader from '../App/comps/AppHeader'
 
 
 
@@ -18,11 +20,14 @@ class Navbar extends Component {
     const username = localStorage.username ? localStorage.username+" 's" : null;
     return (
       <div>
+        <AppHeader />
+      <div>
         {user ?
         <AuthNav username={username} />
         :
         <NotAuthNav />
         }
+      </div>
       </div>
     );/*END OF RETURN*/
   }

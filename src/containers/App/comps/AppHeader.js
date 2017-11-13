@@ -4,7 +4,7 @@ const AppHeader = () => {
 
   return (
 
-      <div>Welcome to facelibrary</div>
+      <div className='header'>Welcome to facelibrary</div>
 
     )//end of return
 };

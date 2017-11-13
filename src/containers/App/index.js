@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import Login from '../Login';
 import Profile from '../Profile';
+import AppHeader from './comps/AppHeader'
 
 class App extends Component {
   constructor(props) {
