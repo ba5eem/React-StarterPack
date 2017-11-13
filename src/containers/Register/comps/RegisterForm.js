@@ -4,7 +4,7 @@ const RegisterForm = ({handleSubmit,handleChange}) => {
 
   return (
 
-      <div id="registration-form">
+      <div className="body">
         <form onSubmit={handleSubmit}>
           <input 
             type="text" 

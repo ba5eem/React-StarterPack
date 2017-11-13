@@ -1,8 +1,8 @@
 import React from 'react';
 
 const UserInfo = ({user}) => {
-  let username = (user[0] ? user[0].username : null)
-  return ( <div>Hello {username} welcome to your profile page</div>)
+  let username = (user[0] ? 'Hello '+user[0].username + ' welcome to your profile page' : null)
+  return ( <div>{username}</div>)
 }
 
 export default UserInfo;

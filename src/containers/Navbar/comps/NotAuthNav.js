@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const NotAuthNav = () => {
   return (
 
-      <div className="App">
-        <Link to="/">Home</Link>
+      <div className="navbar">
+        <Link className="navbutton" to="/">Home</Link>
         <br></br>
-        <Link to="/register">Register</Link>
+        <Link className="navbutton" to="/register">Register</Link>
         <br></br>
-        <Link to="/login">Login</Link>
+        <Link className="navbutton" to="/login">Login</Link>
       </div>
       )
 }

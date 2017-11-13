@@ -5,21 +5,21 @@ const AuthNav = ({username}) => {
   return (
 
       <div className="navbar">
-        <Link to="/">Home</Link>
+        <Link className="navbutton" to="/">Home</Link>
         <br></br>
-        <Link to="/albums">Albums</Link>
+        <Link className="navbutton" to="/albums">Albums</Link>
         <br></br>
-        <Link to="/friends">Friends</Link>
+        <Link className="navbutton" to="/friends">Friends</Link>
         <br></br>
-        <Link to="/interest">Interests</Link>
+        <Link className="navbutton" to="/interest">Interests</Link>
         <br></br>
-        <Link to="/photos">Photos</Link>
+        <Link className="navbutton" to="/photos">Photos</Link>
         <br></br>
-        <Link to="/users">Users</Link>
+        <Link className="navbutton" to="/users">Users</Link>
         <br></br>
-        <Link to="/profile">{username} Profile</Link>
+        <Link className="navbutton" to="/profile">{username} Profile</Link>
         <br></br>
-        <Link to="/logout">Logout</Link>
+        <Link className="navbutton" to="/logout">Logout</Link>
       </div>
       )
 }

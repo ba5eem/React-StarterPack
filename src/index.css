@@ -10,11 +10,23 @@ body{
   padding-top: 10px; 
 }
 
+.body{
+
+}
+
 .navbar{
   display: flex-wrap;
   justify-content: center;
-  max-width: 100px;
+  max-width: 200px;
   text-align: center;
-
 }
+.navbutton:hover{
+  padding-right:50px; 
+  padding-left:50px;
+  background-color: grey;
+  width: 200px;
+  height: 40px;
+  border: 1px solid grey;
+}
+
 

@@ -21,7 +21,7 @@ class Navbar extends Component {
     return (
       <div>
         <AppHeader />
-      <div>
+      <div className='body'>
         {user ?
         <AuthNav username={username} />
         :
