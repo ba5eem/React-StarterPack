@@ -33,7 +33,7 @@ class RegistrationForm extends Component {
     })
   }
 
-  //email submission is using lib file within register root - it uses a npm validation package - email state will always be undefined unless email passes validation - at which point- will become defined.
+  //email using lib file check validation, and uniqueness
   handleEmail(e){
    this.setState({
     email: emailAuth(this.props.users,e)
@@ -44,14 +44,11 @@ class RegistrationForm extends Component {
   handleSubmit(e){
     e.preventDefault();
     let newUser = addNew(e);
-  
-
-
-
+ 
   }
 
   render(){
-    console.log(this.state.email);
+    console.log(this.state.username);
     const { from } = this.props.location.state || { from: { pathname: '/login' } }
     const redirect = this.state.registered;
     if(redirect){ return ( <Redirect to={from}/>) }

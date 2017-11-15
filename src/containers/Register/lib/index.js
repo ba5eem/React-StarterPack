@@ -18,8 +18,12 @@ export function passwordAuth(e){
 export function usernameAuth(arr,e){
   let username = e.target.value;
   let unique = filter(arr,'username',username);
-  console.log(unique);
-  
+  if(unique.length === 0){
+    return username;
+  }
+  else if(unique.length !== 0){
+    return false;
+  } 
 }
 
 export function emailAuth(arr,e){
@@ -30,8 +34,7 @@ export function emailAuth(arr,e){
     return email;
   }
   else if(unique.length !== 0){
-    local.email = 'email exists in our system';
-    return local;
+    return false;
   }
 }
 
