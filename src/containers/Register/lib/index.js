@@ -1,9 +1,9 @@
 import filter from '../../../lib/Filter';
 const validator = require("email-validator");
 var zxcvbn = require('zxcvbn');
-
-
 let local = {}
+
+
 
 export function passwordAuth(e){
   let pwd = e.target.value;
@@ -29,8 +29,9 @@ export function emailAuth(arr,e){
   if(auth && unique.length === 0){
     return email;
   }
-  else{
-    return false;
+  else if(unique.length !== 0){
+    local.email = 'email exists in our system';
+    return local;
   }
 }
 
