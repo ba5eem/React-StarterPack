@@ -12,7 +12,7 @@ const RegisterForm = ({handleSubmit,handleUsername,handlePassword,handleEmail}) 
             placeholder="username" 
             onChange={handleUsername}/>
           <input 
-            type="password" 
+            type="text" 
             name="password" 
             placeholder="password" 
             onChange={handlePassword}/>

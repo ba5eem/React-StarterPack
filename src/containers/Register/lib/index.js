@@ -1,19 +1,14 @@
 const validator = require("email-validator");
+var zxcvbn = require('zxcvbn');
 
 let local = {}
 
 export function passwordAuth(e){
-
-  //security check
-
-
-
-
-
-  console.log(e);
-
-  return e;
-
+  let pwd = e.target.value;
+  let auth = zxcvbn(pwd);
+  if(auth.score >=1){
+    return pwd;
+  }
 }
 
 
