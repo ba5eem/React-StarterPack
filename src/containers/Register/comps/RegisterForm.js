@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RegisterForm = ({handleSubmit,handleChange}) => {
+const RegisterForm = ({handleSubmit,handleUsername,handlePassword,handleEmail}) => {
 
   return (
 
@@ -10,17 +10,17 @@ const RegisterForm = ({handleSubmit,handleChange}) => {
             type="text" 
             name="username" 
             placeholder="username" 
-            onChange={handleChange}/>
+            onChange={handleUsername}/>
           <input 
             type="password" 
             name="password" 
             placeholder="password" 
-            onChange={handleChange}/>
+            onChange={handlePassword}/>
           <input 
             type="text" 
             name="email" 
             placeholder="email address" 
-            onChange={handleChange}/>
+            onChange={handleEmail}/>
           <input 
             type="submit" 
             className="button" 
