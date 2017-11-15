@@ -1,5 +1,7 @@
+import filter from '../../../lib/Filter';
 const validator = require("email-validator");
 var zxcvbn = require('zxcvbn');
+
 
 let local = {}
 
@@ -13,18 +15,23 @@ export function passwordAuth(e){
 
 
 
-export function usernameAuth(e){
+export function usernameAuth(arr,e){
+  let username = e.target.value;
+  let unique = filter(arr,'username',username);
+  console.log(unique);
   
 }
 
-export function emailAuth(e){
+export function emailAuth(arr,e){
   let email = e.target.value;
+  let unique = filter(arr,'email',email);
   let auth = validator.validate(email)
-  if(auth){
+  if(auth && unique.length === 0){
     return email;
   }
-  console.log('email: ',email);
-  console.log('email auth: ',auth);
+  else{
+    return false;
+  }
 }
 
 export default { usernameAuth, passwordAuth, emailAuth };

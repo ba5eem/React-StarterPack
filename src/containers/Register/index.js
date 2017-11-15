@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addData } from '../../actions/users';
+import { loadData as loadUsers } from '../../actions/users';
 import { Redirect } from 'react-router';
 import addNew from '../../lib/Add';
 import RegisterForm from './comps/RegisterForm';
@@ -18,13 +18,15 @@ class RegistrationForm extends Component {
     }
   }
 
+  componentDidMount() { this.props.loadUsers(); }
 
   handleUsername(e){
    this.setState({
-    username: usernameAuth(e)
+    username: usernameAuth(this.props.users,e)
     })
   }
 
+  //password is using lib file, using npm password check for strength right will only return with value if score is 1 or more
   handlePassword(e){
    this.setState({
     password: passwordAuth(e)
@@ -34,7 +36,7 @@ class RegistrationForm extends Component {
   //email submission is using lib file within register root - it uses a npm validation package - email state will always be undefined unless email passes validation - at which point- will become defined.
   handleEmail(e){
    this.setState({
-    email: emailAuth(e)
+    email: emailAuth(this.props.users,e)
     })
   }
 
@@ -49,7 +51,7 @@ class RegistrationForm extends Component {
   }
 
   render(){
-    console.log(this.state.password);
+    console.log(this.state.email);
     const { from } = this.props.location.state || { from: { pathname: '/login' } }
     const redirect = this.state.registered;
     if(redirect){ return ( <Redirect to={from}/>) }
@@ -65,10 +67,16 @@ class RegistrationForm extends Component {
      }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    users: state.userList
+  }
+}
+
 
 const ConnectedRegistrationForm = connect(
-  null,
-  {addData}
+  mapStateToProps,
+  {loadUsers}
 )(RegistrationForm);
 
 export default ConnectedRegistrationForm;
