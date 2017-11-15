@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadData as loadUsers } from '../../actions/users';
+import { addData as register } from '../../actions/users';
 import { Redirect } from 'react-router';
 import addNew from '../../lib/Add';
 import RegisterForm from './comps/RegisterForm';
 import { usernameAuth, passwordAuth, emailAuth } from './lib';
+let local = {};
 
 class RegistrationForm extends Component {
     constructor(props){
@@ -20,6 +22,7 @@ class RegistrationForm extends Component {
 
   componentDidMount() { this.props.loadUsers(); }
 
+  //username is using lib fil, checking for uniqueness
   handleUsername(e){
    this.setState({
     username: usernameAuth(this.props.users,e)
@@ -42,13 +45,14 @@ class RegistrationForm extends Component {
 
 
   handleSubmit(e){
-    e.preventDefault();
-    let newUser = addNew(e);
- 
+   e.preventDefault();
+   local.username = this.state.username;
+   local.password = this.state.password;
+   local.email = this.state.email;
+   this.props.register(local);
   }
 
   render(){
-    console.log(this.state.username);
     const { from } = this.props.location.state || { from: { pathname: '/login' } }
     const redirect = this.state.registered;
     if(redirect){ return ( <Redirect to={from}/>) }
@@ -73,7 +77,7 @@ const mapStateToProps = (state) => {
 
 const ConnectedRegistrationForm = connect(
   mapStateToProps,
-  {loadUsers}
+  {loadUsers,register}
 )(RegistrationForm);
 
 export default ConnectedRegistrationForm;

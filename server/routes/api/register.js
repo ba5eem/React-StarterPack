@@ -19,7 +19,7 @@ _register.post('/', (req,res) =>{
       db.users.create({
         username: req.body.username,
         password: hash,
-        email: 'email@test-db-test-email.io',
+        email: 'x@email.io',
         avatar: 'http://bit.ly/2zHt8Xi'
       })
       .then( (user) => {
