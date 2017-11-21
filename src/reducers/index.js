@@ -1,9 +1,19 @@
 import { combineReducers } from 'redux';
-import dataList from './dataList.js';
-import tempList from './tempList.js';
 
+import login from './login';
+import logout from './logout';
+import password from './password';
+import register from './register';
+import roles from './roles';
+import shifts from './shifts';
+import users from './users';
 
 export default combineReducers({
-  dataList,
-  tempList
-})
+  login,
+  logout,
+  password,
+  register,
+  roles,
+  shifts,
+  users
+});
