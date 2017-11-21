@@ -1,23 +1,24 @@
 {
   "development": {
-    "username": "Baseem",
-    "password": null,
-    "database": "database_name_goes_here",
+    "username": "bekuser",
+    "password": "bekc19",
+    "database": "bekdb",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "test": {
+    "username": "bekuser",
+    "password": "bekc19",
+    "database": "bekdb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "bekuser",
+    "password": "bekc19",
+    "database": "bekdb",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
