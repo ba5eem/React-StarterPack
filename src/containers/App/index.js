@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadData,addData,editData,deleteData } from '../../actions';
+import { GoogleLogin } from 'react-google-login';
+import { loadUsers } from '../../actions/users';
+import { addUser } from '../../actions/register';
 import AppHeader from '../../components/AppHeader.js';
-import edit from '../../lib/Edit';
-import destroyData from '../../lib/Delete';
-import addNew from '../../lib/Add';
+
 
 class App extends Component {
   constructor() {
@@ -13,29 +13,21 @@ class App extends Component {
     this.state={ 
       data: []
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-/*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
+
   componentDidMount() { 
-    // this.props.loadData();
-    // without DB setup this will fail - after DB - uncomment above line
-  }
-/*NOTHING ABOVE NEEDS TO CHANGE*/
+    this.props.loadUsers();
 
-  add(id,e){
-    let data = addNew(id,e);
-    console.log(data);
-    this.props.addNew(data);
   }
 
-  update(id,e){
-    let data = edit(id,e);
-    this.props.editTask(data);
+  handleSubmit(response){
+    console.log(response);
+    //this.props.addUser(response)
+
   }
 
-  destroy(id,e){
-    let data = destroyData(id,e);
-    this.props.deleteData(data);
-  }
+
 
 
 
@@ -43,11 +35,19 @@ class App extends Component {
 
 
   render(){
+    // const responseGoogleFail = (response) => {
+    //     console.log('fail: ',response);
+    //   }
+    // const responseGoogle = (response) => {
+    //     console.log(response);
+    //   }
+    console.log("runit");
+    console.log(this.props.users);
     return (
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
         <div className="App">
-          <AppHeader
-            data = {this.props.data}/>
+          <AppHeader/>
+          
         </div>
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
     );/*END OF RETURN*/
@@ -56,16 +56,13 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.dataList
+    users: state.users
   }
 }
 
 const ConnectedApp = connect(
   mapStateToProps,
-  {loadData,
-  addData,
-  editData,
-  deleteData}
+  {loadUsers,addUser}
 )(App)
 
 export default ConnectedApp;

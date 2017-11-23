@@ -5,7 +5,7 @@ export const EDIT_USER = 'EDIT_USER';
 
 export const loadUsers = () => {
   return function(dispatch){
-    return axios.get('/api/users')
+    return axios.get('/users')
     .then( users => {
       dispatch({
         type: LOAD_USERS,

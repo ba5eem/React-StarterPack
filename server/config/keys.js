@@ -1,4 +1,4 @@
-// add this file to .gitignore
+// dd this file to .gitignore
 
 module.exports = {
         google: {

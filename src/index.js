@@ -7,6 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
+import { GoogleLogin } from 'react-google-login';
 /*CSS*/
 import './index.css';
 /*CONTAINERS*/
@@ -24,6 +25,10 @@ const store = createStore(
   applyMiddleware(thunk)
   );
 
+const responseGoogle = (response) => {
+  let name = response.profileObj.name;
+    localStorage.setItem('user',name);
+}
 
 
 
@@ -31,9 +36,13 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div>
-
-        <Route exact path="/" component={App}/>
+      <div> 
+      <GoogleLogin
+            clientId="366752664535-921iec03nsrtpbb4s8fdlpq8om608e12.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}/>
+      <Route exact path="/" component={App}/>
 
       </div>
     </Router>

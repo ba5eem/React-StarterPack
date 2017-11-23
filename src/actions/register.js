@@ -6,7 +6,7 @@ export const ADD_USER = 'ADD_USER';
 
 export const addUser = (newUser) => {
   return function(dispatch){
-    return axios.post('/api/register', newUser)
+    return axios.post('/auth/google', newUser)
     .then( user => {
       dispatch({
         type: ADD_USER,

@@ -17,14 +17,14 @@ route.get('/logout', (req, res) => {
 });
 
 // auth with google+
-route.get('/google', passport.authenticate('google', {
+route.post('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
 
 // callback route for google to redirect to
-route.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-  res.redirect('/auth/login');
-});
+route.get('/google/redirect',
+  passport.authenticate('google', { failureRedirect: '/auth/google' }),
+(req, res) => res.redirect('OAuthLogin://login?user=' + JSON.stringify(req.user)));
 
 
 
