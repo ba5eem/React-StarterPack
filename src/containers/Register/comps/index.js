@@ -1,17 +1,13 @@
 import React from 'react';
 
 
-const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,username,password,validPwd, email,validEmail}) =>{
+const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,username,validName,password,validPwd, email,validEmail}) =>{
   const greenCheck = "http://bit.ly/2jqOoqa";
   const redCross = "http://bit.ly/2nGi1IM";
 
-  const usernameReqOne = true ? greenCheck : redCross;
-  const usernameReqTwo = false ? greenCheck : redCross;
-  const usernameReqThree = true ? greenCheck : redCross;
+  const validNameReq = validName ? greenCheck : redCross;
 
   const validEmailReq = validEmail ? greenCheck : redCross;
-  const emailReqTwo = true ? greenCheck : redCross;
-  const emailReqThree = true ? greenCheck : redCross;
 
   const score = validPwd ? validPwd.score : '';
   const suggestions = validPwd ? validPwd.feedback.suggestions[0] : '';
@@ -45,19 +41,7 @@ const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,
             <div className="reqDiv">
               <img 
                 className="greenCheck" 
-                src={usernameReqOne} 
-                alt="null"/>Username req One
-            </div>
-            <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={usernameReqTwo} 
-                alt="null"/>Username req One
-            </div>
-            <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={usernameReqThree} 
+                src={validNameReq} 
                 alt="null"/>Username req One
             </div>
           </div>
@@ -78,18 +62,6 @@ const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,
                 src={validEmailReq} 
                 alt="null"/>Valid Email Address
             </div>
-            <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={emailReqTwo} 
-                alt="null"/>Email req One
-            </div>
-            <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={emailReqThree} 
-                alt="null"/>Email req One
-            </div>
 
           </div>
 {/*PASSWORD*/}
@@ -104,10 +76,10 @@ const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,
 
           <div className="passwordDivReqs">
             <div className="reqDiv">
-              <p fontSize="14px" style={strengthStyle}>{strength}</p>
+              <h3 style={strengthStyle}>{strength}</h3>
             </div>
             <div className="reqDiv">
-              <p>{suggestions}</p>
+              <h4>{suggestions}</h4>
             </div>
 
           </div>

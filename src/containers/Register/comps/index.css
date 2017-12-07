@@ -51,6 +51,7 @@
 
 .emailDivReqs{
   background-color: white;
+  margin-top: 30px;
 }
 
 .passwordDiv{
@@ -75,9 +76,12 @@
   background-color: white;
 }
 
-.strength{
-  font-size: 14px;
+
+.passwordDivReqs,  h3{
+  margin-top: 5px;
 }
+
+
 
 .submitDiv{
   background-color: white;

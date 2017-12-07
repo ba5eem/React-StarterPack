@@ -13,6 +13,7 @@ class Register extends Component {
 
     this.state={
       username: '',
+      validName: undefined,
       email: '',
       validEmail: undefined,
       password: '',
@@ -22,6 +23,11 @@ class Register extends Component {
 
   usernameHandler(e){
     let val = e.target.value;
+    const namesArr = ['bas','man']
+    if(val === namesArr[0] || val === namesArr[1]){
+      this.setState({validName: false})
+    }
+    else{ this.setState({validName: true}) }
     this.setState({username: val})
 
   }
@@ -77,9 +83,10 @@ class Register extends Component {
           emailHandler={this.emailHandler.bind(this)}
           passwordHandler={this.passwordHandler.bind(this)}
           submit={this.submit.bind(this)}
-          validEmail={this.state.validEmail}
-          email={this.state.email}
           username={this.state.username}
+          validName={this.state.validName}
+          email={this.state.email}
+          validEmail={this.state.validEmail}
           password={this.state.password}
           validPwd={this.state.validPwd} />
 
