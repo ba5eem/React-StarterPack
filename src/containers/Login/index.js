@@ -8,10 +8,34 @@ class Login extends Component {
     super();
 
     this.state={
-      test: 'baseem'
+      login: '',
+      password: ''
     }
   }
 
+  loginHandler(e){
+    let val = e.target.value;
+    this.setState({login: val})
+
+  }
+
+  passwordHandler(e){
+    let val = e.target.value;
+    this.setState({password: val})
+
+  }
+
+  submit(e){
+    e.preventDefault();
+    let local = {
+      login: this.state.login,
+      password: this.state.password
+    }
+    this.setState({
+      login: '',
+      password: ''
+    })
+  }
 
 
 
@@ -25,7 +49,12 @@ class Login extends Component {
     return (
 
    
-        <LoginComponent />
+        <LoginComponent
+          loginHandler={this.loginHandler.bind(this)}
+          passwordHandler={this.passwordHandler.bind(this)}
+          submit={this.submit.bind(this)}
+          login={this.state.login}
+          password={this.state.password} />
 
 
     );

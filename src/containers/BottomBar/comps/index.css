@@ -1,5 +1,5 @@
 .BottomBar{
- background-color: orange;
+ background-color: lightgrey;
  grid-column-start: 1;
  grid-column-end: 4;
 }

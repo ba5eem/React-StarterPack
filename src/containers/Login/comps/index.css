@@ -1,17 +1,37 @@
 .LoginContainer{
   display: flex-wrap;
   justify-content: center;
-  width: 300px;
+  width: 350px;
   text-align: center;
+  
+}
+
+.LoginHeading{
   font-size: 20px;
 }
 
 .LoginInput{
-  width: 300px;
+  width: 350px;
   height: 80px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.PasswordHeading{
+  font-size: 20px;
 }
 
 .PasswordInput{
-  width: 300px;
+  width: 350px;
   height: 80px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.LoginSubmit{
+  width: 175px;
+  height: 40px;
+  font-size: 20px;
+  margin-top: 20px;
+
 }
