@@ -28,7 +28,7 @@
 }
 
 .usernameDivReqs{
-  background-color: red;
+  background-color: white;
 }
 
 .emailDiv{
@@ -50,7 +50,7 @@
 }
 
 .emailDivReqs{
-  background-color: salmon;
+  background-color: white;
 }
 
 .passwordDiv{
@@ -72,7 +72,7 @@
 }
 
 .passwordDivReqs{
-  background-color: cornflowerblue;
+  background-color: white;
 }
 
 .submitDiv{
@@ -91,5 +91,17 @@
 }
 
 .submitDivReqs{
-  background-color: blue;
+  background-color: white;
+}
+
+.greenCheck{
+  margin-top: 3px;
+  max-width: 20px;
+  max-height: 20px;
+  vertical-align: middle;
+  padding-bottom: 4px;
+}
+.reqDiv{
+  margin-top: 4px;
+  margin-left: 4px;
 }
