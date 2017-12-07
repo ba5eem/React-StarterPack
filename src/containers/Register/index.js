@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './comps/index.css';
 import RegisterComponent from './comps';
+import {pwdValidator} from './helpers';
+const validator = require("email-validator");
+const zxcvbn = require('zxcvbn');
+
 
 class Register extends Component {
   constructor() {
@@ -9,7 +13,10 @@ class Register extends Component {
 
     this.state={
       username: '',
-      password: ''
+      email: '',
+      validEmail: undefined,
+      password: '',
+      validPwd: undefined
     }
   }
 
@@ -19,9 +26,22 @@ class Register extends Component {
 
   }
 
+  emailHandler(e){
+    let val = e.target.value;
+
+    this.setState({
+      validEmail: validator.validate(val),
+      email: val
+    })
+
+  }
+
   passwordHandler(e){
     let val = e.target.value;
-    this.setState({password: val})
+    this.setState({
+      validPwd: zxcvbn(val),
+      password: val
+    })
 
   }
 
@@ -29,10 +49,12 @@ class Register extends Component {
     e.preventDefault();
     let local = {
       username: this.state.username,
+      email: this.state.email,
       password: this.state.password
     }
     this.setState({
       username: '',
+      email: '',
       password: ''
     })
     console.log(local);
@@ -52,10 +74,14 @@ class Register extends Component {
    
         <RegisterComponent
           usernameHandler={this.usernameHandler.bind(this)}
+          emailHandler={this.emailHandler.bind(this)}
           passwordHandler={this.passwordHandler.bind(this)}
           submit={this.submit.bind(this)}
+          validEmail={this.state.validEmail}
+          email={this.state.email}
           username={this.state.username}
-          password={this.state.password} />
+          password={this.state.password}
+          validPwd={this.state.validPwd} />
 
 
     );

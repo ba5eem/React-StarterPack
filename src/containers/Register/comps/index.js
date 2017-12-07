@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const RegisterComponent = ({usernameHandler,passwordHandler,submit,username,password}) =>{
+const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,username,password,validPwd, email,validEmail}) =>{
   const greenCheck = "http://bit.ly/2jqOoqa";
   const redCross = "http://bit.ly/2nGi1IM";
 
@@ -9,13 +9,22 @@ const RegisterComponent = ({usernameHandler,passwordHandler,submit,username,pass
   const usernameReqTwo = false ? greenCheck : redCross;
   const usernameReqThree = true ? greenCheck : redCross;
 
-  const passwordReqOne = false ? greenCheck : redCross;
-  const passwordReqTwo = true ? greenCheck : redCross;
-  const passwordReqThree = true ? greenCheck : redCross;
-
-  const emailReqOne = false ? greenCheck : redCross;
-  const emailReqTwo = false ? greenCheck : redCross;
+  const validEmailReq = validEmail ? greenCheck : redCross;
+  const emailReqTwo = true ? greenCheck : redCross;
   const emailReqThree = true ? greenCheck : redCross;
+
+  const score = validPwd ? validPwd.score : '';
+  const suggestions = validPwd ? validPwd.feedback.suggestions[0] : '';
+  const warnings = validPwd ? validPwd.feedback.warnings : '';
+
+  const strengthArr = ['weak','good','strong','stronger','strongest']
+  const styleArr = [{color: 'red'},{color: 'orange'},{color: 'green'},{color: 'green'}]
+  const strength = strengthArr[score];
+  const strengthStyle = styleArr[score] 
+
+
+
+
 
 
 
@@ -56,8 +65,8 @@ const RegisterComponent = ({usernameHandler,passwordHandler,submit,username,pass
           <div className="emailDiv">
             <h3 className='EmailHeading'>EMAIL</h3>
             <input 
-              onChange={usernameHandler}
-              value={username}
+              onChange={emailHandler}
+              value={email}
               className="EmailInput">
             </input>
           </div>
@@ -66,8 +75,8 @@ const RegisterComponent = ({usernameHandler,passwordHandler,submit,username,pass
             <div className="reqDiv">
               <img 
                 className="greenCheck" 
-                src={emailReqOne} 
-                alt="null"/>Email req One
+                src={validEmailReq} 
+                alt="null"/>Valid Email Address
             </div>
             <div className="reqDiv">
               <img 
@@ -95,22 +104,10 @@ const RegisterComponent = ({usernameHandler,passwordHandler,submit,username,pass
 
           <div className="passwordDivReqs">
             <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={passwordReqOne} 
-                alt="null"/>Password req One
+              <p fontSize="14px" style={strengthStyle}>{strength}</p>
             </div>
             <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={passwordReqTwo} 
-                alt="null"/>Password req One
-            </div>
-            <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={passwordReqThree} 
-                alt="null"/>Password req One
+              <p>{suggestions}</p>
             </div>
 
           </div>
@@ -123,9 +120,7 @@ const RegisterComponent = ({usernameHandler,passwordHandler,submit,username,pass
             </input>
           </div>
 
-          <div className="submitDivReqs">
-
-          </div>
+  
         </form>
       </div>
 
