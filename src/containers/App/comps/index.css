@@ -1,0 +1,31 @@
+
+
+.MainContainer{
+  border: 1px solid blue;
+  width: 800px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 100px 600px 100px;
+  grid-template-rows: 100px 400px 100px 100px 100px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

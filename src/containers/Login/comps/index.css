@@ -1,0 +1,17 @@
+.LoginContainer{
+  display: flex-wrap;
+  justify-content: center;
+  width: 300px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.LoginInput{
+  width: 300px;
+  height: 80px;
+}
+
+.PasswordInput{
+  width: 300px;
+  height: 80px;
+}
