@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './comps/index.css';
 import Login from '../Login';
+import Register from '../Register';
 
 class MainBody extends Component {
   constructor() {
@@ -26,7 +27,7 @@ class MainBody extends Component {
 
    
         <div className="MainBody">
-          <Login />
+          <Register />
       
         </div>
 

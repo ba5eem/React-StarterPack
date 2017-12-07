@@ -1,0 +1,37 @@
+.RegisterContainer{
+  display: flex-wrap;
+  justify-content: center;
+  width: 350px;
+  text-align: center;
+  
+}
+
+.RegisterHeading{
+  font-size: 20px;
+}
+
+.RegisterInput{
+  width: 350px;
+  height: 80px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.PasswordHeading{
+  font-size: 20px;
+}
+
+.PasswordInput{
+  width: 350px;
+  height: 80px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.RegisterSubmit{
+  width: 175px;
+  height: 40px;
+  font-size: 20px;
+  margin-top: 20px;
+
+}
