@@ -1,19 +1,62 @@
 .RegisterContainer{
-  display: flex-wrap;
-  justify-content: center;
-  width: 350px;
-  text-align: center;
-  
+  background-color: white;
+  border: 1px solid blue;
+  width: 800px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 400px 200px;
+  grid-template-rows: 100px 100px 100px 100px;
+
 }
 
-.RegisterHeading{
+.usernameDiv{
+  background-color: white;
+  display: flex-wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.UsernameHeading{
   font-size: 20px;
 }
 
-.RegisterInput{
+.UsernameInput{
   width: 350px;
-  height: 80px;
-  font-size: 40px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.usernameDivReqs{
+  background-color: red;
+}
+
+.emailDiv{
+  background-color: white;
+  display: flex-wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.EmailHeading{
+  font-size: 20px;
+}
+
+.EmailInput{
+  width: 350px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.emailDivReqs{
+  background-color: salmon;
+}
+
+.passwordDiv{
+  background-color: white;
+  display: flex-wrap;
+  justify-content: center;
   text-align: center;
 }
 
@@ -23,15 +66,30 @@
 
 .PasswordInput{
   width: 350px;
-  height: 80px;
-  font-size: 40px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.passwordDivReqs{
+  background-color: cornflowerblue;
+}
+
+.submitDiv{
+  background-color: white;
+  display: flex-wrap;
+  justify-content: center;
   text-align: center;
 }
 
 .RegisterSubmit{
   width: 175px;
-  height: 40px;
+  height: 30px;
   font-size: 20px;
   margin-top: 20px;
 
+}
+
+.submitDivReqs{
+  background-color: blue;
 }
