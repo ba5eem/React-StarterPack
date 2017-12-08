@@ -12,31 +12,17 @@ class Register extends Component {
     super();
 
     this.state={
-      username: '',
-      validName: undefined,
       email: '',
-      validEmail: undefined,
+      validEmail: true,
       password: '',
       validPwd: undefined
     }
-  }
-
-  usernameHandler(e){
-    let val = e.target.value;
-    const namesArr = ['bas','man']
-    if(val === namesArr[0] || val === namesArr[1]){
-      this.setState({validName: false})
-    }
-    else{ this.setState({validName: true}) }
-    this.setState({username: val})
-
   }
 
   emailHandler(e){
     let val = e.target.value;
 
     this.setState({
-      validEmail: validator.validate(val),
       email: val
     })
 
@@ -53,13 +39,16 @@ class Register extends Component {
 
   submit(e){
     e.preventDefault();
+    this.setState({validEmail: validator.validate(this.state.email)})
+
+    setTimeout(function() {
+      this.setState({validEmail: true}); }.bind(this),900);
+
     let local = {
-      username: this.state.username,
       email: this.state.email,
       password: this.state.password
     }
     this.setState({
-      username: '',
       email: '',
       password: ''
     })
@@ -79,12 +68,9 @@ class Register extends Component {
 
    
         <RegisterComponent
-          usernameHandler={this.usernameHandler.bind(this)}
           emailHandler={this.emailHandler.bind(this)}
           passwordHandler={this.passwordHandler.bind(this)}
           submit={this.submit.bind(this)}
-          username={this.state.username}
-          validName={this.state.validName}
           email={this.state.email}
           validEmail={this.state.validEmail}
           password={this.state.password}

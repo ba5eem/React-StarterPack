@@ -1,13 +1,8 @@
 import React from 'react';
 
 
-const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,username,validName,password,validPwd, email,validEmail}) =>{
-  const greenCheck = "http://bit.ly/2jqOoqa";
-  const redCross = "http://bit.ly/2nGi1IM";
-
-  const validNameReq = validName ? greenCheck : redCross;
-
-  const validEmailReq = validEmail ? greenCheck : redCross;
+const RegisterComponent = ({emailHandler,passwordHandler,submit,password,validPwd,email,validEmail}) =>{
+  const emailErr = "Looks like your email is not complete";
 
   const score = validPwd ? validPwd.score : '';
   const suggestions = validPwd ? validPwd.feedback.suggestions[0] : '';
@@ -26,74 +21,36 @@ const RegisterComponent = ({usernameHandler,emailHandler,passwordHandler,submit,
 
   return (
       <div className="RegisterContainer">
-        <form className="RegisterContainer" type="onsubmit" onSubmit={submit}>
-{/*USERNAME*/}
-          <div className="usernameDiv">
-            <h3 className='UsernameHeading'>USERNAME</h3>
-            <input 
-              onChange={usernameHandler}
-              value={username}
-              className="UsernameInput">
-            </input>
-          </div>
-
-          <div className="usernameDivReqs">
-            <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={validNameReq} 
-                alt="null"/>Username req One
-            </div>
-          </div>
-{/*EMAIL*/}
+        <h3 className='RegisterContainerHeading'>SIGN UP</h3>
+        <form className="RegisterForm" type="onsubmit" onSubmit={submit}>
           <div className="emailDiv">
-            <h3 className='EmailHeading'>EMAIL</h3>
             <input 
               onChange={emailHandler}
+              type="text"
               value={email}
-              className="EmailInput">
+              placeholder="Email Address"
+              className="emailInput">
             </input>
+            <h2>{validEmail ? '' : emailErr }</h2>
           </div>
-
-          <div className="emailDivReqs">
-            <div className="reqDiv">
-              <img 
-                className="greenCheck" 
-                src={validEmailReq} 
-                alt="null"/>Valid Email Address
-            </div>
-
-          </div>
-{/*PASSWORD*/}
-          <div className="passwordDiv">
-            <h3 className="PasswordHeading">PASSWORD</h3>
-            <input
-              onChange={passwordHandler} 
+          <div className="emailDiv">
+            <input 
+              onChange={passwordHandler}
+              type="text"
               value={password}
-              className="PasswordInput">
+              placeholder="Password"
+              className="emailInput">
             </input>
+            <h2 style={strengthStyle}>{strength}</h2>
           </div>
-
-          <div className="passwordDivReqs">
-            <div className="reqDiv">
-              <h3 style={strengthStyle}>{strength}</h3>
-            </div>
-            <div className="reqDiv">
-              <h4>{suggestions}</h4>
-            </div>
-
-          </div>
-{/*SUBMIT*/}
-          <div className="submitDiv">
+          <div className="emailDiv">
             <input 
               type='submit'
-              value='SUBMIT'
-              className="RegisterSubmit">
+              value="SUBMIT"
+              className="submit">
             </input>
           </div>
-
-  
-        </form>
+         </form>
       </div>
 
 

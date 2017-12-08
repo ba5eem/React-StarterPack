@@ -4,112 +4,39 @@
   width: 800px;
   height: 600px;
   display: grid;
-  grid-template-columns: 400px 200px;
-  grid-template-rows: 100px 100px 100px 100px;
-
-}
-
-.usernameDiv{
-  background-color: white;
-  display: flex-wrap;
-  justify-content: center;
+  grid-template-columns: 600px;
+  grid-template-rows: 60px;
   text-align: center;
 }
 
-.UsernameHeading{
-  font-size: 20px;
-}
 
-.UsernameInput{
-  width: 350px;
-  height: 30px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.usernameDivReqs{
-  background-color: white;
+.RegisterContainerHeading{
+  font-size: 30px;
 }
 
 .emailDiv{
-  background-color: white;
-  display: flex-wrap;
-  justify-content: center;
-  text-align: center;
-}
-
-.EmailHeading{
-  font-size: 20px;
-}
-
-.EmailInput{
-  width: 350px;
-  height: 30px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.emailDivReqs{
-  background-color: white;
-  margin-top: 30px;
-}
-
-.passwordDiv{
-  background-color: white;
-  display: flex-wrap;
-  justify-content: center;
-  text-align: center;
-}
-
-.PasswordHeading{
-  font-size: 20px;
-}
-
-.PasswordInput{
-  width: 350px;
-  height: 30px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.passwordDivReqs{
-  background-color: white;
-}
-
-
-.passwordDivReqs,  h3{
-  margin-top: 5px;
-}
-
-
-
-.submitDiv{
-  background-color: white;
-  display: flex-wrap;
-  justify-content: center;
-  text-align: center;
-}
-
-.RegisterSubmit{
-  width: 175px;
-  height: 30px;
-  font-size: 20px;
   margin-top: 20px;
-
+  display: flex-wrap;
+  justify-content: center;
+  text-align: center;
 }
 
-.submitDivReqs{
-  background-color: white;
+.emailInput{
+  width: 350px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  background-color: lightgrey;
+  border: 1px solid grey;
+  margin-top: 20px;
 }
 
-.greenCheck{
-  margin-top: 3px;
-  max-width: 20px;
-  max-height: 20px;
-  vertical-align: middle;
-  padding-bottom: 4px;
-}
-.reqDiv{
-  margin-top: 4px;
-  margin-left: 4px;
+.submit{
+  width: 357px;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  background-color: lightgreen;
+  margin-top: 20px;
 }
