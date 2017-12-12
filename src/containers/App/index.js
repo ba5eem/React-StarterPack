@@ -46,8 +46,7 @@ class App extends Component {
     return (
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
         <div className="App">
-          <AppHeader
-            data = {this.props.data}/>
+            CMS 2.0
         </div>
       /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
     );/*END OF RETURN*/
