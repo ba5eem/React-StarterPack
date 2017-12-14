@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { loadData } from '../../actions';
+import {AppHeader,OptionButton,PhotoView,src} from './App-components';
+
+
+
+
+
 
 class App extends Component {
-  constructor() {
+  constructor(){
     super();
-    
-    this.state={ 
-      data: []
+
+    this.state ={
+      a:''
     }
   }
 
@@ -17,25 +21,37 @@ class App extends Component {
 
 
 
-  render(){
-    return (
-        <div className="App">
-            CMS 2.0
-        </div>
 
+
+  render() {
+    
+    return (
+        <div className="app-container">
+          <AppHeader/>
+          <section className="main-section">
+            <PhotoView/>
+            <div className="options-bar">
+            <OptionButton title='upload' src={src.upload}/>
+            <OptionButton title='rotate' src={src.rotate}/>
+            <OptionButton title='enhance' src={src.enhance}/>
+            <OptionButton title='crop' src={src.crop}/>
+            <OptionButton title='retouch' src={src.retouch}/>
+            <OptionButton title='effects' src={src.effects}/>
+            <OptionButton title='undo' src={src.undo}/>
+            </div>
+
+
+          </section>
+
+
+
+
+
+
+        </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.dataList
-  }
-}
 
-const ConnectedApp = connect(
-  mapStateToProps,
-  {loadData}
-)(App)
-
-export default ConnectedApp;
+export default App;
