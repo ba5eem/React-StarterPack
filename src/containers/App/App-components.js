@@ -10,11 +10,27 @@ export const src ={
   undo: "http://bit.ly/2B2zMVy"
 }
 
+
+
 export const AppHeader = () => <header className="app-header"><img src="http://bit.ly/2j1R4Kn"/></header>;
 
 
-export const OptionButton = ({title,src}) => (
+export const UploadButton = ({title,src,handler}) => (
             <div className="options-button">
+            
+              <div className="options-img">
+                <img src={src} alt="icon" className="options-img"/>
+              </div>
+              <div className="options-title">
+              <input type="file" accept="image/*" id="image-upload" onChange={handler}/>
+
+              </div>
+            </div>
+      )
+
+
+export const OptionButton = ({title,src,handler}) => (
+            <div className="options-button" onClick={handler}>
               <div className="options-img">
                 <img src={src} alt="icon" className="options-img"/>
               </div>
@@ -23,13 +39,6 @@ export const OptionButton = ({title,src}) => (
               </div>
             </div>
       )
-
-export const PhotoView = () => (
-          <div className="photo-container">
-            <div className="photo-view"></div>
-            <Footer/>
-          </div>
-  )
 
 export const Footer = () => (
           <footer className="share-options"></footer>
