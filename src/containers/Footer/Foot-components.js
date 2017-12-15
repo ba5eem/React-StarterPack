@@ -18,7 +18,7 @@ export const Option = ({id,handle,src}) => (
 
 export const Rotate = ({handler}) => (
             <div className="rotate-container">
-              <Option id="rotateLeft" handle={handler} src={src.rotateLeft} />
+              <Option id="rotateLeft" handle={handler} src={src.rotateLeft}/>
               <Option id="rotateReset" handle={handler} src={src.reset}/>
               <Option id="rotateRight" handle={handler} src={src.rotateRight}/>
             </div>

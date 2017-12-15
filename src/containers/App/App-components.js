@@ -33,12 +33,12 @@ export const UploadButton = ({title,src,handler}) => (
 
 
 export const OptionButton = ({title,src,handler}) => (
-            <div className="options-button" onClick={handler}>
-              <div className="options-img">
-                <img src={src} alt="icon" className="options-img"/>
+            <div className="options-button" id={title} onClick={handler}>
+              <div className="options-img" id={title}>
+                <img src={src} alt={title} id={title} className="options-img"/>
               </div>
-              <div className="options-title">
-                <p className="title">{title}</p>
+              <div className="options-title" id={title}>
+                <p className="title" id={title}>{title}</p>
               </div>
             </div>
       )

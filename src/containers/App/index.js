@@ -18,7 +18,7 @@ class App extends Component {
       mode: false
     }
     this.upload=this.upload.bind(this);
-    this.rotate=this.rotate.bind(this);
+    this.activeMode=this.activeMode.bind(this);
   }
 
   upload(e){
@@ -40,8 +40,8 @@ class App extends Component {
     reSizeOnImport();
   }
 
-  rotate(){
-    this.props.changeMode({mode: 'rotate'})
+  activeMode(e){
+    this.props.changeMode({mode: e.target.id})
   }
 
 
@@ -57,7 +57,7 @@ class App extends Component {
             <PhotoView src={this.state.url}/>
             <div className="options-bar">
               <UploadButton title='upload' handler={this.upload} src={src.upload}/>
-              <OptionButton title='rotate' handler={this.rotate} src={src.rotate}/>
+              <OptionButton title='rotate' handler={this.activeMode} src={src.rotate}/>
               <OptionButton title='enhance' src={src.enhance}/>
               <OptionButton title='crop' src={src.crop}/>
               <OptionButton title='retouch' src={src.retouch}/>
