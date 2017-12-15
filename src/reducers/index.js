@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import dataList from './dataList.js';
+import ChangeMode from './mode-reducer.js';
+
 
 
 export default combineReducers({
-  dataList
+  mode: ChangeMode
 })

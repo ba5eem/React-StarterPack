@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import {Footer,src} from '../App/App-components';
+import {connect} from 'react-redux';
+import {changeMode} from '../../actions';
+import {src} from '../App/App-components';
+import Footer from '../Footer';
 
 
 class PhotoView extends Component {
@@ -23,14 +26,15 @@ class PhotoView extends Component {
 
 
   render() {
+    let {mode} = this.props;
     const view = this.props.src ? true : false;
     return (
         <div className="photo-container" onClick={this.check}>
-            <div className="photo-view">
-              {!view ? 
-              <img className="photo-view-false" src="http://bit.ly/2j1R4Kn" alt=""/>
+            <div className="photo-view" id="photo-view">
+              {view ? 
+              <img className="photo-view-false"  src="http://bit.ly/2j1R4Kn" alt=""/>
               :
-              <img className="photo-view-true" src={this.props.src} alt=""/>
+              <img className="photo-view-true" id="photo-view-true" src="https://i.ytimg.com/vi/exxji9vqjSw/maxresdefault.jpg" alt=""/>
               }
             </div>
             <Footer/>
@@ -41,4 +45,15 @@ class PhotoView extends Component {
 }
 
 
-export default PhotoView;
+const mapStateToProps = (state) => {
+  return{
+    mode: state.mode
+  }
+}
+
+const ConnectedPhotoView = connect(
+  mapStateToProps,
+  {changeMode}
+  )(PhotoView)
+
+export default ConnectedPhotoView;

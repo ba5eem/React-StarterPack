@@ -65,11 +65,8 @@ body{
   max-height: 60%;
 }
 
-.photo-view-true{
-  margin-left: 5%;
-  margin-top: 5%;
-  max-height: 80%;
-  border: 10px solid #151a1f;
+#photo-view-true{
+
 }
 
 
@@ -107,12 +104,41 @@ body{
 
 }
 
-.share-options{
+.footer{
   margin-top: 10px;
-  background-color: #515c66;
+  background-color: #0f1419;
   height: calc(20% - 10px);
   width: 95%;
 }
+
+.rotate-container{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-buttons{
+  width: 200px;
+  height: 70px;
+  max-height: 80px;
+  margin: auto;
+  background-color: #515c66;
+  border: 1px solid #151a1f;
+  display: flex-wrap;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.footer-buttons img{
+  margin-top: 10px;
+  max-height: 40px;
+}
+
+#rotateRight{
+  transform: rotateY(180deg);
+}
+
 
 input[type="file"] {
     display: none;

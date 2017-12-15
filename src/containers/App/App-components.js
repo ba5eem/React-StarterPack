@@ -22,7 +22,7 @@ export const UploadButton = ({title,src,handler}) => (
                 <img src={src} alt="icon" className="options-img"/>
               </div>
               <div className="options-title">
-              <label for="file" id="image-upload">
+              <label htmlFor="file" id="image-upload">
                 <p className="title">upload</p>
               </label>
               <input type="file" accept="image/*" id="file" onChange={handler}/>
@@ -43,7 +43,3 @@ export const OptionButton = ({title,src,handler}) => (
             </div>
       )
 
-export const Footer = () => (
-          <footer className="share-options"></footer>
-
-  )

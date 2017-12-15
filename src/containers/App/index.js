@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import {AppHeader,OptionButton,src,UploadButton} from './App-components';
+import {connect} from 'react-redux';
+import {changeMode} from '../../actions';
+import {AppHeader,OptionButton,src,UploadButton,Footer} from './App-components';
 import PhotoView from '../Photo';
+import Cropper from 'cropperjs';
+import {reSizeOnImport} from './helpers'
 
 class App extends Component {
   constructor(){
@@ -10,7 +14,8 @@ class App extends Component {
       upload: false,
       file: '',
       url: '',
-      photo: ''
+      photo: '',
+      mode: false
     }
     this.upload=this.upload.bind(this);
     this.rotate=this.rotate.bind(this);
@@ -29,13 +34,25 @@ class App extends Component {
     if(file){
       reader.readAsDataURL(file);
     }
-    let elem = document.getElementsByClassName('photo-view-true');
-    this.setState({photo: elem})
   }
+
+  componentDidMount() {
+    reSizeOnImport();
+  }
+
   rotate(){
-    let photo = this.state.photo;
-    console.log(photo[0]);
-    photo.style.transform = 'rotate(90deg)';
+    this.props.changeMode({mode: 'rotate'})
+    var image = document.getElementById('photo-view-true');
+    var view = document.getElementById('photo-view');
+    let VW = view.clientWidth;//778
+    let VH = view.clientHeight;//480
+    let mSide = VW - image.height;
+    let ML = mSide/2;
+    let deg = 90;
+    image.style.transform = 'rotate('+deg+'deg)';
+    image.width = VH-30;
+    image.style.marginLeft = ML+'px';
+    console.log(image.width);
 
   }
 
@@ -62,8 +79,8 @@ class App extends Component {
 
 
           </section>
-
-
+         
+    
              
 
 
@@ -74,5 +91,15 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return{
+    mode: state.mode
+  }
+}
 
-export default App;
+const ConnectedApp = connect(
+  mapStateToProps,
+  {changeMode}
+  )(App)
+
+export default ConnectedApp;
