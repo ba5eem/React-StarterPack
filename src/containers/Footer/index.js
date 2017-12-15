@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {changeMode} from '../../actions';
 import {Rotate} from './Foot-components';
+import {rotateHelper} from './helpers';
 
 
 class Footer extends Component {
@@ -11,11 +12,11 @@ class Footer extends Component {
     this.state ={
       src:''
     }
-    this.check=this.check.bind(this)
+    this.rotate=this.rotate.bind(this)
   }
 
-  check(){
-    console.log(this.props.src);
+  rotate(e){
+    rotateHelper(e);
   }
 
 
@@ -26,11 +27,10 @@ class Footer extends Component {
 
   render() {
     let {mode} = this.props.mode;
-    console.log(mode);
     return (
             <footer className="footer">
 
-              <Rotate/>
+              <Rotate handler={this.rotate}/>
 
             </footer>
         

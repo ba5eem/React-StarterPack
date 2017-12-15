@@ -42,18 +42,6 @@ class App extends Component {
 
   rotate(){
     this.props.changeMode({mode: 'rotate'})
-    var image = document.getElementById('photo-view-true');
-    var view = document.getElementById('photo-view');
-    let VW = view.clientWidth;//778
-    let VH = view.clientHeight;//480
-    let mSide = VW - image.height;
-    let ML = mSide/2;
-    let deg = 90;
-    image.style.transform = 'rotate('+deg+'deg)';
-    image.width = VH-30;
-    image.style.marginLeft = ML+'px';
-    console.log(image.width);
-
   }
 
 

@@ -139,6 +139,10 @@ body{
   transform: rotateY(180deg);
 }
 
+#rotateReset{
+  margin-top:15px;
+}
+
 
 input[type="file"] {
     display: none;
