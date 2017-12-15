@@ -13,5 +13,9 @@ export function reSizeOnImport(){
     image.height = IH;
     image.style.marginLeft = ML+'px';
     image.style.marginTop = MT+'px';
+    localStorage.setItem('IW', IW);
+    localStorage.setItem('IH',IH);
+    localStorage.setItem('ML',ML);
+    localStorage.setItem('MT',MT);
 }
 

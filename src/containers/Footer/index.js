@@ -29,8 +29,7 @@ class Footer extends Component {
     let {mode} = this.props.mode;
     return (
             <footer className="footer">
-
-              <Rotate handler={this.rotate}/>
+              {mode === 'rotate' ? <Rotate handler={this.rotate}/> : null }
 
             </footer>
         

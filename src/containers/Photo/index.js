@@ -26,7 +26,6 @@ class PhotoView extends Component {
 
 
   render() {
-    let {mode} = this.props;
     const view = this.props.src ? true : false;
     return (
         <div className="photo-container" onClick={this.check}>

@@ -16,8 +16,10 @@ export function rotateHelper(e){
   if(id === 'rotateReset'){
     deg = 0;
     image.style.transform = `rotate(${deg}deg)`;
-    image.width = VH+ML-60;
-    image.style.marginLeft = (ML/2-30)+'px'
+    image.width = localStorage.IW;
+    image.height = localStorage.IH;
+    image.style.marginLeft = localStorage.ML+'px';
+    image.style.marginTop = localStorage.MT;
   }
 
 }
