@@ -22,7 +22,10 @@ export const UploadButton = ({title,src,handler}) => (
                 <img src={src} alt="icon" className="options-img"/>
               </div>
               <div className="options-title">
-              <input type="file" accept="image/*" id="image-upload" onChange={handler}/>
+              <label for="file" id="image-upload">
+                <p className="title">upload</p>
+              </label>
+              <input type="file" accept="image/*" id="file" onChange={handler}/>
 
               </div>
             </div>

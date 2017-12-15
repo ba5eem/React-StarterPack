@@ -66,8 +66,9 @@ body{
 }
 
 .photo-view-true{
-  margin-left: 10px;
-  margin-top: 40px;
+  margin-left: 5%;
+  margin-top: 5%;
+  max-height: 80%;
   border: 10px solid #151a1f;
 }
 
@@ -113,7 +114,11 @@ body{
   width: 95%;
 }
 
-#image-upload{
+input[type="file"] {
+    display: none;
+}
+
+/*#image-upload{
     color: transparent;
     padding: 15px 55px;
     text-align: center;
@@ -121,10 +126,11 @@ body{
     display: inline-block;
     font-size: 16px;
 
+}*/
+
+#image-upload{
+    display: inline-block;
+    cursor: pointer;
+
 }
-
-
-
-
-
 

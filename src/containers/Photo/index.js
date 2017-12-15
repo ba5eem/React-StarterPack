@@ -7,11 +7,14 @@ class PhotoView extends Component {
     super(props);
 
     this.state ={
-      a:''
+      src:''
     }
+    this.check=this.check.bind(this)
   }
 
-
+  check(){
+    console.log(this.props.src);
+  }
 
 
 
@@ -22,7 +25,7 @@ class PhotoView extends Component {
   render() {
     const view = this.props.src ? true : false;
     return (
-        <div className="photo-container">
+        <div className="photo-container" onClick={this.check}>
             <div className="photo-view">
               {!view ? 
               <img className="photo-view-false" src="http://bit.ly/2j1R4Kn" alt=""/>
@@ -32,6 +35,7 @@ class PhotoView extends Component {
             </div>
             <Footer/>
         </div>
+        
     );
   }
 }
