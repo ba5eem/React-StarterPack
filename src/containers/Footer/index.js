@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {changeMode} from '../../actions';
-import {Rotate} from './Foot-components';
+import {Rotate,Filter} from './Foot-components';
 import {rotateHelper} from './helpers';
 
 
@@ -13,10 +13,14 @@ class Footer extends Component {
       src:''
     }
     this.rotate=this.rotate.bind(this)
+    this.filter=this.filter.bind(this)
   }
 
   rotate(e){
     rotateHelper(e);
+  }
+  filter(e){
+    console.log('filter')
   }
 
 
@@ -30,7 +34,7 @@ class Footer extends Component {
     return (
             <footer className="footer">
               {mode === 'rotate' ? <Rotate handler={this.rotate}/> : null }
-
+              {mode === 'filter' ? <Filter handler={this.filter}/> : null }
             </footer>
         
     );

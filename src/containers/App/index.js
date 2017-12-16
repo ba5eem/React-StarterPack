@@ -58,7 +58,7 @@ class App extends Component {
             <div className="options-bar">
               <UploadButton title='upload' handler={this.upload} src={src.upload}/>
               <OptionButton title='rotate' handler={this.activeMode} src={src.rotate}/>
-              <OptionButton title='enhance' src={src.enhance}/>
+              <OptionButton title='filter' handler={this.activeMode} src={src.enhance}/>
               <OptionButton title='crop' src={src.crop}/>
               <OptionButton title='retouch' src={src.retouch}/>
               <OptionButton title='effects' src={src.effects}/>
