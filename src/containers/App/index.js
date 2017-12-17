@@ -19,6 +19,7 @@ class App extends Component {
     }
     this.upload=this.upload.bind(this);
     this.activeMode=this.activeMode.bind(this);
+    this.changeFilter=this.changeFilter.bind(this);
   }
 
   upload(e){
@@ -28,7 +29,7 @@ class App extends Component {
     reader.onloadend = () => {
       this.setState({
         file: file,
-        url: reader.result
+        url: reader.result 
       })
     }
     if(file){
@@ -44,6 +45,11 @@ class App extends Component {
     this.props.changeMode({mode: e.target.id})
   }
 
+  changeFilter(style){
+    var image = document.getElementById('photo-view-true');
+    image.style.filter = `${style}(100%)`;
+  }
+
 
 
 
@@ -54,15 +60,14 @@ class App extends Component {
         <div className="app-container">
           <AppHeader/>
           <section className="main-section">
-            <PhotoView src={this.state.url}/>
+            <PhotoView src={this.state.url} changeFilter={this.changeFilter}/>
             <div className="options-bar">
               <UploadButton title='upload' handler={this.upload} src={src.upload}/>
               <OptionButton title='rotate' handler={this.activeMode} src={src.rotate}/>
               <OptionButton title='filter' handler={this.activeMode} src={src.enhance}/>
-              <OptionButton title='crop' src={src.crop}/>
-              <OptionButton title='retouch' src={src.retouch}/>
               <OptionButton title='effects' src={src.effects}/>
               <OptionButton title='undo' src={src.undo}/>
+              <OptionButton title='share' src={src.retouch}/>
             </div>
 
 

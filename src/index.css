@@ -57,6 +57,7 @@ body{
   width:95%;
   max-width: 100%;
   max-height: 80%;
+
 }
 
 .photo-view-false{
@@ -74,12 +75,11 @@ body{
 .options-bar{
   width: 20%;
   height: 100%;
-  background-color: #151a1f;
 }
 
 .options-button{
   width: 100%;
-  height: calc((100%/7) - 6px);
+  height: calc((100%/6) - 6px);
   margin-bottom: 5px;
   background-color: #515c66;
   border: 1px solid #151a1f;
@@ -165,3 +165,57 @@ input[type="file"] {
 
 }
 
+.filter-buttons{
+  height: 70px;
+  max-height: 80px;
+  margin: auto;
+  border: 1px solid #151a1f;
+  display: flex-wrap;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+
+.filter-buttons img{
+  height: 70px;
+  width: 110px;
+  border: 8px solid #515c66;
+  border-radius: 10px;
+  margin-left: 4px;
+}
+
+#grayscale {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+#blur{
+  -webkit-filter: blur(5px); /* Safari */
+  filter: blur(5px);
+}
+
+#contrast{
+  -webkit-filter: contrast(200%); /* Safari */
+  filter: contrast(200%);
+}
+
+#hue{
+  -webkit-filter: hue-rotate(90deg); /* Safari */
+  filter: hue-rotate(90deg);
+}
+
+#invert{
+  -webkit-filter: invert(100%); /* Safari */
+  filter: invert(100%);
+}
+
+#saturate{
+  -webkit-filter: saturate(800%); /* Safari */
+  filter: saturate(800%);
+}
+
+#sepia{
+   -webkit-filter: sepia(100%); /* Safari */
+    filter: sepia(100%);
+}

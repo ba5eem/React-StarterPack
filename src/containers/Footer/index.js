@@ -20,7 +20,8 @@ class Footer extends Component {
     rotateHelper(e);
   }
   filter(e){
-    console.log('filter')
+    let id = e.target.id;
+    this.props.changeFilter(id);
   }
 
 
@@ -31,10 +32,11 @@ class Footer extends Component {
 
   render() {
     let {mode} = this.props.mode;
+    let {src} = this.props;
     return (
             <footer className="footer">
               {mode === 'rotate' ? <Rotate handler={this.rotate}/> : null }
-              {mode === 'filter' ? <Filter handler={this.filter}/> : null }
+              {mode === 'filter' ? <Filter src={src} handler={this.filter}/> : null }
             </footer>
         
     );

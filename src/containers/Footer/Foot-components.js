@@ -7,7 +7,8 @@ export const src ={
   crop: "http://bit.ly/2B24Gh6",
   retouch: "http://bit.ly/2ClpErk",
   effects:"http://bit.ly/2j2UGMg",
-  undo: "http://bit.ly/2B2zMVy"
+  undo: "http://bit.ly/2B2zMVy",
+
 }
 
 export const Option = ({id,handle,src}) => (
@@ -24,9 +25,15 @@ export const Rotate = ({handler}) => (
             </div>
       )
 
-export const Filter = ({handler}) => (
+export const Filter = ({handler,src}) => (
             <div className="rotate-container">
-              <Option id="rotateLeft" handle={handler} src={src.rotateLeft}/>
+              <div className="filter-buttons">
+                <img id="grayscale" src={src} alt="icon" onClick={handler}/>
+                <img id="contrast" src={src} alt="icon" onClick={handler}/>
+                <img id="invert" src={src} alt="icon" onClick={handler}/>
+                <img id="saturate" src={src} alt="icon" onClick={handler}/>
+                <img id="sepia" src={src} alt="icon" onClick={handler}/>
+              </div>
               
             </div>
       )
