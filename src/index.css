@@ -1,3 +1,14 @@
 body{
   background-color: lightgreen;
 }
+
+.App{
+  display: flex;
+  max-width: 800px;
+}
+
+.box{
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+}

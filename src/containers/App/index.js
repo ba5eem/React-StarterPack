@@ -1,71 +1,109 @@
 import React, { Component } from 'react';
+import {loadVideo} from '../../actions';
 import { connect } from 'react-redux';
-import { loadData,addData,editData,deleteData } from '../../actions';
-import AppHeader from '../../components/AppHeader.js';
-import edit from '../../lib/Edit';
-import destroyData from '../../lib/Delete';
-import addNew from '../../lib/Add';
+
+
+const x = {backgroundColor: 'cornflowerblue'};
+const y = {backgroundColor: 'salmon'};
+
+const arr = new Array(11).fill(x);
+const Box = ({change,ref,i,elem}) => <div id={i} onClick={change} className="box" style={elem}></div>
 
 class App extends Component {
   constructor() {
     super();
     
     this.state={ 
-      data: []
+      arr: arr,
+      count: 0,
+      id: 0
     }
-  }
-/*THIS WILL INVOKED LOADTASKS AND BRING THE DATA TO THIS SMART COMPONENT*/
-  componentDidMount() { 
-    // this.props.loadData();
-    // without DB setup this will fail - after DB - uncomment above line
-  }
-/*NOTHING ABOVE NEEDS TO CHANGE*/
-
-  add(id,e){
-    let data = addNew(id,e);
-    console.log(data);
-    this.props.addNew(data);
-  }
-
-  update(id,e){
-    let data = edit(id,e);
-    this.props.editTask(data);
-  }
-
-  destroy(id,e){
-    let data = destroyData(id,e);
-    this.props.deleteData(data);
+    this.eachBox=this.eachBox.bind(this);
+    this.change=this.change.bind(this);
+    //this.runChange=this.runChange.bind(this);
   }
 
 
+
+  componentWillMount() {
+    this.props.loadVideo()
+  }
+
+  change(e){
+    let id = e.target.id;
+    this.setState({id:id})
+    this.runChange() 
+  }
+
+  runChange(){
+    this.changeDown(this.state.id);
+    this.changeUp(this.state.id);
+
+  }
+
+  changeDown(id){
+    let n = this.state.count;
+    setTimeout(() => {
+      id --
+      this.setState({ count: id });
+      arr[this.state.count] = y;
+      this.setState({arr:arr})
+      if(this.state.count === 0){
+        return;
+      }else { this.runChange() }
+      }, 1500)
+
+
+  }
+  changeUp(id){
+    let n = this.state.count;
+    setTimeout(() => {
+      id ++
+      this.setState({ count: id });
+      arr[this.state.count] = y;
+      this.setState({arr:arr})
+      }, 1500)
+
+  }
+
+
+
+
+
+
+
+  eachBox(elem,i){
+    return(<Box key={i} i={i} elem={elem} change={this.change}/>)
+  }
 
 
 
 
   render(){
+    let {arr} = this.state;
     return (
-      /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
+
         <div className="App">
-          <AppHeader
-            data = {this.props.data}/>
+          {arr.map(this.eachBox)}
+
+
         </div>
-      /*EVERYTHING SHOULD GO BETWEEN THESE DIVS*/
-    );/*END OF RETURN*/
+      
+    )
   }
-} /*END OF RENDER AND CLASS APP*/
+} 
+
 
 const mapStateToProps = (state) => {
   return {
-    data: state.dataList
-  }
+    artworks: state.artworks
+    }
 }
 
 const ConnectedApp = connect(
   mapStateToProps,
-  {loadData,
-  addData,
-  editData,
-  deleteData}
+  {loadVideo}
 )(App)
+
 
 export default ConnectedApp;
