@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadData } from '../../actions';
+import { data } from '../../Utils/Constants';
 
 
 class App extends Component {
@@ -12,6 +13,9 @@ class App extends Component {
     }
   }
 
+  componentWillMount() {
+    this.props.loadData();
+  }
 
 
 
@@ -23,7 +27,9 @@ class App extends Component {
     return (
 
         <div className="App">
-          OLA!
+          {data.map((elem,i) =>{
+            return (<p key={i}>{elem.genre} : {elem.code}</p>)
+          })}
         </div>
 
     );
