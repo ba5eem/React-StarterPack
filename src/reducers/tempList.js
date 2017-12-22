@@ -1,29 +1,43 @@
-import { LOAD_DATA, ADD_DATA, EDIT_DATA, DELETE_DATA } from '../actions';
+import { FETCHING_DATA, FETCHING_DATA_SUCCESS,FETCHING_DATA_FAIL  } from './../Utils/ActionTypes';
 
-const tempList = (state = [],action) => { 
-  console.log("Reducer has been activated, current state: ", state)
-  switch (action.type){
-    case LOAD_DATA:
-      console.log('LOAD_DATA has been activated: ',action.data);
-      return action.data;
-    case ADD_DATA:
-      console.log('ADD_DATA has been activated: ',action.data);
-      return [...state,action.data]
-    case EDIT_DATA:
-      console.log('EDIT_DATA has been activated: ',action.data);
-      const data = action.data[1];
-      let id = data.id
-      let arr = state.filter((elem) =>{
-        return elem.id !== id;
-      })
-      console.log(arr.concat([data]))
-      return arr.concat([data]);
-    case DELETE_DATA:
-      console.log('DELETE_DATA has been activated: ',action.data);
-      return action.data;
+const initialState = {
+  isFetching: null,
+  data: [],
+  hasError: false,
+  errorMessage: null
+}
+
+
+export default function (state = initialState, action) {
+
+  switch(action.type){
+
+    case FETCHING_DATA:
+      return Object.assign({},state, {
+        isFetching: true,
+        data: null,
+        hasError: false,
+        errorMessage: null
+      });
+
+    case FETCHING_DATA_SUCCESS:
+      return Object.assign({},state, {
+        isFetching: false,
+        data: action.payload,
+        hasError: false,
+        errorMessage: null
+      });
+
+    case FETCHING_DATA_FAIL:
+      return Object.assign({},state, {
+        isFetching: false,
+        data: action.payload,
+        hasError: true,
+        errorMessage: action.err
+      });
+
     default:
       return state;
   }
-}
 
-export default tempList;
+}
