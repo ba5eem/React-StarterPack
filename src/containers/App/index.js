@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { loadData } from '../../actions';
 import { data } from '../../Utils/Constants';
+import Genre from './Genre';
+
 
 
 class App extends Component {
@@ -11,13 +11,14 @@ class App extends Component {
     this.state={ 
       data: []
     }
+    this.eachGenre=this.eachGenre.bind(this);
   }
 
-  componentWillMount() {
-    this.props.loadData();
+  eachGenre(elem,i){
+    return(
+        <Genre elem={elem} key={i}/>
+      )
   }
-
-
 
 
 
@@ -25,22 +26,15 @@ class App extends Component {
 
   render(){
     return (
-
-        <div className="App">
-          {data.map((elem,i) =>{
-            return (<p key={i}>{elem.genre} : {elem.code}</p>)
-          })}
+    
+        <div className="container">
+          <h1>NETFLIX GENRE TABS</h1>
+          {data.map(this.eachGenre)}
         </div>
 
     );
   }
-} /*END OF RENDER AND CLASS APP*/
-
-const mapStateToProps = (state) => {
-  return {
-    data: state.data
-  }
-}
+} 
 
 
-export default connect(mapStateToProps,{loadData})(App);
+export default App;

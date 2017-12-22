@@ -1,4 +1,4 @@
-export const apiBaseUrl = 'https://api.coinmarketcap.com';
+export const url = 'https://netflix.com/browse/genre/';
 
 export const data = [{ id: 0, genre: 'Action & Adventure', code: 1365 },
 { id: 1, genre: 'Action Comedies', code: 43040 },
