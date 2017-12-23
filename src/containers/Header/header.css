@@ -1,0 +1,18 @@
+.header-container{
+  background-color: #95e6cb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  height: 100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.add-widget-image{
+  flex-direction: row;
+  margin-bottom: 0;
+  width: 5.75rem;
+  border-radius: 100px;
+  filter: invert(50%);
+}

@@ -1,0 +1,35 @@
+.dashboard-container{
+  background-color: #abb0b6;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 800px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: -1;
+}  
+
+.widget-container{
+  background-color: #737d87;
+  display: flex-wrap;
+  justify-content: space-between;
+  overflow: hidden;
+  margin: 2rem;
+  width: 250px;
+  height: 300px;
+  box-shadow: 0 0 10px #151a1f;
+  z-index: 0;
+}
+
+.widget-temp{
+  text-align: center;
+  font-size: 3rem;
+}
+
+.widget-temp-details{
+  text-align: center;
+}
+
+.widget-footer{
+  text-align: center;
+}

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadData } from '../../actions';
-import { Header, Dashboard } from '../';
+import { WeatherWidget } from './dashboard.components';
+import './dashboard.css';
 
 
 
-class App extends Component {
+
+class Dashboard extends Component {
   constructor() {
     super();
     
@@ -24,9 +26,8 @@ class App extends Component {
   render(){
     return (
 
-        <div className="app-container">
-          <Header />
-          <Dashboard />
+        <div className="dashboard-container">
+          <WeatherWidget/>
         </div>
 
     );
@@ -40,4 +41,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{loadData})(App);
+export default connect(mapStateToProps,{loadData})(Dashboard);

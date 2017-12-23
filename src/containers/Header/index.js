@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadData } from '../../actions';
-import { Header, Dashboard } from '../';
+import { Add } from './header.components';
+import './header.css';
 
 
-
-class App extends Component {
+class Header extends Component {
   constructor() {
     super();
     
@@ -24,14 +24,13 @@ class App extends Component {
   render(){
     return (
 
-        <div className="app-container">
-          <Header />
-          <Dashboard />
+        <div className="header-container">
+          <Add/>
         </div>
 
     );
   }
-} /*END OF RENDER AND CLASS APP*/
+} 
 
 const mapStateToProps = (state) => {
   return {
@@ -40,4 +39,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{loadData})(App);
+export default connect(mapStateToProps,{loadData})(Header);
