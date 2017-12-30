@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadData } from '../../actions';
-import { Header, Body } from "../";
 
 
-class App extends Component {
+class Header extends Component {
   constructor() {
     super();
     
@@ -23,9 +22,8 @@ class App extends Component {
   render(){
     return (
 
-        <div className="App">
-          <Header />
-          <Body />
+        <div className="Header">
+          <h1>One-RM Calculator</h1>
         </div>
 
     );
@@ -39,4 +37,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{loadData})(App);
+export default connect(mapStateToProps,{loadData})(Header);
