@@ -27,14 +27,7 @@ export const updateTitle = (newText,card) => {
 }
 
 export const addCard = () => {
-  let card = {
-        x: 75 - 25,
-        y: 50 - 25,
-        width: 300,
-        height: 300,
-        fill: "red",
-        isDragging: false
-      };
+  let card = {}
   return{
     type: ADD_CARD,
     payload: card

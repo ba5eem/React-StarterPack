@@ -14,11 +14,11 @@ export function archive(arr,i){
 export function add(state){
   let res = state;
   let card = {
-        x: 75 - 15,
-        y: 50 - 15,
+        x: 20,
+        y: 50,
         width: 300,
-        height: 300,
-        fill: "yellow",
+        height: 100,
+        fill: "#074358",
         isDragging: false
       }
   res.unshift(card);

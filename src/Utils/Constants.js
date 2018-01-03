@@ -10,11 +10,27 @@ export const data = {
 
 export const rects = [
       {
-        x: 75 - 15,
-        y: 50 - 15,
+        x: 20,
+        y: 50,
         width: 300,
-        height: 300,
-        fill: "green",
+        height: 100,
+        fill: "#074358",
+        isDragging: false
+      },
+      {
+        x: 400,
+        y: 50,
+        width: 300,
+        height: 100,
+        fill: "#DBA67B",
+        isDragging: false
+      },
+      {
+        x: 20,
+        y: 200,
+        width: 300,
+        height: 100,
+        fill: "#A55C55",
         isDragging: false
       }
     ]
