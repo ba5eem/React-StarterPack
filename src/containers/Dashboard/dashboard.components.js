@@ -18,7 +18,7 @@ canvas.width = 1200;
 canvas.height = 600;
 var BB = canvas.getBoundingClientRect();
 var offsetX = BB.left;
-var offsetY = BB.top;
+var offsetY = BB.top+50;
 var WIDTH = canvas.width;
 var HEIGHT = canvas.height;
 
