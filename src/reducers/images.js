@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
     case FETCHING_DATA:
       return Object.assign({},state, {
         isFetching: true,
-        data: initialState,
+        data: [],
         hasError: false,
         errorMessage: null
       });
@@ -31,7 +31,7 @@ export default function (state = initialState, action) {
     case FETCHING_DATA_FAIL:
       return Object.assign({},state, {
         isFetching: false,
-        data: action.payload,
+        data: [],
         hasError: true,
         errorMessage: action.err
       });

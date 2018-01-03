@@ -17,6 +17,19 @@ class App extends Component {
     this.props.loadData();
   }
 
+  renderPhotos(elem,i){
+    let src = elem.images.low_resolution.url;
+    let width = elem.images.low_resolution.width;
+    let height = elem.images.low_resolution.height;
+    return(
+        <div className="ig_list" key={i}>
+          <img style={{width:width, height: height}} src={src} alt=""/>
+        </div>
+
+
+      )
+  }
+
 
 
 
@@ -26,7 +39,7 @@ class App extends Component {
     return (
 
         <div className="App">
-          OLA!
+          {data.map(this.renderPhotos)}
         </div>
 
     );
