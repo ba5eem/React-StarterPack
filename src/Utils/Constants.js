@@ -8,32 +8,54 @@ export const data = {
   sunny: sunny
 }
 
+export const colors = ["#074358","#82A46D","#6D73A4","#A55C55","#8372DC"];
+export const w = 300;
+export const h = 100;
+
 export const rects = [
       {
-        x: 20,
+        x: 740,
         y: 50,
-        width: 300,
-        height: 100,
-        fill: "#074358",
+        width: w,
+        height: h,
+        fill: colors[0],
         isDragging: false,
         text: "aaaaaa"
       },
       {
-        x: 400,
-        y: 50,
-        width: 300,
-        height: 100,
-        fill: "#DBA67B",
+        x: 700,
+        y: 120,
+        width: w,
+        height: h,
+        fill: colors[1],
         isDragging: false,
         text: "bbb"
       },
       {
         x: 20,
         y: 200,
-        width: 300,
-        height: 100,
-        fill: "#A55C55",
+        width: w,
+        height: h,
+        fill: colors[2],
+        isDragging: false,
+        text: "xxxxx"
+      },
+      {
+        x: 370,
+        y: 50,
+        width: w,
+        height: h,
+        fill: colors[3],
         isDragging: false,
         text: "ccccc"
-      }
+      },
+      {
+        x: 370,
+        y: 180,
+        width: w,
+        height: h,
+        fill: colors[4],
+        isDragging: false,
+        text: "qqqqq"
+      },
     ]

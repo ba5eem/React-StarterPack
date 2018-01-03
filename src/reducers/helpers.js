@@ -1,3 +1,6 @@
+import { rects, colors, w, h } from '../Utils/Constants';
+
+
 export function remove(payload,state){
   let res = state.filter((elem) =>{
       return elem.id !== payload.id;
@@ -6,20 +9,17 @@ export function remove(payload,state){
 }
 
 
-
-export function archive(arr,i){
-  return arr[i];
-}
-
 export function add(state){
+  let text = "ola"
   let res = state;
   let card = {
         x: 20,
         y: 50,
-        width: 300,
-        height: 100,
-        fill: "#074358",
-        isDragging: false
+        width: w,
+        height: h,
+        fill: colors[Math.floor(Math.random() * colors.length)],
+        isDragging: false,
+        text: text
       }
   res.unshift(card);
   return res;

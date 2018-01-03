@@ -22,7 +22,7 @@ var offsetY = BB.top;
 var WIDTH = canvas.width;
 var HEIGHT = canvas.height;
 
-//pass text in on function call
+
 
 
 // drag related variables
@@ -30,10 +30,8 @@ var dragok = false;
 var startX;
 var startY;
 
-//pass objects in with props
 
 
-// an array of objects that define different rectangles
 
 
 
@@ -44,10 +42,7 @@ canvas.onmouseup = myUp;
 canvas.onmousemove = myMove;
 
 // call to draw the scene
-console.log(rects);
-if(rects.length === 1){
-    console.log('more')
-}
+
 draw();
 
 
@@ -58,7 +53,7 @@ function rect(x, y, w, h,text) {
     ctx.rect(x, y, w, h);
     ctx.closePath();
     ctx.fill();
-    ctx.font = 'italic bold 30px sans-serif';
+    ctx.font = 'bold 30px Rajdhani';
     ctx.fillStyle = 'red';
     ctx.textBaseline = 'bottom';
     ctx.fillStyle = '#FAF7F8';
