@@ -1,27 +1,22 @@
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS,FETCHING_DATA_FAIL  } from './../Utils/ActionTypes';
-import { token } from './token.js';
-
-
-
+import { useruri } from './token.js';
 const axios = require('axios');
-const uri = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${process.env.IG_TOKEN}`
 
 
+export default function loadData(){
+  return dispatch => {
 
+    dispatch({ type: FETCHING_DATA })
 
-export const loadData = () => {
-  console.log('loadusers to server ' )
-  return function(dispatch){
-    return axios.get(uri)
-    .then( users => {
-      console.log('loadusers? ', users )
-      dispatch({
-        type: FETCHING_DATA,
-        payload: users.data
+    return axios.get(useruri)
+      .then(res => {
+        return dispatch({ type: FETCHING_DATA_SUCCESS, payload: res.data })
+      })
+      .catch(err => {
+        return dispatch({ type: FETCHING_DATA_FAIL, payload: err })
       });
-    });
-  }
-}
 
+    }
+  }
 
 

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import tempList from './tempList.js';
+import images from './images.js';
 
 
 export default combineReducers({
-  data: tempList
+  data: images
 })

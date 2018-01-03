@@ -13,10 +13,9 @@ export default function (state = initialState, action) {
   switch(action.type){
 
     case FETCHING_DATA:
-      console.log(action.payload);
       return Object.assign({},state, {
         isFetching: true,
-        data: null,
+        data: initialState,
         hasError: false,
         errorMessage: null
       });
@@ -24,7 +23,7 @@ export default function (state = initialState, action) {
     case FETCHING_DATA_SUCCESS:
       return Object.assign({},state, {
         isFetching: false,
-        data: action.payload,
+        data: action.payload.data,
         hasError: false,
         errorMessage: null
       });
