@@ -13,7 +13,9 @@ class App extends Component {
   }
 
 
-
+  componentWillMount() {
+    // this.props.loadData();
+  }
 
 
 
