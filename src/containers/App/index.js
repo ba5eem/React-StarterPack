@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import loadData from '../../actions';
-
-const dropHere = "http://bit.ly/2CH7JMA";
-const arr = [
-{id:"0", src: dropHere},
-{id:"1", src: dropHere},
-{id:"2", src: dropHere},
-{id:"3", src: dropHere},
-{id:"4", src: dropHere},
-{id:"5", src: dropHere},
-{id:"6", src: dropHere},
-{id:"7", src: dropHere},
-{id:"8", src: dropHere}]
+import { arr, dropHere, changeSrc } from './Utils';
 
 
 class App extends Component {
@@ -21,13 +10,9 @@ class App extends Component {
     
     this.state={ 
       arr: arr,
-      url: ''
+      url: '',
+      moveUrl: ''
     }
-
-    this.onDrop=this.onDrop.bind(this);
-    this.drag=this.drag.bind(this);
-    this.onDragOver=this.onDragOver.bind(this);
-
   }
 
 
@@ -39,14 +24,14 @@ class App extends Component {
     this.setState({url})
   }
 
+  move(e){
+    let url = e.target.src;
+    this.setState({url})
+  }
+
   onDrop(e,idx){
     let {arr} = this.state;
-    let res = arr.filter((elem,i) => {
-      if(parseInt(elem.id) === parseInt(idx)){
-        elem.src = this.state.url;
-      }
-      return arr;
-    })
+    let res = changeSrc(idx,this.state.url)
     this.setState({arr:res})
   }
 
@@ -62,9 +47,7 @@ class App extends Component {
 
   render(){
     let {data} = this.props.data;
-    let {arr} = this.state;
-
-    
+    let {arr} = this.state; 
     return (
 
         <div className="App">
@@ -82,7 +65,6 @@ class App extends Component {
                 onDrag={(e)=>this.drag(e,url)}
                 onDragOver={(e)=>this.onDragOver(e)} 
                 onDrop={(e)=>this.onDrop(e,url)}>
-
                 <img style={{width:width, height: height}} src={url} alt=""/>
               </div>
               )
@@ -99,6 +81,7 @@ class App extends Component {
                   className="nine_boxes"
                   key={i} 
                   draggable='false'
+                  onDrag={(e)=>this.move(e,i)}
                   onDragOver={(e)=>this.onDragOver(e,i)} 
                   onDrop={(e)=>this.onDrop(e,i)}>
 

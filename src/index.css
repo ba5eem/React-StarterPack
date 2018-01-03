@@ -60,9 +60,18 @@ body{
   width: 180px;
   height: 180px;
   border: 1px solid black;
+  align-items: center;
+  overflow: hidden
+
+
+}
+
+.nine_boxes img{
+  flex-shrink: 1;
+    min-width: 100%;
+    min-height: 90%
 }
 
 .drophere{
-  margin-top: 0.25rem;
   width: 170px;
 }
