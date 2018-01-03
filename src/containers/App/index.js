@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { render } from 'react-dom';
+import { Stage, Layer, Rect, Text } from 'react-konva';
 import loadData from '../../actions';
 import { arr, dropHere, changeSrc } from './Utils';
+
 
 
 class App extends Component {
