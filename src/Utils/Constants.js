@@ -7,3 +7,14 @@ export const data = {
   addImage: addImage,
   sunny: sunny
 }
+
+export const rects = [
+      {
+        x: 75 - 15,
+        y: 50 - 15,
+        width: 300,
+        height: 300,
+        fill: "green",
+        isDragging: false
+      }
+    ]

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadData } from '../../actions';
+import { loadData, addCard } from '../../actions';
 import { Header, Dashboard } from '../';
+import { updateRects } from '../Dashboard/dashboard.components';
 
 
 
@@ -14,7 +15,7 @@ class App extends Component {
     }
   }
 
-
+  
 
 
 
@@ -25,7 +26,6 @@ class App extends Component {
     return (
 
         <div className="app-container">
-          <Header />
           <Dashboard />
         </div>
 

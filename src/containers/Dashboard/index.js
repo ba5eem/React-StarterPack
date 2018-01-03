@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadData } from '../../actions';
-import { WeatherWidget } from './dashboard.components';
+import { loadData, addCard } from '../../actions';
+import { Header } from '../';
+import { buildCanvas, updateRects } from './dashboard.components';
 import './dashboard.css';
 
 
@@ -12,9 +13,25 @@ class Dashboard extends Component {
     super();
     
     this.state={ 
-      data: []
+      data: [],
+      canvas: undefined
     }
+
+    this.addIdea=this.addIdea.bind(this);
+
   }
+
+  componentDidMount() {
+    let canvas = document.getElementById("canvas");
+    this.setState({canvas})
+    buildCanvas(canvas,this.props.data);
+  }
+
+  addIdea(){
+    this.props.addCard();
+    updateRects(this.state.canvas,this.props.data);
+  }
+
 
 
 
@@ -25,14 +42,15 @@ class Dashboard extends Component {
 
   render(){
     return (
-
-        <div className="dashboard-container">
-          <WeatherWidget/>
+        <div>
+          <Header handler={this.addIdea}/>
+          <div className="dashboard-container">
+            <canvas id="canvas"></canvas>
+          </div>
         </div>
-
     );
   }
-} /*END OF RENDER AND CLASS APP*/
+} 
 
 const mapStateToProps = (state) => {
   return {
@@ -41,4 +59,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{loadData})(Dashboard);
+export default connect(mapStateToProps,{loadData,addCard})(Dashboard);

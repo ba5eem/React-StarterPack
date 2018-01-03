@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadData } from '../../actions';
+import { loadData, addCard } from '../../actions';
 import { Add } from './header.components';
-import './header.css';
 
+import './header.css';
 
 class Header extends Component {
   constructor() {
@@ -14,7 +14,7 @@ class Header extends Component {
     }
   }
 
-
+  
 
 
 
@@ -22,10 +22,11 @@ class Header extends Component {
 
 
   render(){
+    
     return (
 
         <div className="header-container">
-          <Add/>
+          <Add handler={this.props.handler}/>
         </div>
 
     );
@@ -39,4 +40,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{loadData})(Header);
+export default connect(mapStateToProps,{loadData,addCard})(Header);

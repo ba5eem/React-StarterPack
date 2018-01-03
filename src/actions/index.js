@@ -1,18 +1,65 @@
-import { FETCHING_DATA, FETCHING_DATA_SUCCESS,FETCHING_DATA_FAIL  } from './../Utils/ActionTypes';
-
-const axios = require('axios');
-const Promise = require('bluebird');
-
-
+export const REMOVE_CARD = 'REMOVE_CARD';
+export const UPDATE_TITLE = "UPDATE_TITLE";
+export const ADD_CARD = "ADD_CARD";
+export const UPDATE_STATUS = "UPDATE_STATUS";
+export const UNDO_REMOVE = "UNDO_REMOVE";
+export const UPDATE_PRIORITY = "UPDATE_PRIORITY";
 
 
 export const loadData = () => {
-  return Promise.coroutine(function* (dispatch) {
-    dispatch({ 
-      type: FETCHING_DATA, 
-      payload: yield axios.get('/api/data') 
-    })
-  })
+  console.log("ola")
 }
 
 
+export const removeCard = (card) => {
+  return{
+    type: REMOVE_CARD,
+    payload: card
+  }
+}
+
+export const updateTitle = (newText,card) => {
+  card.title = newText;
+  return{
+    type: UPDATE_TITLE,
+    payload: card
+  }
+}
+
+export const addCard = () => {
+  let card = {
+        x: 75 - 25,
+        y: 50 - 25,
+        width: 300,
+        height: 300,
+        fill: "red",
+        isDragging: false
+      };
+  return{
+    type: ADD_CARD,
+    payload: card
+  }
+}
+
+export const updateStatus = (newStatus,card) => {
+  
+  card.status = newStatus;
+  return{
+    type: UPDATE_STATUS,
+    payload: card
+  }
+}
+
+export const updatePriority = (card) => {
+  return{
+    type: UPDATE_PRIORITY,
+    payload: card
+  }
+}
+
+export const undoRemove = (card) => {
+  return{
+    type: UNDO_REMOVE,
+    payload: card
+  }
+}

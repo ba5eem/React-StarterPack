@@ -1,43 +1,14 @@
-import { FETCHING_DATA, FETCHING_DATA_SUCCESS,FETCHING_DATA_FAIL  } from './../Utils/ActionTypes';
+import {
+  ADD_CARD
+  } from '../actions'
+import { rects } from '../Utils/Constants';
+import { add } from './helpers';
 
-const initialState = {
-  isFetching: null,
-  data: [],
-  hasError: false,
-  errorMessage: null
-}
-
-
-export default function (state = initialState, action) {
-
+export default function(state=rects, action){
   switch(action.type){
-
-    case FETCHING_DATA:
-      return Object.assign({},state, {
-        isFetching: true,
-        data: null,
-        hasError: false,
-        errorMessage: null
-      });
-
-    case FETCHING_DATA_SUCCESS:
-      return Object.assign({},state, {
-        isFetching: false,
-        data: action.payload,
-        hasError: false,
-        errorMessage: null
-      });
-
-    case FETCHING_DATA_FAIL:
-      return Object.assign({},state, {
-        isFetching: false,
-        data: action.payload,
-        hasError: true,
-        errorMessage: action.err
-      });
-
+    case ADD_CARD:
+      return [...add(state)];
     default:
       return state;
   }
-
 }
