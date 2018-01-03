@@ -23,7 +23,7 @@ var WIDTH = canvas.width;
 var HEIGHT = canvas.height;
 
 //pass text in on function call
-let text = 'yooooooo!';
+
 
 // drag related variables
 var dragok = false;
@@ -53,7 +53,7 @@ draw();
 
 
 // draw a single rect
-function rect(x, y, w, h) {
+function rect(x, y, w, h,text) {
     ctx.beginPath();
     ctx.rect(x, y, w, h);
     ctx.closePath();
@@ -82,7 +82,7 @@ function draw() {
     for (var i = 0; i < rects.length; i++) {
         var r = rects[i];
         ctx.fillStyle = r.fill;
-        rect(r.x, r.y, r.width, r.height);
+        rect(r.x, r.y, r.width, r.height, r.text);
     }
 }
 

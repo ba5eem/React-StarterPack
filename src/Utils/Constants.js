@@ -15,7 +15,8 @@ export const rects = [
         width: 300,
         height: 100,
         fill: "#074358",
-        isDragging: false
+        isDragging: false,
+        text: "aaaaaa"
       },
       {
         x: 400,
@@ -23,7 +24,8 @@ export const rects = [
         width: 300,
         height: 100,
         fill: "#DBA67B",
-        isDragging: false
+        isDragging: false,
+        text: "bbb"
       },
       {
         x: 20,
@@ -31,6 +33,7 @@ export const rects = [
         width: 300,
         height: 100,
         fill: "#A55C55",
-        isDragging: false
+        isDragging: false,
+        text: "ccccc"
       }
     ]
