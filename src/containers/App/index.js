@@ -14,14 +14,31 @@ class App extends Component {
     this.state={ 
       arr: arr,
       url: '',
-      moveUrl: ''
+      moveUrl: '',
+      color: '#738699'
     }
   }
 
 
   componentWillMount() {
     this.props.loadData();
+    //const ctx = this.refs.canvas.getContext('2d');
   }
+
+   componentDidMount() {
+        this.updateCanvas();
+    }
+    updateCanvas() {
+        const ctx = this.refs.canvas.getContext('2d');
+        ctx.fillRect(0,0, 180, 180);
+        var imageObj = new Image();
+
+      imageObj.onload = function() {
+        ctx.drawImage(imageObj, 0,0,180,180);
+      };
+      imageObj.src = dropHere;
+    }
+
 
   drag(e,url){
     this.setState({url})
@@ -44,6 +61,8 @@ class App extends Component {
 
   postIg(e){
     console.log("postIg")
+    //const ctx = this.refs.canvas.getContext('2d');
+    //console.log(ctx);
   }
 
 
@@ -82,20 +101,7 @@ class App extends Component {
             <h1>My Favorite 9</h1>
           </div>
           <div className="template">
-            {arr.map((elem,i) =>{
-              return (
-                <div 
-                  className="nine_boxes"
-                  key={i} 
-                  draggable='false'
-                  onDrag={(e)=>this.move(e,i)}
-                  onDragOver={(e)=>this.onDragOver(e,i)} 
-                  onDrop={(e)=>this.onDrop(e,i)}>
-
-                  <img src={elem.src} alt="" className="drophere"/>
-                </div>
-                )
-            })}
+    <canvas ref="canvas" width={580} height={550}/>
           </div>
           <div className="post" onClick={this.postIg}>post</div>
          </div>
