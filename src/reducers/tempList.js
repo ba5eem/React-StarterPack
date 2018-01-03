@@ -13,6 +13,7 @@ export default function (state = initialState, action) {
   switch(action.type){
 
     case FETCHING_DATA:
+      console.log(action.payload);
       return Object.assign({},state, {
         isFetching: true,
         data: null,
