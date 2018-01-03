@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import loadData from '../../actions';
 
 
+
+
 class App extends Component {
   constructor() {
     super();
@@ -18,15 +20,21 @@ class App extends Component {
   }
 
   renderPhotos(elem,i){
-    let src = elem.images.low_resolution.url;
-    let width = elem.images.low_resolution.width;
-    let height = elem.images.low_resolution.height;
+    let {url} = elem.images.low_resolution;
+    let {width} = elem.images.low_resolution;
+    let {height} = elem.images.low_resolution;
     return(
         <div className="ig_list" key={i}>
-          <img style={{width:width, height: height}} src={src} alt=""/>
+          <img style={{width:width, height: height}} src={url} alt=""/>
         </div>
+      )
+  }
 
-
+  renderBoxes(elem,i){
+    return (
+        <div className="nine_boxes" key={i}>
+          <img src="http://bit.ly/2CH7JMA" alt="" className="drophere"/>
+        </div>
       )
   }
 
@@ -36,10 +44,22 @@ class App extends Component {
 
   render(){
     let {data} = this.props.data;
+    let arr = new Array(9).fill('i');
     return (
 
         <div className="App">
+         <div className="side_section">
           {data.map(this.renderPhotos)}
+         </div>
+         <div className="main">
+          <div className="header">
+            <h1>My Favorite 9</h1>
+          </div>
+          <div className="template">
+            {arr.map(this.renderBoxes)}
+          </div>
+         </div>
+          
         </div>
 
     );
