@@ -47,7 +47,7 @@ body{
   margin: auto;
   margin-top: 3rem;
   width: 600px;
-  height: 600px;
+  height: 580px;
   text-align: center;
 
 }
@@ -67,11 +67,25 @@ body{
 }
 
 .nine_boxes img{
-  flex-shrink: 1;
-    min-width: 100%;
-    min-height: 90%
+  min-width: 180px;
+  min-height: 180px;
+  max-width: 180px;
+  max-height: 180px;
+
+  overflow:hidden;
 }
 
 .drophere{
   width: 170px;
+}
+
+.post{
+  width: 200px;
+  height: 50px;
+  background-color: #39bae6;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: auto;
+  border-radius: 5px;
 }

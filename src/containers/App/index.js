@@ -39,6 +39,10 @@ class App extends Component {
     e.preventDefault();
   }
 
+  postIg(e){
+    console.log("postIg")
+  }
+
 
   
 
@@ -90,6 +94,7 @@ class App extends Component {
                 )
             })}
           </div>
+          <div className="post" onClick={this.postIg}>post</div>
          </div>
           
         </div>
