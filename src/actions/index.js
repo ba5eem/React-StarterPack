@@ -26,11 +26,10 @@ export const updateTitle = (newText,card) => {
   }
 }
 
-export const addCard = () => {
-  let card = {}
+export const addCard = (value) => {
   return{
     type: ADD_CARD,
-    payload: card
+    payload: value
   }
 }
 

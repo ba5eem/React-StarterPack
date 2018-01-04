@@ -9,10 +9,31 @@
   margin: 0 auto;
 }
 
+
 .add-widget-image{
   flex-direction: row;
   margin-bottom: 0;
-  width: 5.75rem;
+  max-width: 5.75rem;
   border-radius: 100px;
   filter: invert(30%);
 }
+
+.idea-input{
+
+  width: 25rem;
+  height: 50px;
+  border: transparent;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.title{
+  font-family: Rajdhani;
+  margin-right: 3rem;
+  color: white;
+
+}
+
+
+
+

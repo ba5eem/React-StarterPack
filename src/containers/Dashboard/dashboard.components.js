@@ -53,7 +53,7 @@ function rect(x, y, w, h,text) {
     ctx.rect(x, y, w, h);
     ctx.closePath();
     ctx.fill();
-    ctx.font = 'bold 30px Rajdhani';
+    ctx.font = 'bold 25px Rajdhani';
     ctx.fillStyle = 'red';
     ctx.textBaseline = 'bottom';
     ctx.fillStyle = '#FAF7F8';

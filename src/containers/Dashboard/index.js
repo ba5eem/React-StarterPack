@@ -27,8 +27,8 @@ class Dashboard extends Component {
     buildCanvas(canvas,this.props.data);
   }
 
-  addIdea(){
-    this.props.addCard();
+  addIdea(value){
+    this.props.addCard(value);
     updateRects(this.state.canvas,this.props.data);
   }
 
@@ -43,7 +43,7 @@ class Dashboard extends Component {
   render(){
     return (
         <div>
-          <Header handler={this.addIdea}/>
+          <Header addIdea={this.addIdea}/>
           <div className="dashboard-container">
             <canvas id="canvas"></canvas>
           </div>

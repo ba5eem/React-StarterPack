@@ -9,8 +9,7 @@ export function remove(payload,state){
 }
 
 
-export function add(state){
-  let text = "ola"
+export function add(state,value){
   let res = state;
   let card = {
         x: 20,
@@ -19,7 +18,7 @@ export function add(state){
         height: h,
         fill: colors[Math.floor(Math.random() * colors.length)],
         isDragging: false,
-        text: text
+        text: value
       }
   res.unshift(card);
   return res;
