@@ -17,8 +17,10 @@ var ctx = canvas.getContext("2d");
 canvas.width = 1200;
 canvas.height = 600;
 var BB = canvas.getBoundingClientRect();
+
 var offsetX = BB.left;
 var offsetY = BB.top+50;
+
 var WIDTH = canvas.width;
 var HEIGHT = canvas.height;
 
@@ -92,6 +94,7 @@ function myDown(e) {
     // get the current mouse position
     var mx = parseInt(e.clientX - offsetX);
     var my = parseInt(e.clientY - offsetY);
+
 
     // test each rect to see if mouse is inside
     dragok = false;
