@@ -19,7 +19,7 @@
 }
 
 .idea-input{
-
+  margin-top: 1rem;
   width: 25rem;
   height: 50px;
   border: transparent;
@@ -32,6 +32,16 @@
   margin-right: 3rem;
   color: white;
 
+}
+
+.max{
+  color: #9F6000;
+  background-color: #FFD2D2;
+  margin-top: 0.5rem;
+  padding: 0;
+  font-size:1em;
+  vertical-align:middle;
+  text-align: center;
 }
 
 

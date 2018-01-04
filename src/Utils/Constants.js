@@ -14,7 +14,7 @@ export const h = 60;
 
 export const rects = [
       {
-        x: 740,
+        x: 750,
         y: 60,
         width: w,
         height: h,
@@ -41,7 +41,7 @@ export const rects = [
         text: "change username to say email"
       },
       {
-        x: 370,
+        x: 390,
         y: 50,
         width: w,
         height: h,

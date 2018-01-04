@@ -16,7 +16,8 @@ class Header extends Component {
       data: [],
       show: false,
       src: true,
-      value: ''
+      value: '',
+      max: false
     }
     this.showInput=this.showInput.bind(this);
     this.saveInput=this.saveInput.bind(this);
@@ -26,9 +27,9 @@ class Header extends Component {
 
   saveInput(e){
     let value = e.target.value;
-    if(value.length > 44){
-      console.log('toolong')
-    }
+    if(value.length > 20){
+      this.setState({max: true})
+    }else{this.setState({max: false})}
     this.setState({value: value})
     
   }
@@ -58,6 +59,11 @@ class Header extends Component {
           {this.state.show ?
           <div className="input" id="input">
             <input type="text" placeholder="...add new idea" onChange={this.saveInput} className="idea-input"/>
+            {this.state.max ?
+              <p className="max">remember to write...your idea in 20 characters or less</p>
+            : 
+              <p className="max" style={{backgroundColor: "#458985",color: "#458985"}}>20 characters or less</p>
+                }
           </div>
           : null }
           <div>
