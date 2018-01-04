@@ -41,6 +41,7 @@ class Header extends Component {
     this.setState({src: !this.state.src})
     if(!this.state.src && value.length !== 0){
       this.props.addIdea(this.state.value);
+      this.setState({max: false})
     }
 
   }
