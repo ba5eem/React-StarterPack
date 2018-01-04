@@ -17,7 +17,8 @@ class Header extends Component {
       show: false,
       src: true,
       value: '',
-      max: false
+      max: false,
+      taken: false
     }
     this.showInput=this.showInput.bind(this);
     this.saveInput=this.saveInput.bind(this);
@@ -27,7 +28,7 @@ class Header extends Component {
 
   saveInput(e){
     let value = e.target.value;
-    if(value.length > 20){
+    if(value.length > 30){
       this.setState({max: true})
     }else{this.setState({max: false})}
     this.setState({value: value})
@@ -51,8 +52,10 @@ class Header extends Component {
 
 
   render(){
-    const src = this.state.src ? add : done
-    
+    const src = this.state.src ? add : done;
+    const {taken} = this.state;
+    const charLimit = "remember to write...your idea in 30 characters or less";
+
     return (
 
         <div className="header-container">
@@ -61,7 +64,7 @@ class Header extends Component {
           <div className="input" id="input">
             <input type="text" placeholder="...add new idea" onChange={this.saveInput} className="idea-input"/>
             {this.state.max ?
-              <p className="max">remember to write...your idea in 20 characters or less</p>
+              <p className="max">{charLimit}</p>
             : 
               <p className="max" style={{backgroundColor: "#458985",color: "#458985"}}>20 characters or less</p>
                 }
@@ -69,7 +72,7 @@ class Header extends Component {
           : null }
           <div>
             <h1 className="title">Digital Brainstorming Clipboard</h1>
-              <h2 className="title">move item around as you add...</h2>
+              <h2 className="title">move ideas around if you like...</h2>
           </div>
         </div>
 
