@@ -1,28 +1,14 @@
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS,FETCHING_DATA_FAIL  } from './../Utils/ActionTypes';
-import { apiKey } from '../keys.js';
 const axios = require('axios');
-const Promise = require('bluebird');
 
-const stopID = 879;
-const url = `http://api.thebus.org/arrivals/?key=${apiKey}&stop=${stopID}`;
-const config = {
-    headers: {'Access-Control-Allow-Origin': '*'}
-};
+const stopID = 883;
+const apiKey = "5C2E94D8-425D-4791-B362-56C22EBBE25C";
 
 
 
-
-
-
-
-
-
-
-
-
-export const loadData = () => {
+export const loadData = (id) => {
   return function(dispatch){
-    return axios.get(url, config)
+    return axios.get(`/bus/${id}`)
     .then((data) => {
       dispatch({
         type: FETCHING_DATA_SUCCESS,

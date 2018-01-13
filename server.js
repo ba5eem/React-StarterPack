@@ -2,16 +2,20 @@ var express = require('express');
 var app     = express();
 const axios = require('axios');
 var parseString = require('xml2js').parseString;
+require('dotenv').config();
+
+console.log(process.env.KEY);
 
 const stopID = 883;
-const apiKey = "";
+const apiKey = process.env.KEY;
 
-const url = `http://api.thebus.org/arrivals/?key=${apiKey}&stop=${stopID}`;
+const url = `http://api.thebus.org/arrivals/?key=${apiKey}&stop=`;
 
 
-app.get('/bus', (req,res) => {
+app.get('/bus/:id', (req,res) => {
   let all = []
-  axios(url).then((data) => {
+  let id = req.params.id;
+  axios(url+id).then((data) => {
     var xml = data.data;
     parseString(xml, function (err, result) {
     let body = result.stopTimes.arrival;
@@ -38,5 +42,5 @@ app.get('/bus', (req,res) => {
   })
 })
 
-app.listen('8081')
+app.listen('8080')
 

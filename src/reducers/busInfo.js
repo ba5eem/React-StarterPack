@@ -15,30 +15,34 @@ export default function (state = initialState, action) {
     case FETCHING_DATA:
       return Object.assign({},state, {
         isFetching: true,
-        data: null,
+        data: [],
         hasError: false,
         errorMessage: null
       });
 
     case FETCHING_DATA_SUCCESS:
-    console.log(action.payload);
       return Object.assign({},state, {
-        isFetching: false,
-        data: action.payload,
+        dataFetchSuccess: true,
+        data: action.payload.data,
         hasError: false,
         errorMessage: null
       });
 
     case FETCHING_DATA_FAIL:
       return Object.assign({},state, {
-        isFetching: false,
-        data: action.payload,
+        dataFetchFail: false,
+        data: [],
         hasError: true,
         errorMessage: action.err
       });
 
     default:
-      return state;
+      return Object.assign({},state, {
+        isFetching: true,
+        data: [],
+        hasError: false,
+        errorMessage: null
+      });
   }
 
 }

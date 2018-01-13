@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import tempList from './tempList.js';
+import busInfo from './busInfo.js';
 
 
 export default combineReducers({
-  data: tempList
+  bus: busInfo
 })
