@@ -2,7 +2,7 @@ import { FETCHING_DATA, FETCHING_DATA_SUCCESS,FETCHING_DATA_FAIL  } from './../U
 const axios = require('axios');
 
 const stopID = 883;
-const apiKey = "5C2E94D8-425D-4791-B362-56C22EBBE25C";
+const apiKey = "";
 
 
 
