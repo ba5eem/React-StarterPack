@@ -14,6 +14,9 @@
 
 <b>daBusWebApp | [DaBus](https://github.com/ba5eem/React-StarterPack/tree/daBusWebApp) | Search Bus Stops</b>
 
+<img src="./bus.png" width="450"/>
+<br>
+
 <b>Dashboard | [Dashboard](https://github.com/ba5eem/React-StarterPack/tree/dashboard) | Canvas Brainstorming App</b>
 
 <b>FacebookOAuth | [OAuth](https://github.com/ba5eem/React-StarterPack/tree/facebookOAuth) | Quick Facebook auth </b>
