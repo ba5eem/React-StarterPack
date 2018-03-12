@@ -19,11 +19,17 @@
 
 <b>Dashboard | [Dashboard](https://github.com/ba5eem/React-StarterPack/tree/dashboard) | Canvas Brainstorming App</b>
 
+<img src="./dashboard.png" width="450"/>
+<br>
+
 <b>FacebookOAuth | [OAuth](https://github.com/ba5eem/React-StarterPack/tree/facebookOAuth) | Quick Facebook auth </b>
 
 <b>Flowpaper | [CSS Flowpaper](https://github.com/ba5eem/React-StarterPack/tree/flowpaper) | React State changing colors</b>
 
 <b>Kanban | [Kanban](https://github.com/ba5eem/React-StarterPack/tree/kanban) | Plan Management</b>
+
+<img src="./kanban.png" width="450"/>
+<br>
 
 <b>Maps | [Maps](https://github.com/ba5eem/React-StarterPack/tree/maps) | Map API Google</b>
 
@@ -32,6 +38,11 @@
 <b>PhotoEditor | [Editor](https://github.com/ba5eem/React-StarterPack/tree/photoEditor) | Upload and edit your photos</b>
 
 <b>RepMaxCalc | [RMC](https://github.com/ba5eem/React-StarterPack/tree/repMaxCalc) | Calculate your weight lifting percentages</b>
+
+<img src="https://github.com/ba5eem/1RepMax-ios/blob/master/img.png" width="450"/>
+<br>
+
+
 
 <b>ScrollAnimations | [CSS Animations](https://github.com/ba5eem/React-StarterPack/tree/scrollanimations) | Animations as your scroll down the page</b>
 
