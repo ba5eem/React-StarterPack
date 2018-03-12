@@ -6,6 +6,10 @@
 
 <b>BetterNetflixSearch | [Netflix Codes](https://github.com/ba5eem/React-StarterPack/tree/betterNetflixSearch) | Discover Hidden Netflix Genres</b>
 
+<img src="https://github.com/ba5eem/React-StarterPack/blob/betterNetflixSearch/img.png" width="450"/>
+<br>
+
+
 <b>CMS | [CMS](https://github.com/ba5eem/React-StarterPack/tree/cms) | Content Management System</b>
 
 <b>daBusWebApp | [DaBus](https://github.com/ba5eem/React-StarterPack/tree/daBusWebApp) | Search Bus Stops</b>
