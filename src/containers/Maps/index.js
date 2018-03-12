@@ -45,7 +45,7 @@ class Map extends Component {
 
 
   render(){
-      const key = "AIzaSyBBTA30AK8U7dJYaDZg2KvhaA-YaQvrhvs";
+      const key = "API_KEY";
       const mapUrl =`https://maps.googleapis.com/maps/api/js?key=${key}&v=3.exp&libraries=geometry,drawing,places`;
       const loadingElement = <div style={{ height: `100%` }} />;
       const containerElement = <div style={{ height: `400px`, width: `800px` }} />;
