@@ -1,4 +1,4 @@
-## React Built Apps
+## Websites built with REACT
 
 <b>HiBikeLeage | [HI Bike League Demo](https://github.com/ba5eem/React-StarterPack/tree/HiBikeLeague) | Support Cycling in Hawaii</b>
 
