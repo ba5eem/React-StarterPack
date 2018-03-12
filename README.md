@@ -37,6 +37,9 @@
 
 <b>PhotoEditor | [Editor](https://github.com/ba5eem/React-StarterPack/tree/photoEditor) | Upload and edit your photos</b>
 
+<img src="./photo.png" width="450"/>
+<br>
+
 <b>RepMaxCalc | [RMC](https://github.com/ba5eem/React-StarterPack/tree/repMaxCalc) | Calculate your weight lifting percentages</b>
 
 <img src="https://github.com/ba5eem/1RepMax-ios/blob/master/img.png" width="450"/>
